@@ -1,0 +1,43 @@
+<!-- ##### SECTION Title ##### -->
+TnyGtkPixbufStream
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyGtkPixbufStream ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_gtk_pixbuf_stream_new ##### -->
+<para>
+
+</para>
+
+@mime_type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_pixbuf_stream_get_pixbuf ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

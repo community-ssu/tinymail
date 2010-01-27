@@ -1,0 +1,50 @@
+<!-- ##### SECTION Title ##### -->
+TnyGtkMsgWindow
+
+<!-- ##### SECTION Short_Description ##### -->
+A message window for Gtk+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type that decorates the #TnyMsgView and is implemented by inheriting GtkWindow. It
+wraps the #TnyMsgView instance with a window. It expects this view implementation
+to inherit from GtkWidget. Therefore it's soft coupled with implementations like
+#TnyMsgView for Gtk+ and #TnyMozEmbedMsgView which is also implemented by inheriting
+from a #GtkWidget descendant, but uses a #GtkMozEmbed HTML component.
+</para><para>
+You cannot use #TnyMsgView implementations that don't inherit from a #GtkWidget
+type with this type.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyGtkMsgView, #TnyMsgView, #TnyMozEmbedMsgView, #GtkWindow, #GtkWidget
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyGtkMsgWindow ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_gtk_msg_window_new ##### -->
+<para>
+
+</para>
+
+@msgview: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_msg_window_set_view ##### -->
+<para>
+
+</para>
+
+@self: 
+@view: 
+
+

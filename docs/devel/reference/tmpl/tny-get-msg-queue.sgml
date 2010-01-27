@@ -1,0 +1,20 @@
+<!-- ##### SECTION Title ##### -->
+TnyGetMsgQueue
+
+<!-- ##### SECTION Short_Description ##### -->
+A queue for getting full messages
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A queue that implements getting messages. Using this queue you can for example act
+right after the or a message on the queue got fetched successfully.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyQueue, #TnyQueueTask
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+

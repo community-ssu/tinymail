@@ -1,0 +1,787 @@
+;; -*- scheme -*-
+; boxed definitions ...
+
+; interface definitions ...
+
+; object definitions ...
+
+(define-object CamelAccount
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelAccount")
+  (gtype-id "TNY_TYPE_CAMEL_ACCOUNT")
+)
+
+(define-object CamelBsMimePart
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelBsMimePart")
+  (gtype-id "TNY_TYPE_CAMEL_BS_MIME_PART")
+)
+
+(define-object CamelBsMsg
+  (in-module "Tny")
+  (parent "TnyCamelBsMimePart")
+  (c-name "TnyCamelBsMsg")
+  (gtype-id "TNY_TYPE_CAMEL_BS_MSG")
+)
+
+(define-object CamelBsMsgReceiveStrategy
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelBsMsgReceiveStrategy")
+  (gtype-id "TNY_TYPE_CAMEL_BS_MSG_RECEIVE_STRATEGY")
+)
+
+(define-object CamelDefaultConnectionPolicy
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelDefaultConnectionPolicy")
+  (gtype-id "TNY_TYPE_CAMEL_DEFAULT_CONNECTION_POLICY")
+)
+
+(define-object CamelFolder
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelFolder")
+  (gtype-id "TNY_TYPE_CAMEL_FOLDER")
+)
+
+(define-object CamelFullMsgReceiveStrategy
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelFullMsgReceiveStrategy")
+  (gtype-id "TNY_TYPE_CAMEL_FULL_MSG_RECEIVE_STRATEGY")
+)
+
+(define-object CamelHeader
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelHeader")
+  (gtype-id "TNY_TYPE_CAMEL_HEADER")
+)
+
+(define-object CamelIMAPFolder
+  (in-module "Tny")
+  (parent "TnyCamelFolder")
+  (c-name "TnyCamelIMAPFolder")
+  (gtype-id "TNY_TYPE_CAMEL_IMAP_FOLDER")
+)
+
+(define-object CamelIMAPStoreAccount
+  (in-module "Tny")
+  (parent "TnyCamelStoreAccount")
+  (c-name "TnyCamelIMAPStoreAccount")
+  (gtype-id "TNY_TYPE_CAMEL_IMAP_STORE_ACCOUNT")
+)
+
+(define-object CamelMemStream
+  (in-module "Tny")
+  (parent "TnyCamelStream")
+  (c-name "TnyCamelMemStream")
+  (gtype-id "TNY_TYPE_CAMEL_MEM_STREAM")
+)
+
+(define-object CamelMimePart
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelMimePart")
+  (gtype-id "TNY_TYPE_CAMEL_MIME_PART")
+)
+
+(define-object CamelMsg
+  (in-module "Tny")
+  (parent "TnyCamelMimePart")
+  (c-name "TnyCamelMsg")
+  (gtype-id "TNY_TYPE_CAMEL_MSG")
+)
+
+(define-object CamelMsgRemoveStrategy
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelMsgRemoveStrategy")
+  (gtype-id "TNY_TYPE_CAMEL_MSG_REMOVE_STRATEGY")
+)
+
+(define-object CamelNNTPFolder
+  (in-module "Tny")
+  (parent "TnyCamelFolder")
+  (c-name "TnyCamelNNTPFolder")
+  (gtype-id "TNY_TYPE_CAMEL_NNTP_FOLDER")
+)
+
+(define-object CamelNNTPStoreAccount
+  (in-module "Tny")
+  (parent "TnyCamelStoreAccount")
+  (c-name "TnyCamelNNTPStoreAccount")
+  (gtype-id "TNY_TYPE_CAMEL_NNTP_STORE_ACCOUNT")
+)
+
+(define-object CamelPOPFolder
+  (in-module "Tny")
+  (parent "TnyCamelFolder")
+  (c-name "TnyCamelPOPFolder")
+  (gtype-id "TNY_TYPE_CAMEL_POP_FOLDER")
+)
+
+(define-object CamelPOPStoreAccount
+  (in-module "Tny")
+  (parent "TnyCamelStoreAccount")
+  (c-name "TnyCamelPOPStoreAccount")
+  (gtype-id "TNY_TYPE_CAMEL_POP_STORE_ACCOUNT")
+)
+
+(define-object CamelPartialMsgReceiveStrategy
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelPartialMsgReceiveStrategy")
+  (gtype-id "TNY_TYPE_CAMEL_PARTIAL_MSG_RECEIVE_STRATEGY")
+)
+
+(define-object CamelPopRemoteMsgRemoveStrategy
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelPopRemoteMsgRemoveStrategy")
+  (gtype-id "TNY_TYPE_CAMEL_POP_REMOTE_MSG_REMOVE_STRATEGY")
+)
+
+(define-object CamelRecoverConnectionPolicy
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelRecoverConnectionPolicy")
+  (gtype-id "TNY_TYPE_CAMEL_RECOVER_CONNECTION_POLICY")
+)
+
+(define-object CamelSendQueue
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelSendQueue")
+  (gtype-id "TNY_TYPE_CAMEL_SEND_QUEUE")
+)
+
+(define-object CamelStoreAccount
+  (in-module "Tny")
+  (parent "TnyCamelAccount")
+  (c-name "TnyCamelStoreAccount")
+  (gtype-id "TNY_TYPE_CAMEL_STORE_ACCOUNT")
+)
+
+(define-object CamelStream
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyCamelStream")
+  (gtype-id "TNY_TYPE_CAMEL_STREAM")
+)
+
+(define-object CamelTransportAccount
+  (in-module "Tny")
+  (parent "TnyCamelAccount")
+  (c-name "TnyCamelTransportAccount")
+  (gtype-id "TNY_TYPE_CAMEL_TRANSPORT_ACCOUNT")
+)
+
+; pointer definitions ...
+
+;; Enumerations and Flags ...
+
+
+;; From tny-camel-account.h
+
+(define-function camel_account_get_type
+  (c-name "tny_camel_account_get_type")
+  (return-type "GType")
+)
+
+(define-method get_options
+  (of-object "TnyCamelAccount")
+  (c-name "tny_camel_account_get_options")
+  (return-type "none")
+  (parameters
+    '("TnyList*" "options")
+  )
+)
+
+(define-method clear_options
+  (of-object "TnyCamelAccount")
+  (c-name "tny_camel_account_clear_options")
+  (return-type "none")
+)
+
+(define-method add_option
+  (of-object "TnyCamelAccount")
+  (c-name "tny_camel_account_add_option")
+  (return-type "none")
+  (parameters
+    '("TnyPair*" "option")
+  )
+)
+
+(define-method set_session
+  (of-object "TnyCamelAccount")
+  (c-name "tny_camel_account_set_session")
+  (return-type "none")
+  (parameters
+    '("TnySessionCamel*" "session")
+  )
+)
+
+(define-method set_online
+  (of-object "TnyCamelAccount")
+  (c-name "tny_camel_account_set_online")
+  (return-type "none")
+  (parameters
+    '("gboolean" "online")
+    '("TnyCamelSetOnlineCallback" "callback")
+    '("gpointer" "user_data")
+  )
+)
+
+(define-method get_supported_secure_authentication
+  (of-object "TnyCamelAccount")
+  (c-name "tny_camel_account_get_supported_secure_authentication")
+  (return-type "none")
+  (parameters
+    '("TnyCamelGetSupportedSecureAuthCallback" "callback")
+    '("TnyStatusCallback" "status_callback")
+    '("gpointer" "user_data")
+  )
+)
+
+
+
+;; From tny-camel-bs-mime-part.h
+
+(define-function camel_bs_mime_part_get_type
+  (c-name "tny_camel_bs_mime_part_get_type")
+  (return-type "GType")
+)
+
+
+
+;; From tny-camel-bs-msg-receive-strategy.h
+
+(define-function camel_bs_msg_receive_strategy_get_type
+  (c-name "tny_camel_bs_msg_receive_strategy_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_bs_msg_receive_strategy_new
+  (c-name "tny_camel_bs_msg_receive_strategy_new")
+  (is-constructor-of "TnyCamelBsMsgReceiveStrategy")
+  (return-type "TnyMsgReceiveStrategy*")
+)
+
+(define-method start_receiving_part
+  (of-object "TnyCamelBsMsgReceiveStrategy")
+  (c-name "tny_camel_bs_msg_receive_strategy_start_receiving_part")
+  (return-type "TnyStream*")
+  (parameters
+    '("TnyFolder*" "folder")
+    '("TnyCamelBsMimePart*" "part")
+    '("gboolean*" "binary")
+    '("GError**" "err")
+  )
+)
+
+
+
+;; From tny-camel-bs-msg.h
+
+(define-function camel_bs_msg_get_type
+  (c-name "tny_camel_bs_msg_get_type")
+  (return-type "GType")
+)
+
+
+
+;; From tny-camel-default-connection-policy.h
+
+(define-function camel_default_connection_policy_get_type
+  (c-name "tny_camel_default_connection_policy_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_default_connection_policy_new
+  (c-name "tny_camel_default_connection_policy_new")
+  (is-constructor-of "TnyCamelDefaultConnectionPolicy")
+  (return-type "TnyConnectionPolicy*")
+)
+
+
+
+;; From tny-camel-folder.h
+
+(define-function camel_folder_get_type
+  (c-name "tny_camel_folder_get_type")
+  (return-type "GType")
+)
+
+(define-method get_full_name
+  (of-object "TnyCamelFolder")
+  (c-name "tny_camel_folder_get_full_name")
+  (return-type "const-gchar*")
+)
+
+
+
+;; From tny-camel-full-msg-receive-strategy.h
+
+(define-function camel_full_msg_receive_strategy_get_type
+  (c-name "tny_camel_full_msg_receive_strategy_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_full_msg_receive_strategy_new
+  (c-name "tny_camel_full_msg_receive_strategy_new")
+  (is-constructor-of "TnyCamelFullMsgReceiveStrategy")
+  (return-type "TnyMsgReceiveStrategy*")
+)
+
+
+
+;; From tny-camel-header.h
+
+(define-function camel_header_get_type
+  (c-name "tny_camel_header_get_type")
+  (return-type "GType")
+)
+
+
+
+;; From tny-camel-imap-folder.h
+
+(define-function camel_imap_folder_get_type
+  (c-name "tny_camel_imap_folder_get_type")
+  (return-type "GType")
+)
+
+
+
+;; From tny-camel-imap-store-account.h
+
+(define-function camel_imap_store_account_get_type
+  (c-name "tny_camel_imap_store_account_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_imap_store_account_new
+  (c-name "tny_camel_imap_store_account_new")
+  (is-constructor-of "TnyCamelIMAPStoreAccount")
+  (return-type "TnyStoreAccount*")
+)
+
+
+
+;; From tny-camel-mem-stream.h
+
+(define-function camel_mem_stream_get_type
+  (c-name "tny_camel_mem_stream_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_mem_stream_new
+  (c-name "tny_camel_mem_stream_new")
+  (is-constructor-of "TnyCamelMemStream")
+  (return-type "TnyStream*")
+)
+
+(define-function camel_mem_stream_new_with_buffer
+  (c-name "tny_camel_mem_stream_new_with_buffer")
+  (return-type "TnyStream*")
+  (parameters
+    '("const-char*" "buffer")
+    '("size_t" "len")
+  )
+)
+
+
+
+;; From tny-camel-mime-part.h
+
+(define-function camel_mime_part_get_type
+  (c-name "tny_camel_mime_part_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_mime_part_new_with_part
+  (c-name "tny_camel_mime_part_new_with_part")
+  (return-type "TnyMimePart*")
+  (parameters
+    '("CamelMimePart*" "part")
+  )
+)
+
+(define-function camel_mime_part_new
+  (c-name "tny_camel_mime_part_new")
+  (is-constructor-of "TnyCamelMimePart")
+  (return-type "TnyMimePart*")
+)
+
+(define-method get_part
+  (of-object "TnyCamelMimePart")
+  (c-name "tny_camel_mime_part_get_part")
+  (return-type "CamelMimePart*")
+)
+
+
+
+;; From tny-camel-msg-remove-strategy.h
+
+(define-function camel_msg_remove_strategy_get_type
+  (c-name "tny_camel_msg_remove_strategy_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_msg_remove_strategy_new
+  (c-name "tny_camel_msg_remove_strategy_new")
+  (is-constructor-of "TnyCamelMsgRemoveStrategy")
+  (return-type "TnyMsgRemoveStrategy*")
+)
+
+
+
+;; From tny-camel-msg.h
+
+(define-function camel_msg_get_type
+  (c-name "tny_camel_msg_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_msg_new
+  (c-name "tny_camel_msg_new")
+  (is-constructor-of "TnyCamelMsg")
+  (return-type "TnyMsg*")
+)
+
+(define-function camel_msg_new_with_part
+  (c-name "tny_camel_msg_new_with_part")
+  (return-type "TnyMsg*")
+  (parameters
+    '("CamelMimePart*" "part")
+  )
+)
+
+
+
+;; From tny-camel-nntp-folder.h
+
+(define-function camel_nntp_folder_get_type
+  (c-name "tny_camel_nntp_folder_get_type")
+  (return-type "GType")
+)
+
+
+
+;; From tny-camel-nntp-store-account.h
+
+(define-function camel_nntp_store_account_get_type
+  (c-name "tny_camel_nntp_store_account_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_nntp_store_account_new
+  (c-name "tny_camel_nntp_store_account_new")
+  (is-constructor-of "TnyCamelNNTPStoreAccount")
+  (return-type "TnyStoreAccount*")
+)
+
+
+
+;; From tny-camel-partial-msg-receive-strategy.h
+
+(define-function camel_partial_msg_receive_strategy_get_type
+  (c-name "tny_camel_partial_msg_receive_strategy_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_partial_msg_receive_strategy_new
+  (c-name "tny_camel_partial_msg_receive_strategy_new")
+  (is-constructor-of "TnyCamelPartialMsgReceiveStrategy")
+  (return-type "TnyMsgReceiveStrategy*")
+)
+
+
+
+;; From tny-camel-pop-folder.h
+
+(define-function camel_pop_folder_get_type
+  (c-name "tny_camel_pop_folder_get_type")
+  (return-type "GType")
+)
+
+
+
+;; From tny-camel-pop-remote-msg-remove-strategy.h
+
+(define-function camel_pop_remote_msg_remove_strategy_get_type
+  (c-name "tny_camel_pop_remote_msg_remove_strategy_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_pop_remote_msg_remove_strategy_new
+  (c-name "tny_camel_pop_remote_msg_remove_strategy_new")
+  (is-constructor-of "TnyCamelPopRemoteMsgRemoveStrategy")
+  (return-type "TnyMsgRemoveStrategy*")
+)
+
+
+
+;; From tny-camel-pop-store-account.h
+
+(define-function camel_pop_store_account_get_type
+  (c-name "tny_camel_pop_store_account_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_pop_store_account_new
+  (c-name "tny_camel_pop_store_account_new")
+  (is-constructor-of "TnyCamelPOPStoreAccount")
+  (return-type "TnyStoreAccount*")
+)
+
+(define-method set_leave_messages_on_server
+  (of-object "TnyCamelPOPStoreAccount")
+  (c-name "tny_camel_pop_store_account_set_leave_messages_on_server")
+  (return-type "none")
+  (parameters
+    '("gboolean" "enabled")
+  )
+)
+
+(define-method reconnect
+  (of-object "TnyCamelPOPStoreAccount")
+  (c-name "tny_camel_pop_store_account_reconnect")
+  (return-type "none")
+)
+
+
+
+;; From tny-camel-recover-connection-policy.h
+
+(define-function camel_recover_connection_policy_get_type
+  (c-name "tny_camel_recover_connection_policy_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_recover_connection_policy_new
+  (c-name "tny_camel_recover_connection_policy_new")
+  (is-constructor-of "TnyCamelRecoverConnectionPolicy")
+  (return-type "TnyConnectionPolicy*")
+)
+
+(define-method set_reconnect_delay
+  (of-object "TnyCamelRecoverConnectionPolicy")
+  (c-name "tny_camel_recover_connection_policy_set_reconnect_delay")
+  (return-type "none")
+  (parameters
+    '("gint" "milliseconds")
+  )
+)
+
+(define-method set_recover_active_folder
+  (of-object "TnyCamelRecoverConnectionPolicy")
+  (c-name "tny_camel_recover_connection_policy_set_recover_active_folder")
+  (return-type "none")
+  (parameters
+    '("gboolean" "setting")
+  )
+)
+
+
+
+;; From tny-camel-send-queue.h
+
+(define-function camel_send_queue_get_type
+  (c-name "tny_camel_send_queue_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_send_queue_new
+  (c-name "tny_camel_send_queue_new")
+  (is-constructor-of "TnyCamelSendQueue")
+  (return-type "TnySendQueue*")
+  (parameters
+    '("TnyCamelTransportAccount*" "trans_account")
+  )
+)
+
+(define-method flush
+  (of-object "TnyCamelSendQueue")
+  (c-name "tny_camel_send_queue_flush")
+  (return-type "none")
+)
+
+(define-method get_transport_account
+  (of-object "TnyCamelSendQueue")
+  (c-name "tny_camel_send_queue_get_transport_account")
+  (return-type "TnyCamelTransportAccount*")
+)
+
+(define-method set_transport_account
+  (of-object "TnyCamelSendQueue")
+  (c-name "tny_camel_send_queue_set_transport_account")
+  (return-type "none")
+  (parameters
+    '("TnyCamelTransportAccount*" "trans_account")
+  )
+)
+
+
+
+;; From tny-camel-shared.h
+
+
+
+;; From tny-camel-store-account.h
+
+(define-function camel_store_account_get_type
+  (c-name "tny_camel_store_account_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_store_account_new
+  (c-name "tny_camel_store_account_new")
+  (is-constructor-of "TnyCamelStoreAccount")
+  (return-type "TnyStoreAccount*")
+)
+
+(define-method factor_folder
+  (of-object "TnyCamelStoreAccount")
+  (c-name "tny_camel_store_account_factor_folder")
+  (return-type "TnyFolder*")
+  (parameters
+    '("const-gchar*" "full_name")
+    '("gboolean*" "was_new")
+  )
+)
+
+
+
+;; From tny-camel-stream.h
+
+(define-function camel_stream_get_type
+  (c-name "tny_camel_stream_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_stream_new
+  (c-name "tny_camel_stream_new")
+  (is-constructor-of "TnyCamelStream")
+  (return-type "TnyStream*")
+  (parameters
+    '("CamelStream*" "stream")
+  )
+)
+
+(define-method get_stream
+  (of-object "TnyCamelStream")
+  (c-name "tny_camel_stream_get_stream")
+  (return-type "CamelStream*")
+)
+
+
+
+;; From tny-camel-transport-account.h
+
+(define-function camel_transport_account_get_type
+  (c-name "tny_camel_transport_account_get_type")
+  (return-type "GType")
+)
+
+(define-function camel_transport_account_new
+  (c-name "tny_camel_transport_account_new")
+  (is-constructor-of "TnyCamelTransportAccount")
+  (return-type "TnyTransportAccount*")
+)
+
+(define-method get_from
+  (of-object "TnyCamelTransportAccount")
+  (c-name "tny_camel_transport_account_get_from")
+  (return-type "const-gchar*")
+)
+
+(define-method set_from
+  (of-object "TnyCamelTransportAccount")
+  (c-name "tny_camel_transport_account_set_from")
+  (return-type "none")
+  (parameters
+    '("const-gchar*" "from")
+  )
+)
+
+
+
+;; From tny-session-camel.h
+
+(define-function session_camel_get_type
+  (c-name "tny_session_camel_get_type")
+  (return-type "CamelType")
+)
+
+(define-method set_account_store
+  (of-object "TnySessionCamel")
+  (c-name "tny_session_camel_set_account_store")
+  (return-type "none")
+  (parameters
+    '("TnyAccountStore*" "account_store")
+  )
+)
+
+(define-method set_device
+  (of-object "TnySessionCamel")
+  (c-name "tny_session_camel_set_device")
+  (return-type "none")
+  (parameters
+    '("TnyDevice*" "device")
+  )
+)
+
+(define-method set_ui_locker
+  (of-object "TnySessionCamel")
+  (c-name "tny_session_camel_set_ui_locker")
+  (return-type "none")
+  (parameters
+    '("TnyLockable*" "ui_lock")
+  )
+)
+
+(define-method set_initialized
+  (of-object "TnySessionCamel")
+  (c-name "tny_session_camel_set_initialized")
+  (return-type "none")
+)
+
+
+
+;; From tny-stream-camel.h
+
+(define-function stream_camel_get_type
+  (c-name "tny_stream_camel_get_type")
+  (return-type "CamelType")
+)
+
+(define-method camel_new
+  (of-object "TnyStream")
+  (c-name "tny_stream_camel_new")
+  (return-type "CamelStream*")
+)
+
+(define-method set_stream
+  (of-object "TnyStreamCamel")
+  (c-name "tny_stream_camel_set_stream")
+  (return-type "none")
+  (parameters
+    '("TnyStream*" "stream")
+  )
+)
+
+(define-method write_to_stream
+  (of-object "TnyStreamCamel")
+  (c-name "tny_stream_camel_write_to_stream")
+  (return-type "gssize")
+  (parameters
+    '("TnyStream*" "output")
+  )
+)
+
+

@@ -1,0 +1,5 @@
+Makefile.in
+.libs
+.deps
+Makefile
+libedataserver-1.2.a

@@ -1,0 +1,6 @@
+Tny cheader_filename="tny.h"
+TnySessionCamel.parent_object hidden="1"
+TnySessionCamelClass hidden="1"
+TnyStreamCamel.parent hidden="1"
+TnyStreamCamelClass hidden="1"
+

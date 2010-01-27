@@ -1,0 +1,7 @@
+Makefile.in
+libtinymail-gnome-desktop-1.0.pc
+.libs
+.deps
+Makefile
+.svnignore
+libtinymail-gnome-desktop.pc

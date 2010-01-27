@@ -1,0 +1,46 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelBsMsgReceiveStrategy
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelBsMsgReceiveStrategy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_bs_msg_receive_strategy_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_camel_bs_msg_receive_strategy_start_receiving_part ##### -->
+<para>
+
+</para>
+
+@self: 
+@folder: 
+@part: 
+@binary: 
+@err: 
+@Returns: 
+
+

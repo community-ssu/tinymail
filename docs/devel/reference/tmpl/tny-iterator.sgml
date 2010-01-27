@@ -1,0 +1,101 @@
+<!-- ##### SECTION Title ##### -->
+TnyIterator
+
+<!-- ##### SECTION Short_Description ##### -->
+A iterator type for a list
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+An iterator for a #TnyList is used for iterating over a list. The iterator is an instance that keeps the
+position state information. The #TnyList instance will not by itself keep a position state. Only iterators
+can keep a position state for a list.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyList
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyIterator ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyIteratorIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@next: 
+@prev: 
+@first: 
+@nth: 
+@get_current: 
+@is_done: 
+@get_list: 
+
+<!-- ##### FUNCTION tny_iterator_next ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_iterator_prev ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_iterator_first ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_iterator_nth ##### -->
+<para>
+
+</para>
+
+@self: 
+@nth: 
+
+
+<!-- ##### FUNCTION tny_iterator_get_current ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_iterator_is_done ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_iterator_get_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

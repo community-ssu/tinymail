@@ -1,0 +1,287 @@
+<!-- ##### SECTION Title ##### -->
+TnyHeader
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that defines a header
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A header of a #TnyMsg instance is the non-body information. It contains for example 
+the "to", the "from", the "subject" and the "sent-date" information. It's typically used 
+by a summary view to give the user an overview of the available messages in a folder.
+</para>
+<para>One #TnyHeader means all the typical headers. Not all headers but only the
+typical ones (like subject, from, dates and to). For getting all headers, wait for or 
+implement an API in #TnyMsg as you will need to fetch the entire message for that.</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMsg, #TnyFolder, #TnyGtkHeaderListModel, #TnyHeaderFlags
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO TNY_TYPE_HEADER_FLAGS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### STRUCT TnyHeader ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyHeaderIface ##### -->
+<para>
+
+</para>
+
+@g: 
+@dup_uid: 
+@dup_bcc: 
+@dup_cc: 
+@dup_subject: 
+@dup_to: 
+@dup_from: 
+@dup_replyto: 
+@dup_message_id: 
+@get_message_size: 
+@get_date_received: 
+@get_date_sent: 
+@set_bcc: 
+@set_cc: 
+@set_from: 
+@set_subject: 
+@set_to: 
+@set_replyto: 
+@get_folder: 
+@get_flags: 
+@set_flag: 
+@unset_flag: 
+
+<!-- ##### MACRO TNY_HEADER_FLAG_PRIORITY_MASK ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION tny_header_flags_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_dup_uid ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_dup_bcc ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_dup_cc ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_get_date_received ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_get_date_sent ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_dup_message_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_get_message_size ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_dup_from ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_dup_to ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_dup_subject ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_dup_replyto ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_set_bcc ##### -->
+<para>
+
+</para>
+
+@self: 
+@bcc: 
+
+
+<!-- ##### FUNCTION tny_header_set_cc ##### -->
+<para>
+
+</para>
+
+@self: 
+@cc: 
+
+
+<!-- ##### FUNCTION tny_header_set_from ##### -->
+<para>
+
+</para>
+
+@self: 
+@from: 
+
+
+<!-- ##### FUNCTION tny_header_set_subject ##### -->
+<para>
+
+</para>
+
+@self: 
+@subject: 
+
+
+<!-- ##### FUNCTION tny_header_set_to ##### -->
+<para>
+
+</para>
+
+@self: 
+@to: 
+
+
+<!-- ##### FUNCTION tny_header_set_replyto ##### -->
+<para>
+
+</para>
+
+@self: 
+@to: 
+
+
+<!-- ##### FUNCTION tny_header_get_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_get_flags ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_set_flag ##### -->
+<para>
+
+</para>
+
+@self: 
+@mask: 
+
+
+<!-- ##### FUNCTION tny_header_unset_flag ##### -->
+<para>
+
+</para>
+
+@self: 
+@mask: 
+
+
+<!-- ##### FUNCTION tny_header_get_priority ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_header_set_priority ##### -->
+<para>
+
+</para>
+
+@self: 
+@priority: 
+
+

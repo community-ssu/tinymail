@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<metadata>
+ <attr path="/api/namespace[@name='Tny']" name="name">Tny.Ui</attr>
+ <attr path="/api/namespace[@name='Tny']" name="error_handler">throw Tny.TnyExceptionFactory.Create (error)</attr>
+
+ <attr path="/api/namespace/*/*/parameters/parameter[@name='callback']" name="scope">async</attr>
+ <attr path="/api/namespace/*/*/parameters/parameter[@name='status_callback']" name="scope">call</attr>
+
+</metadata>

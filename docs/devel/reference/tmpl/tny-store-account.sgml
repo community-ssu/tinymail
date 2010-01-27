@@ -1,0 +1,89 @@
+<!-- ##### SECTION Title ##### -->
+TnyStoreAccount
+
+<!-- ##### SECTION Short_Description ##### -->
+A type for getting folders and E-mails of an account
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A store account contains the folders of an E-mail service and handles the authentication with the service.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyFolderStore, #TnyAccount
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO TNY_TYPE_STORE_ACCOUNT_SIGNAL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### STRUCT TnyStoreAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL TnyStoreAccount::subscription-changed ##### -->
+<para>
+
+</para>
+
+@tnystoreaccount: the object which received the signal.
+@arg1: 
+
+<!-- ##### STRUCT TnyStoreAccountIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@subscription_changed: 
+@subscribe: 
+@unsubscribe: 
+@find_folder: 
+@delete_cache: 
+
+<!-- ##### FUNCTION tny_store_account_subscribe ##### -->
+<para>
+
+</para>
+
+@self: 
+@folder: 
+
+
+<!-- ##### FUNCTION tny_store_account_unsubscribe ##### -->
+<para>
+
+</para>
+
+@self: 
+@folder: 
+
+
+<!-- ##### FUNCTION tny_store_account_find_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@url_string: 
+@err: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_store_account_delete_cache ##### -->
+<para>
+
+</para>
+
+@self: 
+
+

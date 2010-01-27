@@ -1,0 +1,63 @@
+<!-- ##### SECTION Title ##### -->
+TnyGtkAccountListModel
+
+<!-- ##### SECTION Short_Description ##### -->
+A tree model for account instances
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #GtkTreeModel implementation for storing #TnyStoreAccount instances.
+</para>
+<para>
+The implementation inherits the #GtkTreeStore, implements #GtkTreeModel and #TnyList. It can for example be used to display the accounts in a #GtkComboBox or #GtkTreeView. If, however, you want to show both the account names and the folder names in a tree view style, consider using the #TnyGtkAccountTreeModel in stead.
+</para>
+<para>
+It's very important to unreference the instance you will get when doing something like this:
+<programlisting>
+TnyAccount *account;
+gtk_tree_model_get (model, &amp;iter,
+  TNY_ACCOUNT_LIST_MODEL_INSTANCE_COLUMN,
+  &amp;account, -1);
+/* use account */
+g_object_unref (G_OBJECT(account));
+</programlisting>
+The column is indeed a G_TYPE_OBJECT column and getting it from the #GtkTreeModel will indeed add a reference.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO TNY_TYPE_GTK_ACCOUNT_LIST_MODEL_COLUMN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### STRUCT TnyGtkAccountListModel ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_gtk_account_list_model_column_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_account_list_model_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

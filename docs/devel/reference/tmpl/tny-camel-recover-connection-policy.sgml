@@ -1,0 +1,51 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelRecoverConnectionPolicy
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelRecoverConnectionPolicy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_recover_connection_policy_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_camel_recover_connection_policy_set_reconnect_delay ##### -->
+<para>
+
+</para>
+
+@self: 
+@milliseconds: 
+
+
+<!-- ##### FUNCTION tny_camel_recover_connection_policy_set_recover_active_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@setting: 
+
+

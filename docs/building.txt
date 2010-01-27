@@ -1,0 +1,234 @@
+iconv-detect.h
+--------------
+
+Note: Unless you are cross compiling, this probably isn't needed
+
+When cross compiling there's one difficulty: the iconv-detect.h file in
+libtinymail-camel/camel-lite/ which is a file that must be generated.
+
+In case the normal configure script fails at creating this, you can or
+checking m4/ticonv.m4 to figure out why it's failing, or put a file in
+it manually.
+
+You can generate one doing this on the target platform:
+
+cd libtinymail-camel/camel-lite
+gcc -DCONFIGURE_AC iconv-detect.c -o iconv-detect
+./iconv-detect
+cat iconv-detect.h
+cd ../..
+
+This is by the way basically the procedure that ticonv.m4 will do too.
+
+Feel free to contribute a good detection that will always work with all
+cross compilation situations.
+
+One laptop per child
+--------------------
+
+= On a x86 desktop =
+
+
+svn co https://svn.tinymail.org/svn/tinymail
+cd tinymail/trunk
+./autogen.sh --prefix=/opt/tinymail-olpc --with-platform=olpc \
+	--enable-imap-part-fetch
+make && make install
+
+Now simply copy /opt/tinymail-olpc to the device
+
+Mount the image on /media/OLPCRoot
+
+cp -a /opt/tinymail-olpc /media/OLPCRoot/opt/
+
+
+Maemo
+-----
+
+= Outside scratchbox =
+
+cd /scratchbox/users/$USER/home/$USER/
+svn co https://svn.tinymail.org/svn/tinymail
+
+= Inside an ARMEL scratchbox =
+
+cd tinymail/trunk
+./autogen.sh --prefix=/opt/tinymail-maemo --with-platform=maemo
+make && make install
+
+Now simply copy /opt/tinymail-maemo to the device
+
+GPE
+---
+
+svn co https://svn.tinymail.org/svn/tinymail
+cd tinymail/trunk
+./autogen.sh --prefix=/opt/tinymail --with-platform=gpe \
+	--enable-imap-part-fetch
+make && make install
+
+Now run /opt/tinymail/bin/tinymail
+
+A desktop
+---------
+
+For dependencies per distribution, check out requirements.txt
+
+svn co https://svn.tinymail.org/svn/tinymail
+cd tinymail/trunk
+./autogen.sh --prefix=/opt/tinymail \
+	--enable-imap-part-fetch
+make && make install
+
+Now run /opt/tinymail/bin/tinymail
+
+Creating the test-account for GPE, Maemo en Desktop builds
+----------------------------------------------------------
+
+Note that this information is specific for the following platform specific
+implementations:
+
+	o. libtinymail-gnome-desktop
+	o. libtinymail-gpe
+	o. libtinymail-maemo
+
+Note that it's the developer who develops on top of tinymail who decides about
+where to put and how to store configuration. This configuration will work for
+clients that use the standard TnyAccountStore implementations.
+
+For example the libtinymail-olpc implementation uses a .ini file in stead of
+GConf. That's because the OLPC laptop doesn't come with GConf. GConf is not
+a requirement of the tinymail framework. It's an optional method for storing
+configuration data.
+
+The demo user interfaces are all demos. They are not intented to be full
+E-mail clients or PIM suites. It's you, the application developer, who's going
+to make that using tinymail. Right?
+
+gconftool-2 -s /apps/tinymail/accounts/count -t int 1
+gconftool-2 -s /apps/tinymail/accounts/0/name -t string "Test account"
+gconftool-2 -s /apps/tinymail/accounts/0/proto -t string "imap"
+gconftool-2 -s /apps/tinymail/accounts/0/type -t string "store"
+gconftool-2 -s /apps/tinymail/accounts/0/hostname -t string "mail.tinymail.org"
+gconftool-2 -s /apps/tinymail/accounts/0/user -t string "tinymailunittest"
+
+ps. The password is "unittest"
+
+
+The make distcheck target
+-------------------------
+./autogen.sh --prefix=/opt/tinymail --with-html-component=mozembed \
+	--enable-gtk-doc --enable-tests --enable-imap-part-fetch
+make
+make distcheck
+
+For packagers
+-------------
+Read packagers.txt
+
+Dependencies
+------------
+Read requirements.txt
+
+For debugging
+-------------
+
+-DDEBUG
+
+The DEBUG define will enable IMAP, POP, NNTP and SMTP debugging. If you compile
+with this define you'll see some of the traffic on your stdout.
+
+CFLAGS="-DDEBUG -DDBC -D_GNU_SOURCE -O0 -Wall -g -ggdb" ./autogen.sh \
+	--prefix=/opt/tinymail --enable-tests --enable-unit-tests \
+	--enable-imap-part-fetch && \
+	 make && sudo make install
+
+-DMERGEFOLDERTEST
+
+The mergefolder test will add a merge folder to each parent folder that has 
+more than two subfolders, it takes the first and the second folder and 
+creates a subfolder called MERGE TESTER that merges these two folders together.
+
+
+Other commonly used CFLAGS
+--------------------------
+export CFLAGS="-DDEBUG -DDBC -O0 -g -ggdb"
+
+Typical for development
+-----------------------
+CFLAGS="-DDEBUG -DDBC -O0 -Wstrict-prototypes -Wall -g -ggdb" ./autogen.sh --prefix=/opt/tinymail \
+	--with-platform=maemo --with-ssl=openssl --enable-imap-part-fetch \
+	&& make && make install
+
+You typically compile E-mail clients this way now:
+PKG_CONFIG_PATH=/opt/tinymail/lib/pkgconfig/ ./autogen --prefix=/opt/myclient --with-platform=maemo
+
+SSL support
+-----------
+If you want to build with support for SSL, you can either choose for Mozilla's NSS or OpenSSL:
+
+  Default               Detect NSS and if available, use it
+  --with-ssl=nss        Use NSS
+  --with-ssl=openssl    Use OpenSSL
+  --with-ssl=none       Do NOT detect any SSL, and DON'T use it
+
+
+-- Building Modest --
+#
+## Outside scratchbox
+#
+cd /scratchbox/users/$USER/home/$USER
+mkdir repos
+cd repos
+svn co https://svn.tinymail.org/svn/tinymail/trunk tinymail
+svn co https://garage.maemo.org/svn/modest/maemo-providers-data maemo-providers-data   
+svn co https://garage.maemo.org/svn/modest/libwpeditor-plus/trunk libwpeditor-plus 
+svn co https://garage.maemo.org/svn/modest/modest/trunk modest
+/scratchbox/login
+
+#
+## Inside scratchbox
+#
+cd $HOME/repos/tinymail
+CFLAGS="-DDEBUG -DDBC -O0 -g -ggdb" ./autogen.sh --with-ssl=openssl --prefix=/opt/tinymail \
+	--with-platform=maemo
+
+# Modest does not yet support --enable-imap-part-fetch correctly
+
+make && make install
+
+cd $HOME/repos/maemo-providers-data
+./autogen.sh && ./configure --prefix=/opt/modest
+make && make install
+
+cd $HOME/libwpeditor-plus
+./autogen.sh && ./configure --prefix=/opt/modest
+make && make install
+
+cd $HOME/repos/modest
+PKG_CONFIG_PATH=/opt/tinymail/lib/pkgconfig:/opt/modest/lib/pkgconfig ./autogen.sh \
+	--prefix=/opt/modest --with-platform=maemo
+make && make install
+
+#
+## Deploying to your N800
+##
+cd /opt
+sb~$ tar zcvf tny-mdst.tar.gz tinymail/ modest/
+sb~$ mv tny-mdst.tar.gz /tmp
+host~$ scp /tmp/tny-mdst.tar.gz root@yourdevice:
+yourdevice~# cd /opt
+yourdevice/opt# tar zxvf /root/tny-mdst.tar.gz
+yourdevice~$ run-standalone.sh /opt/modest/bin/modest showui
+
+Installing a debugger on a N800
+-------------------------------
+Read this documentation:
+http://tinymail.org/trac/tinymail/wiki/RecentGdbN800
+
+
+Experimental features
+---------------------
+On demand fetching parts, in stead of always fetching the entire message:
+Use the --enable-imap-part-fetch ./configure option to enable this feature
+

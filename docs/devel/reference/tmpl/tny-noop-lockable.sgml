@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnyNoopLockable
+
+<!-- ##### SECTION Short_Description ##### -->
+A do-nothing lockable
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyLockable implementation that, well, doesn't lock. One that, in other words, does nothing
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyNoopLockable ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_noop_lockable_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

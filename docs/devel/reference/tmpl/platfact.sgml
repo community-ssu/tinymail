@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnyPlatformFactory
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyTestPlatformFactory ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_test_platform_factory_get_instance ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

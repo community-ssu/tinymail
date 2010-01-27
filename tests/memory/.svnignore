@@ -1,0 +1,9 @@
+tags
+Makefile.in
+memory-test
+.svnignore
+stamp-h1
+config.h
+.libs
+.deps
+Makefile

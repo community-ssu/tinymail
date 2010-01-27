@@ -1,0 +1,12 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+gapidir=${prefix}/share/gapi-2.0
+
+
+Name: libtinymail-sharp
+Description: libtinymail-sharp - Tinymail .NET Binding
+Version: @VERSION@
+Cflags: -I:${gapidir}/libtinymail-api.xml /d:HAVE_TNY_SHARP
+Libs: -r:${libdir}/mono/libtinymail-sharp-@API_VERSION@/libtinymail-sharp.dll
+Requires: glib-sharp-2.0

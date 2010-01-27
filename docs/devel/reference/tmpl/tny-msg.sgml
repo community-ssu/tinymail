@@ -1,0 +1,81 @@
+<!-- ##### SECTION Title ##### -->
+TnyMsg
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that defines a message
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type that defines a message. It inherits from #TnyMsgMimePart and can
+therefore be used as a mime part.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMsgHeader, #TnyFolder, #TnyMsgMimePart
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyMsg ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMsgIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_header: 
+@get_folder: 
+@get_url_string: 
+@uncache_attachments: 
+@rewrite_cache: 
+
+<!-- ##### FUNCTION tny_msg_get_header ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_msg_get_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_msg_get_url_string ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_msg_uncache_attachments ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_msg_rewrite_cache ##### -->
+<para>
+
+</para>
+
+@self: 
+
+

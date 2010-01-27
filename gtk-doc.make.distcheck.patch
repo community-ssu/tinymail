@@ -1,0 +1,32 @@
+--- gtk-doc.make.o	2006-05-17 14:47:41.000000000 +0200
++++ gtk-doc.make	2006-05-17 14:47:48.000000000 +0200
+@@ -131,18 +131,19 @@
+ #
+ # Require gtk-doc when making dist
+ #
+-if ENABLE_GTK_DOC
+-dist-check-gtkdoc:
+-else
+-dist-check-gtkdoc:
+-	@echo "*** gtk-doc must be installed and enabled in order to make dist"
+-	@false
+-endif
++# if ENABLE_GTK_DOC
++# dist-check-gtkdoc:
++# else
++# dist-check-gtkdoc:
++# @echo "*** gtk-doc must be installed and enabled in order to make dist"
++# @false
++# endif
+ 
++dist-check-gtkdoc:
+ dist-hook: dist-check-gtkdoc dist-hook-local
+-	mkdir $(distdir)/tmpl
+-	mkdir $(distdir)/xml
+-	mkdir $(distdir)/html
++	mkdir -p $(distdir)/tmpl
++	mkdir -p $(distdir)/xml
++	mkdir -p $(distdir)/html
+ 	-cp $(srcdir)/tmpl/*.sgml $(distdir)/tmpl
+ 	-cp $(srcdir)/xml/*.xml $(distdir)/xml
+ 	-cp $(srcdir)/html/* $(distdir)/html

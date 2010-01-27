@@ -1,0 +1,36 @@
+<!-- ##### SECTION Title ##### -->
+TnyTestObject
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyTestObject ##### -->
+<para>
+
+</para>
+
+@parent: 
+@str: 
+
+<!-- ##### FUNCTION tny_test_object_new ##### -->
+<para>
+
+</para>
+
+@str: 
+@Returns: 
+
+

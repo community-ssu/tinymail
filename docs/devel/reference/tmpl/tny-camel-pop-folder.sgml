@@ -1,0 +1,25 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelPOPFolder
+
+<!-- ##### SECTION Short_Description ##### -->
+A POP folder type for Camel
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A POP #TnyFolder implementation implemented using Camel
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyFolder, #TnyCamelFolder, #TnyPOPStoreAccount
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelPOPFolder ##### -->
+<para>
+
+</para>
+
+

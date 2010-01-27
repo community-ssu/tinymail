@@ -1,0 +1,6 @@
+debian/tmp/usr/lib/libtinymail-camel-1.0.so.0.0.0
+debian/tmp/usr/lib/libtinymail-camel-1.0.so.0
+debian/tmp/usr/lib/libcamel-lite-1.2.so.0.0.0
+debian/tmp/usr/lib/libcamel-lite-1.2.so.0
+debian/tmp/usr/lib/camel-lite-1.2/camel-providers/*.so
+debian/tmp/usr/lib/camel-lite-1.2/camel-providers/*.urls

@@ -1,0 +1,11 @@
+tny-signals-marshal.c
+tny-signals-marshal.h
+Makefile.in
+config.h
+.libs
+.deps
+libtinymail-1.0.pc
+Makefile
+.svnignore
+stamp-h2
+libtinymail.pc

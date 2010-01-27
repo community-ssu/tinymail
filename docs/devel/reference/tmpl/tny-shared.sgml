@@ -1,0 +1,893 @@
+<!-- ##### SECTION Title ##### -->
+tny-shared.h
+
+<!-- ##### SECTION Short_Description ##### -->
+Shared include file with forward typedefs
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO tny_debug ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO TNY_PRIORITY_LOWER_THAN_GTK_REDRAWS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### STRUCT TnyStatus ##### -->
+<para>
+
+</para>
+
+@domain: 
+@code: 
+@message: 
+@position: 
+@of_total: 
+
+<!-- ##### STRUCT TnyAccountStore ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL TnyAccountStore::connecting-started ##### -->
+<para>
+
+</para>
+
+@: 
+
+<!-- ##### STRUCT TnyAccountStoreIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_accounts: 
+@get_cache_dir: 
+@get_device: 
+@alert: 
+@find_account: 
+@connecting_started: 
+
+<!-- ##### STRUCT TnyList ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyIterator ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyListIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_length: 
+@prepend: 
+@append: 
+@remove: 
+@foreach: 
+@copy: 
+@create_iterator: 
+@remove_matches: 
+
+<!-- ##### STRUCT TnyIteratorIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@next: 
+@prev: 
+@first: 
+@nth: 
+@get_current: 
+@is_done: 
+@get_list: 
+
+<!-- ##### STRUCT TnyMsg ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMsgIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_header: 
+@get_folder: 
+@get_url_string: 
+@uncache_attachments: 
+@rewrite_cache: 
+
+<!-- ##### STRUCT TnyFolder ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@remove_msg: 
+@remove_msgs: 
+@add_msg: 
+@add_msg_async: 
+@sync: 
+@sync_async: 
+@get_msg_remove_strategy: 
+@set_msg_remove_strategy: 
+@get_msg_receive_strategy: 
+@set_msg_receive_strategy: 
+@get_msg: 
+@find_msg: 
+@get_msg_async: 
+@get_headers: 
+@get_headers_async: 
+@get_name: 
+@get_id: 
+@get_account: 
+@get_folder_type: 
+@get_all_count: 
+@get_unread_count: 
+@get_local_size: 
+@is_subscribed: 
+@refresh_async: 
+@refresh: 
+@transfer_msgs: 
+@transfer_msgs_async: 
+@copy: 
+@copy_async: 
+@poke_status: 
+@add_observer: 
+@remove_observer: 
+@get_folder_store: 
+@get_stats: 
+@get_url_string: 
+@get_caps: 
+@remove_msgs_async: 
+
+<!-- ##### STRUCT TnyHeader ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyHeaderIface ##### -->
+<para>
+
+</para>
+
+@g: 
+@dup_uid: 
+@dup_bcc: 
+@dup_cc: 
+@dup_subject: 
+@dup_to: 
+@dup_from: 
+@dup_replyto: 
+@dup_message_id: 
+@get_message_size: 
+@get_date_received: 
+@get_date_sent: 
+@set_bcc: 
+@set_cc: 
+@set_from: 
+@set_subject: 
+@set_to: 
+@set_replyto: 
+@get_folder: 
+@get_flags: 
+@set_flag: 
+@unset_flag: 
+
+<!-- ##### STRUCT TnyMimePart ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMimePartIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_content_type: 
+@content_type_is: 
+@get_stream: 
+@get_decoded_stream: 
+@decode_to_stream: 
+@write_to_stream: 
+@construct: 
+@get_filename: 
+@get_content_id: 
+@get_description: 
+@get_content_location: 
+@is_purged: 
+@set_content_location: 
+@set_description: 
+@set_content_id: 
+@set_filename: 
+@set_content_type: 
+@set_purged: 
+@is_attachment: 
+@get_parts: 
+@del_part: 
+@add_part: 
+@get_header_pairs: 
+@set_header_pair: 
+@decode_to_stream_async: 
+@get_transfer_encoding: 
+@set_transfer_encoding: 
+
+<!-- ##### STRUCT TnyAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL TnyAccount::changed ##### -->
+<para>
+
+</para>
+
+@tnyaccount: the object which received the signal.
+
+<!-- ##### SIGNAL TnyAccount::connection-status-changed ##### -->
+<para>
+
+</para>
+
+@: 
+@Param2: 
+
+<!-- ##### STRUCT TnyAccountIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_connection_status: 
+@set_id: 
+@set_name: 
+@set_secure_auth_mech: 
+@set_proto: 
+@set_user: 
+@set_hostname: 
+@set_port: 
+@set_url_string: 
+@set_pass_func: 
+@set_forget_pass_func: 
+@get_pass_func: 
+@get_forget_pass_func: 
+@get_id: 
+@get_name: 
+@get_secure_auth_mech: 
+@get_proto: 
+@get_user: 
+@get_hostname: 
+@get_port: 
+@get_url_string: 
+@get_account_type: 
+@cancel: 
+@matches_url_string: 
+@start_operation: 
+@stop_operation: 
+@is_ready: 
+@get_connection_policy: 
+@set_connection_policy: 
+@connection_status_changed: 
+@changed: 
+
+<!-- ##### STRUCT TnyDevice ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL TnyDevice::connection-changed ##### -->
+<para>
+
+</para>
+
+@: 
+@: 
+
+<!-- ##### STRUCT TnyDeviceIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@is_online: 
+@force_online: 
+@force_offline: 
+@reset: 
+@connection_changed: 
+
+<!-- ##### STRUCT TnyStoreAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL TnyStoreAccount::subscription-changed ##### -->
+<para>
+
+</para>
+
+@: 
+@: 
+
+<!-- ##### STRUCT TnyStoreAccountIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@subscription_changed: 
+@subscribe: 
+@unsubscribe: 
+@find_folder: 
+@delete_cache: 
+
+<!-- ##### STRUCT TnyTransportAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyTransportAccountIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@send: 
+
+<!-- ##### STRUCT TnyStream ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyStreamIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@read: 
+@write: 
+@flush: 
+@close: 
+@is_eos: 
+@reset: 
+@write_to_stream: 
+
+<!-- ##### STRUCT TnySimpleList ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnySimpleListClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### STRUCT TnyFsStream ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFsStreamClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### STRUCT TnyFolderStore ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderStoreIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@remove_folder: 
+@create_folder: 
+@create_folder_async: 
+@get_folders: 
+@get_folders_async: 
+@add_observer: 
+@remove_observer: 
+
+<!-- ##### STRUCT TnyFolderStoreQuery ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderStoreQueryClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### STRUCT TnyFolderStoreQueryItem ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderStoreQueryItemClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### STRUCT TnyMsgRemoveStrategy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMsgRemoveStrategyIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@perform_remove: 
+
+<!-- ##### STRUCT TnySendQueue ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL TnySendQueue::error-happened ##### -->
+<para>
+
+</para>
+
+@tnysendqueue: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+
+<!-- ##### SIGNAL TnySendQueue::msg-sending ##### -->
+<para>
+
+</para>
+
+@tnysendqueue: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+
+<!-- ##### SIGNAL TnySendQueue::msg-sent ##### -->
+<para>
+
+</para>
+
+@tnysendqueue: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+
+<!-- ##### SIGNAL TnySendQueue::queue-start ##### -->
+<para>
+
+</para>
+
+@: 
+
+<!-- ##### SIGNAL TnySendQueue::queue-stop ##### -->
+<para>
+
+</para>
+
+@: 
+
+<!-- ##### STRUCT TnySendQueueIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@msg_sending: 
+@msg_sent: 
+@error_happened: 
+@queue_start: 
+@queue_stop: 
+@add: 
+@add_async: 
+@get_sentbox: 
+@get_outbox: 
+@cancel: 
+
+<!-- ##### STRUCT TnyMsgReceiveStrategy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMsgReceiveStrategyIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@perform_get_msg: 
+
+<!-- ##### STRUCT TnyPair ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyPairClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### STRUCT TnyLockable ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyLockableIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@lock: 
+@unlock: 
+
+<!-- ##### STRUCT TnyNoopLockable ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyNoopLockableClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### STRUCT TnyFolderObserver ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderObserverIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@update: 
+
+<!-- ##### STRUCT TnyFolderChange ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderChangeClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### STRUCT TnyFolderMonitor ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderMonitorClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+@update: 
+@poke_status: 
+@add_list: 
+@remove_list: 
+@stop: 
+@start: 
+
+<!-- ##### STRUCT TnyFolderStoreChange ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderStoreChangeClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### STRUCT TnyFolderStoreObserver ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderStoreObserverIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@update: 
+
+<!-- ##### STRUCT TnyFolderStats ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderStatsClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### STRUCT TnyPasswordGetter ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyPasswordGetterIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_password: 
+@forget_password: 
+
+<!-- ##### STRUCT TnyCombinedAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyCombinedAccountClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### STRUCT TnyConnectionPolicy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyConnectionPolicyIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@on_connect: 
+@on_connection_broken: 
+@on_disconnect: 
+@set_current: 
+
+<!-- ##### STRUCT TnySeekable ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnySeekableIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@seek: 
+@tell: 
+@set_bounds: 
+
+<!-- ##### USER_FUNCTION TnyStatusCallback ##### -->
+<para>
+
+</para>
+
+@self: 
+@status: 
+@user_data: 
+
+
+<!-- ##### USER_FUNCTION TnyGetPassFunc ##### -->
+<para>
+This method happens whenever the password must be requested from the user. You must return the password for #TnyAccount self.
+</para>
+
+@self: The #TnyAccount instance for which the password is needed
+@prompt: A prompt that you can display to the user. This is a human-readable password question, possibly 
+containing an untranslated error message directly from the server. This should be ignored by most 
+implementations, so NULL is an acceptable value.
+@cancel: A by-ref boolean for if the user wants to cancel the connection request
+@Returns: Return the password for #TnyAccount self entered by the user.
+
+
+<!-- ##### USER_FUNCTION TnyForgetPassFunc ##### -->
+<para>
+This method happens in case the password was wrong. Also take a look at tny_account_set_forget_pass_func
+</para>
+
+@self: the #TnyAccount instance of which the password was wrong
+
+
+<!-- ##### USER_FUNCTION TnyMimePartCallback ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancelled: 
+@stream: 
+@err: 
+@user_data: 
+
+
+<!-- ##### USER_FUNCTION TnyGetFoldersCallback ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancelled: 
+@list: 
+@err: 
+@user_data: 
+
+
+<!-- ##### USER_FUNCTION TnyCreateFolderCallback ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancelled: 
+@new_folder: 
+@err: 
+@user_data: 
+
+
+<!-- ##### USER_FUNCTION TnyFolderCallback ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancelled: 
+@err: 
+@user_data: 
+
+
+<!-- ##### USER_FUNCTION TnyGetHeadersCallback ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancelled: 
+@headers: 
+@err: 
+@user_data: 
+
+
+<!-- ##### USER_FUNCTION TnyGetMsgCallback ##### -->
+<para>
+
+</para>
+
+@folder: 
+@cancelled: 
+@msg: 
+@err: 
+@user_data: 
+
+
+<!-- ##### USER_FUNCTION TnyTransferMsgsCallback ##### -->
+<para>
+
+</para>
+
+@folder: 
+@cancelled: 
+@err: 
+@user_data: 
+
+
+<!-- ##### USER_FUNCTION TnyCopyFolderCallback ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancelled: 
+@into: 
+@new_folder: 
+@err: 
+@user_data: 
+
+
+<!-- ##### USER_FUNCTION TnySendQueueAddCallback ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancelled: 
+@msg: 
+@err: 
+@user_data: 
+
+

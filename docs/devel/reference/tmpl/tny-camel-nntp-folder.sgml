@@ -1,0 +1,25 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelNNTPFolder
+
+<!-- ##### SECTION Short_Description ##### -->
+A NNTP folder type for Camel
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A NNTP #TnyFolder implementation implemented using Camel
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyFolder, #TnyCamelFolder, #TnyFolderStore, #TnyNNTPAccountStore
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelNNTPFolder ##### -->
+<para>
+
+</para>
+
+

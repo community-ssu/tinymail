@@ -1,0 +1,165 @@
+Philip Van Hoof <philip@codeminded.be>
+
+	Freelance software developer at Codeminded bvba
+
+	* Overall project maintainer and decision making
+	* Design, implementation and analysis
+	* Main developer of the core implementation
+	* Main developer of camel-lite
+	* Wrote most of the documentation
+	* Build environment
+	* Marketing website
+	* ...
+
+Sergio Villar Senin <svillar@igalia.com>
+
+	Software developer at Igalia
+
+	* Work on TnyCamelFolder implementation
+	* Subscribe & unsubscribe folders functionality
+	* Moving messages around between folders
+	* Unit tests
+	* Various bugfixes
+	* ...
+
+
+Dirk-Jan C. Binnema <dirk-jan.binnema@nokia.com>
+
+	Software developer at Nokia, project lead of Modest
+
+	* Main developer of Modest, an E-mail client on top of tinymail
+	* Co-designer of the TnyIterator and TnyList interfaces
+	* Implementer of many TnyIterator types
+	* Implementer of many TnyList types
+	* Co-designer of the TnySendQueue type
+	* Maintainer of the maemo-specific library
+	* Author of the maemo-specific library
+	* ...
+
+Javier Fernandez <jfernandez@igalia.com>
+
+	Software developer at Igalia
+
+	* Various contributions
+	* Transfering of messages
+	* Unread and total count of folders
+	* ...
+
+Jose Dapena Paz <jdapena@igalia.com>
+
+	Software developer at Igalia
+
+	* Various contributions
+	* Mimepart handling
+	* ...
+
+Mark Doffman <mark.doffman@codethink.co.uk>
+
+	Software developer at Codethink Ltd.
+
+	* Author of the Python bindings since September '07
+	* Maintainer of the Python bindings
+
+Jürg Billeter <j@bitron.ch>
+
+	Maintainer of Vala (http://live.gnome.org/Vala)
+
+	* Author of the vala bindings
+	* Maintainer of the vala bindings
+
+Murray Cumming <murrayc@murrayc.com>
+
+	CEO & software developer at Openismus
+
+	* Implementations in libtinymail-maemo
+	* Various fixes
+	* ...
+
+Rob Taylor <rob.taylor@codethink.co.uk>
+
+	CEO & software developer at Codethink Ltd.
+
+	* Co architect of the TnyCamelQueue infrastructure
+	  this is the architecture of all of the standard 
+	  _async methods
+
+Martin Bonnin <martinbonnin@gmail.com>
+
+	* Software developer
+
+Armin Burgmeier <armin@openismus.com>
+
+	Software developer at Openismus
+
+	* Various bug fixes regarding folder handling
+
+Alberto Garcia <agarcia@igalia.com>
+
+	Software developer at Igalia
+
+	* Various bug fixes
+
+Raphael Slinckx <raphael@slinckx.net>
+
+	Software developer at Collabora Ltd.
+
+	* Author of the first Python binding implementation
+
+Antia Puentes Felpeto <apuentes@igalia.com>
+
+	Software developer at Igalia
+
+	* Documentation, class diagrams
+	* Some tests
+
+Tinne Hannes <tinne.hannes@gmail.com>
+
+	Student who studies languages in Belgium
+
+	* Wiki/Trac documentation and maintenance
+	* Marketing website
+	* Mascot and project name reason :) (tinne's mail client or tinymail)
+
+James Doc Livingston <doclivingston@gmail.com>
+
+	* Contributions to the language bindings for Python
+
+Florian Boor <florian.boor@kernelconcepts.de>
+
+	Software developer at Kernel Concepts
+
+	* Initial support for status flags
+	* Co-developer of Modest, an E-mail client on top of tinymail
+
+Nils Faerber <nils.faerber_at_kernelconcepts.de> 
+
+	Software developer at Kernel Concepts
+
+	* Co-developer of Modest, an E-mail client on top of tinymail
+
+Thomas Hisch <t.hisch@gmail.com>
+
+	* Refactoring and renaming types
+
+Koen Kooi <koen@dominion.kabel.utwente.nl>
+
+	Packager and software developer for OpenEmbedded
+
+	* Packaging for Ångström
+
+Chris Lord <chris@openedhand.com>
+
+	Software developer at Opened Hand
+
+	* Contributions to and refactoring of the TnySummaryView type
+
+Øystein Gisnås <oystein@gisnas.net>
+
+	* Packaging for Debian
+	* Unit tests (porting GUnit to Check)
+
+Thomas Viehmann <tv@beamnet.de>
+
+	* Packaging for Debian
+
+

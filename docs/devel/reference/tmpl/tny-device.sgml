@@ -1,0 +1,86 @@
+<!-- ##### SECTION Title ##### -->
+TnyDevice
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that defines a device
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A abstract type that defines a few device specific things like the 
+online/offline status.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyDeviceSignal
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO TNY_TYPE_DEVICE_SIGNAL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### STRUCT TnyDevice ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL TnyDevice::connection-changed ##### -->
+<para>
+
+</para>
+
+@tnydevice: the object which received the signal.
+@arg1: 
+
+<!-- ##### STRUCT TnyDeviceIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@is_online: 
+@force_online: 
+@force_offline: 
+@reset: 
+@connection_changed: 
+
+<!-- ##### FUNCTION tny_device_is_online ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_device_force_online ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_device_force_offline ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_device_reset ##### -->
+<para>
+
+</para>
+
+@self: 
+
+

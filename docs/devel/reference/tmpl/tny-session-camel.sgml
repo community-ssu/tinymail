@@ -1,0 +1,102 @@
+<!-- ##### SECTION Title ##### -->
+TnySessionCamel
+
+<!-- ##### SECTION Short_Description ##### -->
+A session type for Camel
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type being used internally by the libtinymail-camel implementation. It, 
+for example, observes the #TnyDevice instance for the online/offline
+status of the device and registers the accounts with the Camel library.
+</para>
+<para>
+The Camel library uses the offline/online status for knowing whether it should
+attempt to get unavailable messages from the service and put them in cache or
+whether it should only try to read from that cache.
+</para>
+<para>
+The type is also used for delivering alert messages, like SSL certificate questions,
+to the account store, delivering passwords to the services and delivering the command
+to forget the password to the password store in case the service replied that the 
+password was incorrect.
+</para>
+<para>
+Most people will not have to care about this type a lot. Most people should simply
+follow the guidelines for implementing a #TnyAccountStore and after that always
+develop against the #TnyAccountStore interface API using an instance of their implementation.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyDevice, #TnyAccount, #TnyStoreAccount, #TnyTransportAccount, #TnyCamelStoreAccount, #TnyCamelTransportAccount
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnySessionCamelPriv ##### -->
+<para>
+
+</para>
+
+@device: 
+@account_store: 
+@interactive: 
+@prev_constat: 
+@connchanged_signal: 
+@current_accounts: 
+@current_accounts_lock: 
+@camel_dir: 
+@in_auth_function: 
+@is_connecting: 
+@ui_lock: 
+@queue_lock: 
+@stop_now: 
+@initialized: 
+@is_inuse: 
+@regged_queues: 
+
+<!-- ##### STRUCT TnySessionCamel ##### -->
+<para>
+
+</para>
+
+@parent_object: 
+@priv: 
+
+<!-- ##### FUNCTION tny_session_camel_set_account_store ##### -->
+<para>
+
+</para>
+
+@self: 
+@account_store: 
+
+
+<!-- ##### FUNCTION tny_session_camel_set_device ##### -->
+<para>
+
+</para>
+
+@self: 
+@device: 
+
+
+<!-- ##### FUNCTION tny_session_camel_set_ui_locker ##### -->
+<para>
+
+</para>
+
+@self: 
+@ui_lock: 
+
+
+<!-- ##### FUNCTION tny_session_camel_set_initialized ##### -->
+<para>
+
+</para>
+
+@self: 
+
+

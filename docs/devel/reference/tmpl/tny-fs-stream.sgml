@@ -1,0 +1,42 @@
+<!-- ##### SECTION Title ##### -->
+TnyFsStream
+
+<!-- ##### SECTION Short_Description ##### -->
+A #TnyStream adaptor for a file discriptor
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>An adaptor for a file descriptor to a #TnyStream type. You need to use the standard POSIX open() syscall. </para>
+<para>The instance will, upon destruction, close() the filedescriptor. </para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyStream
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyFsStream ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_fs_stream_new ##### -->
+<para>
+
+</para>
+
+@fd: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_fs_stream_set_fd ##### -->
+<para>
+
+</para>
+
+@self: 
+@fd: 
+
+

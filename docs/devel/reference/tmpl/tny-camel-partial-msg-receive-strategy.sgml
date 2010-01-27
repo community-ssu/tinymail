@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelPartialMsgReceiveStrategy
+
+<!-- ##### SECTION Short_Description ##### -->
+A strategy for receiving a message partially
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyMsgReceiveStrategy implementation for Camel that receives the message partially (only the body of the E-mail)
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelPartialMsgReceiveStrategy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_partial_msg_receive_strategy_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

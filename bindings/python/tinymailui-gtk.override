@@ -1,0 +1,61 @@
+/* -*- Mode: C; c-basic-offset: 4 -*- */
+%%
+headers
+#include <Python.h>
+
+#define NO_IMPORT_PYGOBJECT
+#include "pygobject.h"
+
+#include <glib-object.h>
+
+#include <tny-gtk-account-list-model.h>
+#include <tny-gtk-folder-store-tree-model.h>
+#include <tny-gtk-attach-list-model.h>
+#include <tny-gtk-attachment-mime-part-view.h>
+#include <tny-gtk-expander-mime-part-view.h>
+#include <tny-gtk-header-list-model.h>
+#include <tny-gtk-header-view.h>
+#include <tny-gtk-image-mime-part-view.h>
+#include <tny-gtk-mime-part-save-strategy.h>
+#include <tny-gtk-msg-view.h>
+#include <tny-gtk-msg-window.h>
+#include <tny-gtk-pixbuf-stream.h>
+#include <tny-gtk-text-buffer-stream.h>
+#include <tny-gtk-text-mime-part-view.h>
+#include <tny-gtk-lockable.h>
+#include <tny-gtk-password-dialog.h>
+
+%%
+modulename tinymail.uigtk
+%%
+ignore-glob
+  *_get_type
+%%
+import gobject.GObject as PyGObject_Type
+import gtk.Bin as PyGtkBin_Type
+import gtk.Expander as PyGtkExpander_Type
+import gtk.Image as PyGtkImage_Type
+import gtk.ListStore as PyGtkListStore_Type
+import gtk.ListStore as PyGtkListStore_Type
+import gtk.ScrolledWindow as PyGtkScrolledWindow_Type
+import gtk.Table as PyGtkTable_Type
+import gtk.TextBuffer as PyGtkTextBuffer_Type
+import gtk.TextView as PyGtkTextView_Type
+import gtk.TreeStore as PyGtkTreeStore_Type
+import gtk.TreeModel as PyGtkTreeModel_Type
+import gtk.VBox as PyGtkVBox_Type
+import gtk.Window as PyGtkWindow_Type
+
+import tinymail.Header as PyTnyHeader_Type
+import tinymail.Folder as PyTnyFolder_Type
+import tinymail.MimePart as PyTnyMimePart_Type
+import tinymail.Msg as PyTnyMsg_Type
+import tinymail.List as PyTnyList_Type
+import tinymail.FolderStore as PyTnyFolderStore_Type
+import tinymail.FolderStoreQuery as PyTnyFolderStoreQuery_Type
+import tinymail.Stream as PyTnyStream_Type
+import tinymail.ui.MimePartView as PyTnyMimePartView_Type
+import tinymail.ui.MimePartSaver as PyTnyMimePartSaver_Type
+import tinymail.ui.MimePartSaveStrategy as PyTnyMimePartSaveStrategy_Type
+import tinymail.ui.MsgView as PyTnyMsgView_Type
+

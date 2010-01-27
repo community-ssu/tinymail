@@ -1,0 +1,16 @@
+<Combine name="TnyNetDemo" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry build="True" name="TnyNetDemo" configuration="Debug" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry build="True" name="TnyNetDemo" configuration="Release" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="TnyNetDemo" single="True">
+    <Execute type="None" entry="TnyNetDemo" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./TnyNetDemo.mdp" />
+  </Entries>
+</Combine>

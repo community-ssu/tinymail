@@ -1,0 +1,12 @@
+.deps
+Makefile
+Makefile.in
+.libs
+.deps
+*.lo
+*.la
+test-newsrc
+*.bb
+*.bbg
+*.da
+*.gcov

@@ -1,0 +1,45 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelStream
+
+<!-- ##### SECTION Short_Description ##### -->
+A #TnyStream as adaptor for a #CamelStream
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+This type adapts a #CamelStream to a #TnyStream. It's used in the 
+libtinymail-camel library for converting a #CamelStream to a
+#TnyStream.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyStream, #CamelStream, #TnyStreamCamel
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelStream ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_stream_new ##### -->
+<para>
+
+</para>
+
+@stream: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_camel_stream_get_stream ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

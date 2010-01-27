@@ -1,0 +1,10 @@
+tny-vfs-stream.loT
+Makefile.in
+.svnignore
+config.h
+libtinymail-gnomevfs-1.0.pc
+stamp-h4
+libtinymail-gnomevfs.pc
+.libs
+.deps
+Makefile

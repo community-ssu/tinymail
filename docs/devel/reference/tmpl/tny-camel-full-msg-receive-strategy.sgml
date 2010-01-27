@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelFullMsgReceiveStrategy
+
+<!-- ##### SECTION Short_Description ##### -->
+A strategy for receiving a message fully
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyMsgReceiveStrategy implementation for Camel that receives the message fully
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelFullMsgReceiveStrategy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_full_msg_receive_strategy_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

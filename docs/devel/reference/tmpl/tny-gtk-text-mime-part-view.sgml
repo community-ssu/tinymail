@@ -1,0 +1,35 @@
+<!-- ##### SECTION Title ##### -->
+TnyGtkTextMimePartView
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that can display text/* mime parts
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type that can display text/* mime parts implemented using #GtkTextView
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyGtkTextMimePartView ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_gtk_text_mime_part_view_new ##### -->
+<para>
+
+</para>
+
+@status_callback: 
+@status_user_data: 
+@Returns: 
+
+

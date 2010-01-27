@@ -1,0 +1,34 @@
+<!-- ##### SECTION Title ##### -->
+TnyGtkAttachmentMimePartView
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that can show a file attachment mime part
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type that can show a file attachment #TnyMimePart instance
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyGtkAttachmentMimePartView ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_gtk_attachment_mime_part_view_new ##### -->
+<para>
+
+</para>
+
+@iview: 
+@Returns: 
+
+

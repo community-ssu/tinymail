@@ -1,0 +1,10 @@
+2007-05-14  set REAL_NAME environment variable  <murrayc@murrayc-desktop>
+
+	reviewed by: <delete if not using a buddy>
+
+	* Makefile.in.in:
+
+2006-08-29 Robert-André Mauchin <zebob.m@gmail.com>
+
+	* Added French translation
+

@@ -1,0 +1,9 @@
+Makefile.in
+.svnignore
+config.h
+stamp-h5
+.libs
+libtinymailui-1.0.pc
+.deps
+libtinymailui.pc
+Makefile

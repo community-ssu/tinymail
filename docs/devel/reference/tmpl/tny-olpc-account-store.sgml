@@ -1,0 +1,43 @@
+<!-- ##### SECTION Title ##### -->
+TnyOlpcAccountStore
+
+<!-- ##### SECTION Short_Description ##### -->
+A account store for the OLPC device
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyAccountStore implementation for the OLPC device that uses a inifile for storing the account information
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyAccountStore
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyOlpcAccountStore ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION tny_olpc_account_store_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_olpc_account_store_get_session ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

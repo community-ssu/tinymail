@@ -1,0 +1,47 @@
+
+		public new System.Collections.IEnumerator GetEnumerator()
+		{
+			return (System.Collections.IEnumerator) this.CreateIterator ();
+		}
+
+
+		public void GetValue(Gtk.TreeIter iter, Tny.Ui.GTK.AttachListModelColumn column, ref GLib.Value value) 
+		{
+			this.GetValue (iter, ((int) column), ref value);
+		}
+
+
+		public void GetValue(Gtk.TreeIter iter, Tny.Ui.GTK.AttachListModelColumn column, ref Tny.MimePart value) 
+		{
+			GLib.Value val = GLib.Value.Empty;
+			this.GetValue (iter, ((int) column), ref val);
+			value = (Tny.MimePart) val.Val;
+		}
+
+		public Tny.MimePart GetMimePart (Gtk.TreeIter iter)
+		{
+			try {
+				Tny.MimePart retval;
+
+				GLib.Value val = GLib.Value.Empty;
+				GetValue (iter, Tny.Ui.GTK.AttachListModelColumn.InstanceColumn, ref val);
+				retval = (Tny.MimePart) val.Val;
+				val.Dispose ();
+
+				return retval;
+			} catch {
+				return null;
+			}
+		}
+
+		public Tny.MimePart GetMimePart (Gtk.TreeSelection selection)
+		{
+			Gtk.TreeIter iter;
+
+			if (selection.GetSelected (out iter)) {
+				return this.GetMimePart (iter);
+			}
+
+			return null;
+		}
+

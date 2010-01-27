@@ -1,0 +1,66 @@
+<!-- ##### SECTION Title ##### -->
+TnySeekable
+
+<!-- ##### SECTION Short_Description ##### -->
+Makes a #TnyStream seekable
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+Interface for making a stream seekable
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnySeekable ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnySeekableIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@seek: 
+@tell: 
+@set_bounds: 
+
+<!-- ##### FUNCTION tny_seekable_seek ##### -->
+<para>
+
+</para>
+
+@self: 
+@offset: 
+@policy: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_seekable_tell ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_seekable_set_bounds ##### -->
+<para>
+
+</para>
+
+@self: 
+@start: 
+@end: 
+@Returns: 
+
+

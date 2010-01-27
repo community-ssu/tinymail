@@ -1,0 +1,491 @@
+<!-- ##### SECTION Title ##### -->
+TnyFolder
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that defines a folder
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A abstract type that defines a folder
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyFolderStore, #TnyStoreAccount, #TnyCamelFolder, #TnyFolderSignal
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyFolder ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@remove_msg: 
+@remove_msgs: 
+@add_msg: 
+@add_msg_async: 
+@sync: 
+@sync_async: 
+@get_msg_remove_strategy: 
+@set_msg_remove_strategy: 
+@get_msg_receive_strategy: 
+@set_msg_receive_strategy: 
+@get_msg: 
+@find_msg: 
+@get_msg_async: 
+@get_headers: 
+@get_headers_async: 
+@get_name: 
+@get_id: 
+@get_account: 
+@get_folder_type: 
+@get_all_count: 
+@get_unread_count: 
+@get_local_size: 
+@is_subscribed: 
+@refresh_async: 
+@refresh: 
+@transfer_msgs: 
+@transfer_msgs_async: 
+@copy: 
+@copy_async: 
+@poke_status: 
+@add_observer: 
+@remove_observer: 
+@get_folder_store: 
+@get_stats: 
+@get_url_string: 
+@get_caps: 
+@remove_msgs_async: 
+
+<!-- ##### MACRO TNY_TYPE_FOLDER_SIGNAL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO TNY_TYPE_FOLDER_TYPE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO TNY_TYPE_FOLDER_CAPS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION tny_folder_type_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_caps_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_signal_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_get_msg_remove_strategy ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_set_msg_remove_strategy ##### -->
+<para>
+
+</para>
+
+@self: 
+@st: 
+
+
+<!-- ##### FUNCTION tny_folder_get_msg_receive_strategy ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_set_msg_receive_strategy ##### -->
+<para>
+
+</para>
+
+@self: 
+@st: 
+
+
+<!-- ##### FUNCTION tny_folder_add_msg_async ##### -->
+<para>
+
+</para>
+
+@self: 
+@msg: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_folder_sync_async ##### -->
+<para>
+
+</para>
+
+@self: 
+@expunge: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_folder_find_msg ##### -->
+<para>
+
+</para>
+
+@self: 
+@url_string: 
+@err: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_get_msg_async ##### -->
+<para>
+
+</para>
+
+@self: 
+@header: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_folder_get_headers_async ##### -->
+<para>
+
+</para>
+
+@self: 
+@headers: 
+@refresh: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_folder_get_account ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_get_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_get_name ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_get_folder_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_get_all_count ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_get_unread_count ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_get_local_size ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_is_subscribed ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_refresh_async ##### -->
+<para>
+
+</para>
+
+@self: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_folder_transfer_msgs_async ##### -->
+<para>
+
+</para>
+
+@self: 
+@header_list: 
+@folder_dst: 
+@delete_originals: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_folder_copy_async ##### -->
+<para>
+
+</para>
+
+@self: 
+@into: 
+@new_name: 
+@del: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_folder_poke_status ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_folder_add_observer ##### -->
+<para>
+
+</para>
+
+@self: 
+@observer: 
+
+
+<!-- ##### FUNCTION tny_folder_remove_observer ##### -->
+<para>
+
+</para>
+
+@self: 
+@observer: 
+
+
+<!-- ##### FUNCTION tny_folder_get_folder_store ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_get_stats ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_get_caps ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_get_url_string ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_remove_msgs_async ##### -->
+<para>
+
+</para>
+
+@self: 
+@headers: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_folder_copy ##### -->
+<para>
+
+</para>
+
+@self: 
+@into: 
+@new_name: 
+@del: 
+@err: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_add_msg ##### -->
+<para>
+
+</para>
+
+@self: 
+@msg: 
+@err: 
+
+
+<!-- ##### FUNCTION tny_folder_remove_msg ##### -->
+<para>
+
+</para>
+
+@self: 
+@header: 
+@err: 
+
+
+<!-- ##### FUNCTION tny_folder_remove_msgs ##### -->
+<para>
+
+</para>
+
+@self: 
+@headers: 
+@err: 
+
+
+<!-- ##### FUNCTION tny_folder_get_msg ##### -->
+<para>
+
+</para>
+
+@self: 
+@header: 
+@err: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_refresh ##### -->
+<para>
+
+</para>
+
+@self: 
+@err: 
+
+
+<!-- ##### FUNCTION tny_folder_transfer_msgs ##### -->
+<para>
+
+</para>
+
+@self: 
+@header_list: 
+@folder_dst: 
+@delete_originals: 
+@err: 
+
+
+<!-- ##### FUNCTION tny_folder_get_headers ##### -->
+<para>
+
+</para>
+
+@self: 
+@headers: 
+@refresh: 
+@err: 
+
+
+<!-- ##### FUNCTION tny_folder_sync ##### -->
+<para>
+
+</para>
+
+@self: 
+@expunge: 
+@err: 
+
+

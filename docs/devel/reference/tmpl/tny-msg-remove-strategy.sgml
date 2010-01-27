@@ -1,0 +1,44 @@
+<!-- ##### SECTION Title ##### -->
+TnyMsgRemoveStrategy
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that implements removing a message
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type that implements removing a message from a #TnyFolder
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyFolder, #TnyMsg, #TnyHeader
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyMsgRemoveStrategy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMsgRemoveStrategyIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@perform_remove: 
+
+<!-- ##### FUNCTION tny_msg_remove_strategy_perform_remove ##### -->
+<para>
+
+</para>
+
+@self: 
+@folder: 
+@header: 
+@err: 
+
+

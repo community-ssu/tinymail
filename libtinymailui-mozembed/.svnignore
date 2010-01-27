@@ -1,0 +1,6 @@
+Makefile.in
+.libs
+libtinymailui-mozembed-1.0.pc
+.deps
+libtinymailui-mozembed.pc
+Makefile

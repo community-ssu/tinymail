@@ -1,0 +1,666 @@
+;; -*- scheme -*-
+; boxed definitions ...
+
+; interface definitions ...
+
+; object definitions ...
+
+(define-object GtkAccountListModel
+  (in-module "Tny")
+  (parent "GtkListStore")
+  (c-name "TnyGtkAccountListModel")
+  (gtype-id "TNY_TYPE_GTK_ACCOUNT_LIST_MODEL")
+)
+
+(define-object GtkAttachListModel
+  (in-module "Tny")
+  (parent "GtkListStore")
+  (c-name "TnyGtkAttachListModel")
+  (gtype-id "TNY_TYPE_GTK_ATTACH_LIST_MODEL")
+)
+
+(define-object GtkAttachmentMimePartView
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyGtkAttachmentMimePartView")
+  (gtype-id "TNY_TYPE_GTK_ATTACHMENT_MIME_PART_VIEW")
+)
+
+(define-object GtkExpanderMimePartView
+  (in-module "Tny")
+  (parent "GtkExpander")
+  (c-name "TnyGtkExpanderMimePartView")
+  (gtype-id "TNY_TYPE_GTK_EXPANDER_MIME_PART_VIEW")
+)
+
+(define-object GtkFolderStoreTreeModel
+  (in-module "Tny")
+  (parent "GtkTreeStore")
+  (c-name "TnyGtkFolderStoreTreeModel")
+  (gtype-id "TNY_TYPE_GTK_FOLDER_STORE_TREE_MODEL")
+)
+
+(define-object GtkHeaderListModel
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyGtkHeaderListModel")
+  (gtype-id "TNY_TYPE_GTK_HEADER_LIST_MODEL")
+)
+
+(define-object GtkHeaderView
+  (in-module "Tny")
+  (parent "GtkTable")
+  (c-name "TnyGtkHeaderView")
+  (gtype-id "TNY_TYPE_GTK_HEADER_VIEW")
+)
+
+(define-object GtkImageMimePartView
+  (in-module "Tny")
+  (parent "GtkImage")
+  (c-name "TnyGtkImageMimePartView")
+  (gtype-id "TNY_TYPE_GTK_IMAGE_MIME_PART_VIEW")
+)
+
+(define-object GtkLockable
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyGtkLockable")
+  (gtype-id "TNY_TYPE_GTK_LOCKABLE")
+)
+
+(define-object GtkMimePartSaveStrategy
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyGtkMimePartSaveStrategy")
+  (gtype-id "TNY_TYPE_GTK_MIME_PART_SAVE_STRATEGY")
+)
+
+(define-object GtkMsgView
+  (in-module "Tny")
+  (parent "GtkBin")
+  (c-name "TnyGtkMsgView")
+  (gtype-id "TNY_TYPE_GTK_MSG_VIEW")
+)
+
+(define-object GtkMsgWindow
+  (in-module "Tny")
+  (parent "GtkWindow")
+  (c-name "TnyGtkMsgWindow")
+  (gtype-id "TNY_TYPE_GTK_MSG_WINDOW")
+)
+
+(define-object GtkPasswordDialog
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyGtkPasswordDialog")
+  (gtype-id "TNY_TYPE_GTK_PASSWORD_DIALOG")
+)
+
+(define-object GtkPixbufStream
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyGtkPixbufStream")
+  (gtype-id "TNY_TYPE_GTK_PIXBUF_STREAM")
+)
+
+(define-object GtkTextBufferStream
+  (in-module "Tny")
+  (parent "GObject")
+  (c-name "TnyGtkTextBufferStream")
+  (gtype-id "TNY_TYPE_GTK_TEXT_BUFFER_STREAM")
+)
+
+(define-object GtkTextMimePartView
+  (in-module "Tny")
+  (parent "GtkTextView")
+  (c-name "TnyGtkTextMimePartView")
+  (gtype-id "TNY_TYPE_GTK_TEXT_MIME_PART_VIEW")
+)
+
+; pointer definitions ...
+
+;; Enumerations and Flags ...
+
+(define-enum GtkAccountListModelColumn
+  (in-module "Tny")
+  (c-name "TnyGtkAccountListModelColumn")
+  (gtype-id "TNY_TYPE_GTK_ACCOUNT_LIST_MODEL_COLUMN")
+  (values
+    '("name" "TNY_GTK_ACCOUNT_LIST_MODEL_NAME_COLUMN")
+    '("instance" "TNY_GTK_ACCOUNT_LIST_MODEL_INSTANCE_COLUMN")
+    '("n" "TNY_GTK_ACCOUNT_LIST_MODEL_N_COLUMNS")
+  )
+)
+
+(define-enum GtkAttachListModelColumn
+  (in-module "Tny")
+  (c-name "TnyGtkAttachListModelColumn")
+  (gtype-id "TNY_TYPE_GTK_ATTACH_LIST_MODEL_COLUMN")
+  (values
+    '("pixbuf" "TNY_GTK_ATTACH_LIST_MODEL_PIXBUF_COLUMN")
+    '("filename" "TNY_GTK_ATTACH_LIST_MODEL_FILENAME_COLUMN")
+    '("instance" "TNY_GTK_ATTACH_LIST_MODEL_INSTANCE_COLUMN")
+    '("n" "TNY_GTK_ATTACH_LIST_MODEL_N_COLUMNS")
+  )
+)
+
+(define-enum GtkFolderStoreTreeModelColumn
+  (in-module "Tny")
+  (c-name "TnyGtkFolderStoreTreeModelColumn")
+  (gtype-id "TNY_TYPE_GTK_FOLDER_STORE_TREE_MODEL_COLUMN")
+  (values
+    '("name" "TNY_GTK_FOLDER_STORE_TREE_MODEL_NAME_COLUMN")
+    '("unread" "TNY_GTK_FOLDER_STORE_TREE_MODEL_UNREAD_COLUMN")
+    '("all" "TNY_GTK_FOLDER_STORE_TREE_MODEL_ALL_COLUMN")
+    '("type" "TNY_GTK_FOLDER_STORE_TREE_MODEL_TYPE_COLUMN")
+    '("instance" "TNY_GTK_FOLDER_STORE_TREE_MODEL_INSTANCE_COLUMN")
+    '("n" "TNY_GTK_FOLDER_STORE_TREE_MODEL_N_COLUMNS")
+  )
+)
+
+(define-enum GtkHeaderListModelColumn
+  (in-module "Tny")
+  (c-name "TnyGtkHeaderListModelColumn")
+  (gtype-id "TNY_TYPE_GTK_HEADER_LIST_MODEL_COLUMN")
+  (values
+    '("from" "TNY_GTK_HEADER_LIST_MODEL_FROM_COLUMN")
+    '("to" "TNY_GTK_HEADER_LIST_MODEL_TO_COLUMN")
+    '("subject" "TNY_GTK_HEADER_LIST_MODEL_SUBJECT_COLUMN")
+    '("cc" "TNY_GTK_HEADER_LIST_MODEL_CC_COLUMN")
+    '("date_sent" "TNY_GTK_HEADER_LIST_MODEL_DATE_SENT_COLUMN")
+    '("date_received_t" "TNY_GTK_HEADER_LIST_MODEL_DATE_RECEIVED_TIME_T_COLUMN")
+    '("date_sent_t" "TNY_GTK_HEADER_LIST_MODEL_DATE_SENT_TIME_T_COLUMN")
+    '("message_size" "TNY_GTK_HEADER_LIST_MODEL_MESSAGE_SIZE_COLUMN")
+    '("date_received" "TNY_GTK_HEADER_LIST_MODEL_DATE_RECEIVED_COLUMN")
+    '("instance" "TNY_GTK_HEADER_LIST_MODEL_INSTANCE_COLUMN")
+    '("flags" "TNY_GTK_HEADER_LIST_MODEL_FLAGS_COLUMN")
+    '("n" "TNY_GTK_HEADER_LIST_MODEL_N_COLUMNS")
+  )
+)
+
+
+;; From tny-gtk-account-list-model.h
+
+(define-function gtk_account_list_model_get_type
+  (c-name "tny_gtk_account_list_model_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_account_list_model_column_get_type
+  (c-name "tny_gtk_account_list_model_column_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_account_list_model_new
+  (c-name "tny_gtk_account_list_model_new")
+  (is-constructor-of "TnyGtkAccountListModel")
+  (return-type "GtkTreeModel*")
+)
+
+
+
+;; From tny-gtk-attach-list-model.h
+
+(define-function gtk_attach_list_model_get_type
+  (c-name "tny_gtk_attach_list_model_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_attach_list_model_column_get_type
+  (c-name "tny_gtk_attach_list_model_column_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_attach_list_model_new
+  (c-name "tny_gtk_attach_list_model_new")
+  (is-constructor-of "TnyGtkAttachListModel")
+  (return-type "GtkTreeModel*")
+)
+
+
+
+;; From tny-gtk-attachment-mime-part-view.h
+
+(define-function gtk_attachment_mime_part_view_get_type
+  (c-name "tny_gtk_attachment_mime_part_view_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_attachment_mime_part_view_new
+  (c-name "tny_gtk_attachment_mime_part_view_new")
+  (is-constructor-of "TnyGtkAttachmentMimePartView")
+  (return-type "TnyMimePartView*")
+  (parameters
+    '("TnyGtkAttachListModel*" "iview")
+  )
+)
+
+
+
+;; From tny-gtk-enums.h
+
+
+
+;; From tny-gtk-expander-mime-part-view.h
+
+(define-function gtk_expander_mime_part_view_get_type
+  (c-name "tny_gtk_expander_mime_part_view_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_expander_mime_part_view_new
+  (c-name "tny_gtk_expander_mime_part_view_new")
+  (is-constructor-of "TnyGtkExpanderMimePartView")
+  (return-type "TnyMimePartView*")
+  (parameters
+    '("TnyMimePartView*" "view")
+  )
+)
+
+(define-method set_view
+  (of-object "TnyGtkExpanderMimePartView")
+  (c-name "tny_gtk_expander_mime_part_view_set_view")
+  (return-type "none")
+  (parameters
+    '("TnyMimePartView*" "view")
+  )
+)
+
+
+
+;; From tny-gtk-folder-store-tree-model.h
+
+(define-function gtk_folder_store_tree_model_get_type
+  (c-name "tny_gtk_folder_store_tree_model_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_folder_store_tree_model_column_get_type
+  (c-name "tny_gtk_folder_store_tree_model_column_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_folder_store_tree_model_new
+  (c-name "tny_gtk_folder_store_tree_model_new")
+  (is-constructor-of "TnyGtkFolderStoreTreeModel")
+  (return-type "GtkTreeModel*")
+  (parameters
+    '("TnyFolderStoreQuery*" "query")
+  )
+)
+
+(define-method prepend
+  (of-object "TnyGtkFolderStoreTreeModel")
+  (c-name "tny_gtk_folder_store_tree_model_prepend")
+  (return-type "none")
+  (parameters
+    '("TnyFolderStore*" "item")
+    '("const-gchar*" "root_name")
+  )
+)
+
+(define-method append
+  (of-object "TnyGtkFolderStoreTreeModel")
+  (c-name "tny_gtk_folder_store_tree_model_append")
+  (return-type "none")
+  (parameters
+    '("TnyFolderStore*" "item")
+    '("const-gchar*" "root_name")
+  )
+)
+
+
+
+;; From tny-gtk-header-list-model.h
+
+(define-function gtk_header_list_model_get_type
+  (c-name "tny_gtk_header_list_model_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_header_list_model_column_get_type
+  (c-name "tny_gtk_header_list_model_column_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_header_list_model_new
+  (c-name "tny_gtk_header_list_model_new")
+  (is-constructor-of "TnyGtkHeaderListModel")
+  (return-type "GtkTreeModel*")
+)
+
+(define-method set_folder
+  (of-object "TnyGtkHeaderListModel")
+  (c-name "tny_gtk_header_list_model_set_folder")
+  (return-type "none")
+  (parameters
+    '("TnyFolder*" "folder")
+    '("gboolean" "refresh")
+    '("TnyGetHeadersCallback" "callback")
+    '("TnyStatusCallback" "status_callback")
+    '("gpointer" "user_data")
+  )
+)
+
+(define-function gtk_header_list_model_received_date_sort_func
+  (c-name "tny_gtk_header_list_model_received_date_sort_func")
+  (return-type "gint")
+  (parameters
+    '("GtkTreeModel*" "model")
+    '("GtkTreeIter*" "a")
+    '("GtkTreeIter*" "b")
+    '("gpointer" "user_data")
+  )
+)
+
+(define-function gtk_header_list_model_sent_date_sort_func
+  (c-name "tny_gtk_header_list_model_sent_date_sort_func")
+  (return-type "gint")
+  (parameters
+    '("GtkTreeModel*" "model")
+    '("GtkTreeIter*" "a")
+    '("GtkTreeIter*" "b")
+    '("gpointer" "user_data")
+  )
+)
+
+(define-method set_no_duplicates
+  (of-object "TnyGtkHeaderListModel")
+  (c-name "tny_gtk_header_list_model_set_no_duplicates")
+  (return-type "none")
+  (parameters
+    '("gboolean" "setting")
+  )
+)
+
+(define-method get_no_duplicates
+  (of-object "TnyGtkHeaderListModel")
+  (c-name "tny_gtk_header_list_model_get_no_duplicates")
+  (return-type "gboolean")
+)
+
+
+
+;; From tny-gtk-header-view.h
+
+(define-function gtk_header_view_get_type
+  (c-name "tny_gtk_header_view_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_header_view_new
+  (c-name "tny_gtk_header_view_new")
+  (is-constructor-of "TnyGtkHeaderView")
+  (return-type "TnyHeaderView*")
+)
+
+
+
+;; From tny-gtk-image-mime-part-view.h
+
+(define-function gtk_image_mime_part_view_get_type
+  (c-name "tny_gtk_image_mime_part_view_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_image_mime_part_view_new
+  (c-name "tny_gtk_image_mime_part_view_new")
+  (is-constructor-of "TnyGtkImageMimePartView")
+  (return-type "TnyMimePartView*")
+  (parameters
+    '("TnyStatusCallback" "status_callback")
+    '("gpointer" "status_user_data")
+  )
+)
+
+
+
+;; From tny-gtk-lockable.h
+
+(define-function gtk_lockable_get_type
+  (c-name "tny_gtk_lockable_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_lockable_new
+  (c-name "tny_gtk_lockable_new")
+  (is-constructor-of "TnyGtkLockable")
+  (return-type "TnyLockable*")
+)
+
+
+
+;; From tny-gtk-mime-part-save-strategy.h
+
+(define-function gtk_mime_part_save_strategy_get_type
+  (c-name "tny_gtk_mime_part_save_strategy_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_mime_part_save_strategy_new
+  (c-name "tny_gtk_mime_part_save_strategy_new")
+  (is-constructor-of "TnyGtkMimePartSaveStrategy")
+  (return-type "TnyMimePartSaveStrategy*")
+  (parameters
+    '("TnyStatusCallback" "status_callback")
+    '("gpointer" "status_user_data")
+  )
+)
+
+
+
+;; From tny-gtk-msg-view.h
+
+(define-function gtk_msg_view_get_type
+  (c-name "tny_gtk_msg_view_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_msg_view_new
+  (c-name "tny_gtk_msg_view_new")
+  (is-constructor-of "TnyGtkMsgView")
+  (return-type "TnyMsgView*")
+)
+
+(define-method set_display_html
+  (of-object "TnyGtkMsgView")
+  (c-name "tny_gtk_msg_view_set_display_html")
+  (return-type "none")
+  (parameters
+    '("gboolean" "setting")
+  )
+)
+
+(define-method set_display_rfc822
+  (of-object "TnyGtkMsgView")
+  (c-name "tny_gtk_msg_view_set_display_rfc822")
+  (return-type "none")
+  (parameters
+    '("gboolean" "setting")
+  )
+)
+
+(define-method set_display_attachments
+  (of-object "TnyGtkMsgView")
+  (c-name "tny_gtk_msg_view_set_display_attachments")
+  (return-type "none")
+  (parameters
+    '("gboolean" "setting")
+  )
+)
+
+(define-method set_display_plain
+  (of-object "TnyGtkMsgView")
+  (c-name "tny_gtk_msg_view_set_display_plain")
+  (return-type "none")
+  (parameters
+    '("gboolean" "setting")
+  )
+)
+
+(define-method get_display_html
+  (of-object "TnyGtkMsgView")
+  (c-name "tny_gtk_msg_view_get_display_html")
+  (return-type "gboolean")
+)
+
+(define-method get_display_rfc822
+  (of-object "TnyGtkMsgView")
+  (c-name "tny_gtk_msg_view_get_display_rfc822")
+  (return-type "gboolean")
+)
+
+(define-method get_display_attachments
+  (of-object "TnyGtkMsgView")
+  (c-name "tny_gtk_msg_view_get_display_attachments")
+  (return-type "gboolean")
+)
+
+(define-method get_display_plain
+  (of-object "TnyGtkMsgView")
+  (c-name "tny_gtk_msg_view_get_display_plain")
+  (return-type "gboolean")
+)
+
+(define-method set_status_callback
+  (of-object "TnyGtkMsgView")
+  (c-name "tny_gtk_msg_view_set_status_callback")
+  (return-type "none")
+  (parameters
+    '("TnyStatusCallback" "status_callback")
+    '("gpointer" "status_user_data")
+  )
+)
+
+(define-method get_status_callback
+  (of-object "TnyGtkMsgView")
+  (c-name "tny_gtk_msg_view_get_status_callback")
+  (return-type "none")
+  (parameters
+    '("TnyStatusCallback*" "status_callback")
+    '("gpointer*" "status_user_data")
+  )
+)
+
+(define-method set_parented
+  (of-object "TnyGtkMsgView")
+  (c-name "tny_gtk_msg_view_set_parented")
+  (return-type "none")
+  (parameters
+    '("gboolean" "parented")
+  )
+)
+
+
+
+;; From tny-gtk-msg-window.h
+
+(define-function gtk_msg_window_get_type
+  (c-name "tny_gtk_msg_window_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_msg_window_new
+  (c-name "tny_gtk_msg_window_new")
+  (is-constructor-of "TnyGtkMsgWindow")
+  (return-type "TnyMsgWindow*")
+  (parameters
+    '("TnyMsgView*" "msgview")
+  )
+)
+
+(define-method set_view
+  (of-object "TnyGtkMsgWindow")
+  (c-name "tny_gtk_msg_window_set_view")
+  (return-type "none")
+  (parameters
+    '("TnyMsgView*" "view")
+  )
+)
+
+
+
+;; From tny-gtk-password-dialog.h
+
+(define-function gtk_password_dialog_get_type
+  (c-name "tny_gtk_password_dialog_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_password_dialog_new
+  (c-name "tny_gtk_password_dialog_new")
+  (is-constructor-of "TnyGtkPasswordDialog")
+  (return-type "TnyPasswordGetter*")
+)
+
+
+
+;; From tny-gtk-pixbuf-stream.h
+
+(define-function gtk_pixbuf_stream_get_type
+  (c-name "tny_gtk_pixbuf_stream_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_pixbuf_stream_new
+  (c-name "tny_gtk_pixbuf_stream_new")
+  (is-constructor-of "TnyGtkPixbufStream")
+  (return-type "TnyStream*")
+  (parameters
+    '("const-gchar*" "mime_type")
+  )
+)
+
+(define-method get_pixbuf
+  (of-object "TnyGtkPixbufStream")
+  (c-name "tny_gtk_pixbuf_stream_get_pixbuf")
+  (return-type "GdkPixbuf*")
+)
+
+
+
+;; From tny-gtk-text-buffer-stream.h
+
+(define-function gtk_text_buffer_stream_get_type
+  (c-name "tny_gtk_text_buffer_stream_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_text_buffer_stream_new
+  (c-name "tny_gtk_text_buffer_stream_new")
+  (is-constructor-of "TnyGtkTextBufferStream")
+  (return-type "TnyStream*")
+  (parameters
+    '("GtkTextBuffer*" "buffer")
+  )
+)
+
+(define-method set_text_buffer
+  (of-object "TnyGtkTextBufferStream")
+  (c-name "tny_gtk_text_buffer_stream_set_text_buffer")
+  (return-type "none")
+  (parameters
+    '("GtkTextBuffer*" "buffer")
+  )
+)
+
+
+
+;; From tny-gtk-text-mime-part-view.h
+
+(define-function gtk_text_mime_part_view_get_type
+  (c-name "tny_gtk_text_mime_part_view_get_type")
+  (return-type "GType")
+)
+
+(define-function gtk_text_mime_part_view_new
+  (c-name "tny_gtk_text_mime_part_view_new")
+  (is-constructor-of "TnyGtkTextMimePartView")
+  (return-type "TnyMimePartView*")
+  (parameters
+    '("TnyStatusCallback" "status_callback")
+    '("gpointer" "status_user_data")
+  )
+)
+
+

@@ -1,0 +1,11 @@
+Checkout this information: http://tinymail.org/trac/tinymail/wiki/HelpMemoryTesting
+
+Important pieces:
+
+export G_SLICE=always-malloc
+export G_DEBUG=gc-friendly
+cd ../.. && make install && cd tests/memory
+valgrind --tool=massif .libs/memory-test
+
+It shouldn't show a leak if you use G_DEBUG=gc-friendly and G_SLICE=always-malloc. If you don't, it will show something that looks very much like a leak. That's the slab allocator and glice stuff keeping instances of allocations around.
+

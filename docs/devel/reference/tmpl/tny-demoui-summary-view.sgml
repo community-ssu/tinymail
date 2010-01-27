@@ -1,0 +1,34 @@
+<!-- ##### SECTION Title ##### -->
+TnyDemouiSummaryView
+
+<!-- ##### SECTION Short_Description ##### -->
+A demo summary view type for Gtk+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnySummaryView implemented using Gtk+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyDemouiSummaryView ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION tny_demoui_summary_view_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

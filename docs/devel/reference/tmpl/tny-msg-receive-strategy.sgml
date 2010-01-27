@@ -1,0 +1,45 @@
+<!-- ##### SECTION Title ##### -->
+TnyMsgReceiveStrategy
+
+<!-- ##### SECTION Short_Description ##### -->
+A strategy for receiving messages
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A strategy that can implement receiving a message. For example by fully receiving it, or by partially receiving it.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyMsgReceiveStrategy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMsgReceiveStrategyIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@perform_get_msg: 
+
+<!-- ##### FUNCTION tny_msg_receive_strategy_perform_get_msg ##### -->
+<para>
+
+</para>
+
+@self: 
+@folder: 
+@header: 
+@err: 
+@Returns: 
+
+

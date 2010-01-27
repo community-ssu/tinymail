@@ -1,0 +1,107 @@
+<!-- ##### SECTION Title ##### -->
+TnyStream
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that defines a stream
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A stream is an object that can be written to and can be read from in a streaming fashion.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyCamelStream, #TnyStreamCamel, #TnyMozEmbedStream, #TnyGtkTextBufferStream, #TnyFsStream, #TnyVfsStream
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyStream ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyStreamIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@read: 
+@write: 
+@flush: 
+@close: 
+@is_eos: 
+@reset: 
+@write_to_stream: 
+
+<!-- ##### FUNCTION tny_stream_read ##### -->
+<para>
+
+</para>
+
+@self: 
+@buffer: 
+@n: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_stream_write ##### -->
+<para>
+
+</para>
+
+@self: 
+@buffer: 
+@n: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_stream_flush ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_stream_close ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_stream_is_eos ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_stream_reset ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_stream_write_to_stream ##### -->
+<para>
+
+</para>
+
+@self: 
+@output: 
+@Returns: 
+
+

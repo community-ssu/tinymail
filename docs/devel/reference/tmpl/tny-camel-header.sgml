@@ -1,0 +1,32 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelHeader
+
+<!-- ##### SECTION Short_Description ##### -->
+A header type for Camel
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyHeader implementation implemented as a proxy for a #CamelMessageInfo.
+The type doesn't use a priv pointer, it's implemented as a opaque structure.
+This is done for decreasing the amount of allocations (a priv pointer is an
+unnecessary allocation).
+</para><para>
+All kinds of dirty non-GObject-standard tricks have been applied to make this
+type as fast as possible. Including modifying the TNY_HEADER() macro and
+removing the GObject type-check.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyHeader, #TnyFolder, #TnyCamelFolder, #TnyGtkHeaderListModel
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelHeader ##### -->
+<para>
+
+</para>
+
+

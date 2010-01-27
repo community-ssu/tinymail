@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libtinymail-gnomevfs
+Description: TinyMail generic library implemented for gnomevfs
+Version: @VERSION@
+Requires: libtinymail-@API_VERSION@ gnome-vfs-2.0
+Libs: -L${libdir} -ltinymail-gnomevfs-@API_VERSION@
+Cflags: -I${includedir}/libtinymail-gnomevfs-@API_VERSION@

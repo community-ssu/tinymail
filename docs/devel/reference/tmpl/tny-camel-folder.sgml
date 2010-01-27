@@ -1,0 +1,34 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelFolder
+
+<!-- ##### SECTION Short_Description ##### -->
+A folder type for Camel
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyFolder implemented using Camel
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyFolderStore, #TnyStoreAccount, #TnyFolder
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelFolder ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_folder_get_full_name ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

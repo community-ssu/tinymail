@@ -1,0 +1,152 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelAccount
+
+<!-- ##### SECTION Short_Description ##### -->
+A abstract account type implemented for Camel
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A abstract account type implemented for Camel
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyAccount
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO TNY_TYPE_CAMEL_ACCOUNT ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO TNY_CAMEL_ACCOUNT ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### MACRO TNY_CAMEL_ACCOUNT_CLASS ##### -->
+<para>
+
+</para>
+
+@vtable: 
+
+
+<!-- ##### MACRO TNY_IS_CAMEL_ACCOUNT ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### MACRO TNY_CAMEL_ACCOUNT_GET_CLASS ##### -->
+<para>
+
+</para>
+
+@inst: 
+
+
+<!-- ##### USER_FUNCTION TnyCamelSetOnlineCallback ##### -->
+<para>
+
+</para>
+
+@account: 
+@canceled: 
+@err: 
+@user_data: 
+
+
+<!-- ##### STRUCT TnyCamelAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL TnyCamelAccount::set-online-happened ##### -->
+<para>
+
+</para>
+
+@tnycamelaccount: the object which received the signal.
+@arg1: 
+
+<!-- ##### FUNCTION tny_camel_account_get_options ##### -->
+<para>
+
+</para>
+
+@self: 
+@options: 
+
+
+<!-- ##### FUNCTION tny_camel_account_clear_options ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_camel_account_add_option ##### -->
+<para>
+
+</para>
+
+@self: 
+@option: 
+
+
+<!-- ##### FUNCTION tny_camel_account_set_session ##### -->
+<para>
+
+</para>
+
+@self: 
+@session: 
+
+
+<!-- ##### FUNCTION tny_camel_account_set_online ##### -->
+<para>
+
+</para>
+
+@self: 
+@online: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### USER_FUNCTION TnyCamelGetSupportedSecureAuthCallback ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancelled: 
+@auth_types: 
+@err: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_camel_account_get_supported_secure_authentication ##### -->
+<para>
+
+</para>
+
+@self: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+

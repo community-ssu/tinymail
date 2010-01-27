@@ -1,0 +1,43 @@
+<!-- ##### SECTION Title ##### -->
+TnyTransportAccount
+
+<!-- ##### SECTION Short_Description ##### -->
+A type for transporting E-mails
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A transport account and transport E-mail via a service and handles the authentication with the service.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyStoreAccount, #TnyAccount, #TnyCamelTransportAccount, #TnyCamelAccount
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyTransportAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyTransportAccountIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@send: 
+
+<!-- ##### FUNCTION tny_transport_account_send ##### -->
+<para>
+
+</para>
+
+@self: 
+@msg: 
+@err: 
+
+

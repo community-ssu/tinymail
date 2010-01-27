@@ -1,0 +1,155 @@
+<!-- ##### SECTION Title ##### -->
+TnyStatus
+
+<!-- ##### SECTION Short_Description ##### -->
+An object containing status information
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+An object containing status information
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyFolder
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyStatus ##### -->
+<para>
+
+</para>
+
+@domain: 
+@code: 
+@message: 
+@position: 
+@of_total: 
+
+<!-- ##### MACRO TNY_TYPE_STATUS_DOMAIN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO TNY_TYPE_STATUS_CODE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION tny_status_domain_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_status_code_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_status_new ##### -->
+<para>
+
+</para>
+
+@domain: 
+@code: 
+@position: 
+@of_total: 
+@format: 
+@Varargs: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_status_new_literal ##### -->
+<para>
+
+</para>
+
+@domain: 
+@code: 
+@position: 
+@of_total: 
+@message: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_status_free ##### -->
+<para>
+
+</para>
+
+@status: 
+
+
+<!-- ##### FUNCTION tny_status_copy ##### -->
+<para>
+
+</para>
+
+@status: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_status_matches ##### -->
+<para>
+
+</para>
+
+@status: 
+@domain: 
+@code: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_set_status ##### -->
+<para>
+
+</para>
+
+@status: 
+@domain: 
+@code: 
+@position: 
+@of_total: 
+@format: 
+@Varargs: 
+
+
+<!-- ##### FUNCTION tny_clear_status ##### -->
+<para>
+
+</para>
+
+@status: 
+
+
+<!-- ##### FUNCTION tny_status_set_fraction ##### -->
+<para>
+
+</para>
+
+@status: 
+@fraction: 
+
+
+<!-- ##### FUNCTION tny_status_get_fraction ##### -->
+<para>
+
+</para>
+
+@status: 
+@Returns: 
+
+

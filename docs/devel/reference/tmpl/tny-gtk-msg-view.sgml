@@ -1,0 +1,142 @@
+<!-- ##### SECTION Title ##### -->
+TnyGtkMsgView
+
+<!-- ##### SECTION Short_Description ##### -->
+A message view type for Gtk+.
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyMsgView implementation that uses the #GtkTextBuffer and #GtkTextView 
+for displaying the message.
+</para>
+<para>
+ It doesn't support viewing formatted HTML messages. It will, however,
+display the source code of such content.
+</para>
+<para>
+This type is coupled with the #TnyTextBufferStream.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMsg, #TnyMsgView, #TnyMimePart, #TnyTextBufferStream, #GtkTextBuffer, #GtkTextView
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyGtkMsgView ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_gtk_msg_view_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_msg_view_set_display_html ##### -->
+<para>
+
+</para>
+
+@self: 
+@setting: 
+
+
+<!-- ##### FUNCTION tny_gtk_msg_view_set_display_rfc822 ##### -->
+<para>
+
+</para>
+
+@self: 
+@setting: 
+
+
+<!-- ##### FUNCTION tny_gtk_msg_view_set_display_attachments ##### -->
+<para>
+
+</para>
+
+@self: 
+@setting: 
+
+
+<!-- ##### FUNCTION tny_gtk_msg_view_set_display_plain ##### -->
+<para>
+
+</para>
+
+@self: 
+@setting: 
+
+
+<!-- ##### FUNCTION tny_gtk_msg_view_get_display_html ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_msg_view_get_display_rfc822 ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_msg_view_get_display_attachments ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_msg_view_get_display_plain ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_msg_view_set_status_callback ##### -->
+<para>
+
+</para>
+
+@self: 
+@status_callback: 
+@status_user_data: 
+
+
+<!-- ##### FUNCTION tny_gtk_msg_view_get_status_callback ##### -->
+<para>
+
+</para>
+
+@self: 
+@status_callback: 
+@status_user_data: 
+
+
+<!-- ##### FUNCTION tny_gtk_msg_view_set_parented ##### -->
+<para>
+
+</para>
+
+@self: 
+@parented: 
+
+

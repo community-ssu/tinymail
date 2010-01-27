@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+
+<!ENTITY libtinymail-TnyEnums SYSTEM "xml/tny-enums.xml">
+<!ENTITY libtinymail-TnyAccount SYSTEM "xml/tny-account.xml">
+<!ENTITY libtinymail-TnyStoreAccount SYSTEM "xml/tny-store-account.xml">
+<!ENTITY libtinymail-TnyFolderStore SYSTEM "xml/tny-folder-store.xml">
+<!ENTITY libtinymail-TnyFolderStoreQuery SYSTEM "xml/tny-folder-store-query.xml">
+<!ENTITY libtinymail-TnyTransportAccount SYSTEM "xml/tny-transport-account.xml">
+<!ENTITY libtinymail-TnyAccountStore SYSTEM "xml/tny-account-store.xml">
+<!ENTITY libtinymail-TnyHeader SYSTEM "xml/tny-header.xml">
+<!ENTITY libtinymail-TnyStatus SYSTEM "xml/tny-status.xml">
+<!ENTITY libtinymail-TnyMsg SYSTEM "xml/tny-msg.xml">
+<!ENTITY libtinymail-TnyMimePart SYSTEM "xml/tny-mime-part.xml">
+<!ENTITY libtinymail-TnyStream SYSTEM "xml/tny-stream.xml">
+<!ENTITY libtinymail-TnySeekable SYSTEM "xml/tny-seekable.xml">
+<!ENTITY libtinymail-TnyFsStream SYSTEM "xml/tny-fs-stream.xml">
+<!ENTITY libtinymail-TnyFolder SYSTEM "xml/tny-folder.xml">
+<!ENTITY libtinymail-TnyDevice SYSTEM "xml/tny-device.xml">
+<!ENTITY libtinymail-TnyList SYSTEM "xml/tny-list.xml">
+<!ENTITY libtinymail-TnyIterator SYSTEM "xml/tny-iterator.xml">
+<!ENTITY libtinymail-TnySimpleList SYSTEM "xml/tny-simple-list.xml">
+<!ENTITY libtinymail-TnyMsgRemoveStrategy SYSTEM "xml/tny-msg-remove-strategy.xml">
+<!ENTITY libtinymail-TnyMsgReceiveStrategy SYSTEM "xml/tny-msg-receive-strategy.xml">
+<!ENTITY libtinymail-TnySendQueue SYSTEM "xml/tny-send-queue.xml">
+<!ENTITY libtinymail-TnyPair SYSTEM "xml/tny-pair.xml">
+<!ENTITY libtinymail-TnyLockable SYSTEM "xml/tny-lockable.xml">
+<!ENTITY libtinymail-TnyNoopLockable SYSTEM "xml/tny-noop-lockable.xml">
+<!ENTITY libtinymail-TnyFolderMonitor SYSTEM "xml/tny-folder-monitor.xml">
+<!ENTITY libtinymail-TnyFolderStats SYSTEM "xml/tny-folder-stats.xml">
+<!ENTITY libtinymail-TnyFolderObserver SYSTEM "xml/tny-folder-observer.xml">
+<!ENTITY libtinymail-TnyFolderChange SYSTEM "xml/tny-folder-change.xml">
+<!ENTITY libtinymail-TnyFolderStoreObserver SYSTEM "xml/tny-folder-store-observer.xml">
+<!ENTITY libtinymail-TnyFolderStoreChange SYSTEM "xml/tny-folder-store-change.xml">
+<!ENTITY libtinymail-TnyPasswordGetter SYSTEM "xml/tny-password-getter.xml">
+<!ENTITY libtinymail-TnyMergeFolder SYSTEM "xml/tny-merge-folder.xml">
+<!ENTITY libtinymail-TnyShared SYSTEM "xml/tny-shared.xml">
+<!ENTITY libtinymail-TnyCombinedAccount SYSTEM "xml/tny-combined-account.xml">
+<!ENTITY libtinymail-TnyConnectionPolicy "xml/tny-connection-policy.xml">
+
+<!ENTITY libtinymail-camel-TnyCamelSendQueue SYSTEM "xml/tny-camel-send-queue.xml">
+<!ENTITY libtinymail-camel-TnyCamelMsgRemoveStrategy SYSTEM "xml/tny-camel-msg-remove-strategy.xml">
+<!ENTITY libtinymail-camel-TnyCamelFullMsgReceiveStrategy SYSTEM "xml/tny-camel-full-msg-receive-strategy.xml">
+<!ENTITY libtinymail-camel-TnyCamelPartialMsgReceiveStrategy SYSTEM "xml/tny-camel-partial-msg-receive-strategy.xml">
+<!ENTITY libtinymail-camel-TnyCamelAccount SYSTEM "xml/tny-camel-account.xml">
+<!ENTITY libtinymail-camel-TnyCamelStoreAccount SYSTEM "xml/tny-camel-store-account.xml">
+<!ENTITY libtinymail-camel-TnyCamelIMAPStoreAccount SYSTEM "xml/tny-camel-imap-store-account.xml">
+<!ENTITY libtinymail-camel-TnyCamelNNTPStoreAccount SYSTEM "xml/tny-camel-nntp-store-account.xml">
+<!ENTITY libtinymail-camel-TnyCamelPOPStoreAccount SYSTEM "xml/tny-camel-pop-store-account.xml">
+<!ENTITY libtinymail-camel-TnyCamelTransportAccount SYSTEM "xml/tny-camel-transport-account.xml">
+<!ENTITY libtinymail-camel-TnyCamelStream SYSTEM "xml/tny-camel-stream.xml">
+<!ENTITY libtinymail-camel-TnyCamelFolder SYSTEM "xml/tny-camel-folder.xml">
+<!ENTITY libtinymail-camel-TnyCamelIMAPFolder SYSTEM "xml/tny-camel-imap-folder.xml">
+<!ENTITY libtinymail-camel-TnyCamelNNTPFolder SYSTEM "xml/tny-camel-nntp-folder.xml">
+<!ENTITY libtinymail-camel-TnyCamelPOPFolder SYSTEM "xml/tny-camel-pop-folder.xml">
+<!ENTITY libtinymail-camel-TnyCamelMimePart SYSTEM "xml/tny-camel-mime-part.xml">
+<!ENTITY libtinymail-camel-TnyCamelMsg SYSTEM "xml/tny-camel-msg.xml">
+<!ENTITY libtinymail-camel-TnyCamelBsMsg SYSTEM "xml/tny-camel-bs-msg.xml">
+<!ENTITY libtinymail-camel-TnyCamelBsMsgReceiveStrategy SYSTEM "xml/tny-camel-bs-msg-receive-strategy.xml">
+<!ENTITY libtinymail-camel-TnyCamelBsMimePart SYSTEM "xml/tny-camel-bs-mime-part.xml">
+<!ENTITY libtinymail-camel-TnyCamelRecoverConnectionPolicy SYSTEM "xml/tny-camel-recover-connection-policy.xml">
+<!ENTITY libtinymail-camel-TnyCamelDefaultConnectionPolicy SYSTEM "xml/tny-camel-default-connection-policy.xml">
+<!ENTITY libtinymail-camel-TnySessionCamel SYSTEM "xml/tny-session-camel.xml">
+<!ENTITY libtinymail-camel-TnyStreamCamel SYSTEM "xml/tny-stream-camel.xml">
+<!ENTITY libtinymail-camel-TnyCamelShared SYSTEM "xml/tny-camel-shared.xml">
+
+<!ENTITY libtinymail-gnomevfs-TnyVfsStream SYSTEM "xml/tny-vfs-stream.xml">
+
+<!ENTITY libtinymailui-gtk-TnyGtkAttachmentMimePartView SYSTEM "xml/tny-gtk-attachment-mime-part-view.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkEnums SYSTEM "xml/tny-gtk-enums.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkFolderStoreTreeModel SYSTEM "xml/tny-gtk-folder-store-tree-model.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkAccountListModel SYSTEM "xml/tny-gtk-account-list-model.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkAttachListModel SYSTEM "xml/tny-gtk-attach-list-model.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkHeaderListModel SYSTEM "xml/tny-gtk-header-list-model.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkTextBufferStream SYSTEM "xml/tny-gtk-text-buffer-stream.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkMsgView SYSTEM "xml/tny-gtk-msg-view.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkHeaderView SYSTEM "xml/tny-gtk-header-view.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkMsgWindow SYSTEM "xml/tny-gtk-msg-window.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkMimePartSaveStrategy SYSTEM "xml/tny-gtk-mime-part-save-strategy.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkTextMimePartView SYSTEM "xml/tny-gtk-text-mime-part-view.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkLockable SYSTEM "xml/tny-gtk-lockable.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkPasswordDialog SYSTEM "xml/tny-gtk-password-dialog.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkExpanderMimePartView SYSTEM "xml/tny-gtk-expander-mime-part-view.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkPixbufStream SYSTEM "xml/tny-gtk-pixbuf-stream.xml">
+<!ENTITY libtinymailui-gtk-TnyGtkImageMimePartView SYSTEM "xml/tny-gtk-image-mime-part-view.xml">
+
+<!ENTITY libtinymailui-TnyMimePartSaver SYSTEM "xml/tny-mime-part-saver.xml">
+<!ENTITY libtinymailui-TnyMsgWindow SYSTEM "xml/tny-msg-window.xml">
+<!ENTITY libtinymailui-TnyMsgView SYSTEM "xml/tny-msg-view.xml">
+<!ENTITY libtinymailui-TnyHeaderView SYSTEM "xml/tny-header-view.xml">
+<!ENTITY libtinymailui-TnyPlatformFactory SYSTEM "xml/tny-platform-factory.xml">
+<!ENTITY libtinymailui-TnyAccountStoreView SYSTEM "xml/tny-account-store-view.xml">
+<!ENTITY libtinymailui-TnyMimePartSaveStrategy SYSTEM "xml/tny-mime-part-save-strategy.xml">
+<!ENTITY libtinymailui-TnySummaryView SYSTEM "xml/tny-summary-view.xml">
+<!ENTITY libtinymailui-TnyMimePartView SYSTEM "xml/tny-mime-part-view.xml">
+
+<!ENTITY libtinymailui-mozembed-TnyMozEmbedStream SYSTEM "xml/tny-moz-embed-stream.xml">
+<!ENTITY libtinymailui-mozembed-TnyMozEmbedMsgView SYSTEM "xml/tny-moz-embed-msg-view.xml">
+<!ENTITY libtinymailui-mozembed-TnyMozEmbedHtmlMimePartView SYSTEM "xml/tny-moz-embed-html-mime-part-view.xml">
+
+<!ENTITY libtinymail-gnome-desktop-TnyGnomePlatformFactory SYSTEM "xml/tny-gnome-platform-factory.xml">
+<!ENTITY libtinymail-gnome-desktop-TnyGnomeAccountStore SYSTEM "xml/tny-gnome-account-store.xml">
+<!ENTITY libtinymail-gnome-desktop-TnyGnomeDevice SYSTEM "xml/tny-gnome-device.xml">
+
+<!ENTITY index-Object-Tree SYSTEM "xml/tree_index.sgml">
+
+]>
+
+<book id="index">
+  <bookinfo>
+    <title>Reference Manual of the tinymail framework</title>
+  </bookinfo>
+
+  <preface>
+    <title>Introduction</title>
+    <para>Tinymail is a development framework for both accessing E-mail services 
+	and building a user interface for it.</para>
+    <para>It will make sure that you as a developer can do this on devices with
+	low memory resources.</para>
+    <para>It supports IMAP, POP and NNTP. It can be used to send 
+	messages over SMTP.</para>
+    <para>It's licensed as LGPL.</para>
+  </preface>
+
+  <reference>
+    <title>Object Index</title>
+	&index-Object-Tree;
+  </reference>
+
+  <reference>
+    <title>API Reference</title>
+
+	<chapter id="libtinymail">
+		<title>libtinymail - main abstraction library</title>
+		&libtinymail-TnyAccountStore;
+		&libtinymail-TnyFolderStore;
+		&libtinymail-TnyFolderStoreQuery;
+		&libtinymail-TnyAccount;
+		&libtinymail-TnyStoreAccount;
+		&libtinymail-TnyTransportAccount;
+		&libtinymail-TnyCombinedAccount;
+		&libtinymail-TnySendQueue;
+		&libtinymail-TnyMsg;
+		&libtinymail-TnyMimePart;
+		&libtinymail-TnyFolder;
+		&libtinymail-TnyMergeFolder;
+		&libtinymail-TnyMsgRemoveStrategy;
+		&libtinymail-TnyMsgReceiveStrategy;
+		&libtinymail-TnyHeader;
+		&libtinymail-TnyStream;
+		&libtinymail-TnySeekable;
+		&libtinymail-TnyFsStream;
+		&libtinymail-TnyDevice;
+		&libtinymail-TnyList;
+		&libtinymail-TnyIterator;
+		&libtinymail-TnySimpleList;
+		&libtinymail-TnyPair;
+		&libtinymail-TnyLockable;
+		&libtinymail-TnyNoopLockable;
+		&libtinymail-TnyFolderObserver;
+		&libtinymail-TnyFolderChange;
+		&libtinymail-TnyFolderMonitor;
+		&libtinymail-TnyFolderStats;
+		&libtinymail-TnyFolderStoreObserver;
+		&libtinymail-TnyFolderStoreChange;
+		&libtinymail-TnyPasswordGetter;
+		&libtinymail-TnyConnectionPolicy;
+		&libtinymail-TnyEnums;
+		&libtinymail-TnyShared;
+		&libtinymail-TnyStatus;
+	</chapter>
+
+	<chapter id="libtinymailui">
+		<title>libtinymailui - ui abstraction library</title>
+		&libtinymailui-TnyAccountStoreView;
+		&libtinymailui-TnyHeaderView;
+		&libtinymailui-TnyMsgView;
+		&libtinymailui-TnyMsgWindow;
+		&libtinymailui-TnyMimePartSaveStrategy;
+		&libtinymailui-TnyPlatformFactory;
+		&libtinymailui-TnyHeaderView;
+		&libtinymailui-TnySummaryView;
+		&libtinymailui-TnyMimePartView;
+		&libtinymailui-TnyMimePartSaver;
+	</chapter>
+
+	<chapter id="libtinymailui-gtk">
+	<title>libtinymailui-gtk - an optional ui implementation library</title>
+		&libtinymailui-gtk-TnyGtkMsgView;
+		&libtinymailui-gtk-TnyGtkMsgWindow;
+		&libtinymailui-gtk-TnyGtkHeaderView;
+		&libtinymailui-gtk-TnyGtkFolderStoreTreeModel;
+		&libtinymailui-gtk-TnyGtkAccountListModel;
+		&libtinymailui-gtk-TnyGtkHeaderListModel;
+		&libtinymailui-gtk-TnyGtkAttachListModel;
+		&libtinymailui-gtk-TnyGtkTextBufferStream;
+		&libtinymailui-gtk-TnyGtkMimePartSaveStrategy;
+		&libtinymailui-gtk-TnyGtkTextMimePartView;
+		&libtinymailui-gtk-TnyGtkAttachmentMimePartView;
+		&libtinymailui-gtk-TnyGtkLockable;
+		&libtinymailui-gtk-TnyGtkPasswordDialog;
+		&libtinymailui-gtk-TnyGtkExpanderMimePartView;
+		&libtinymailui-gtk-TnyGtkPixbufStream;
+		&libtinymailui-gtk-TnyGtkImageMimePartView;
+		&libtinymailui-gtk-TnyGtkEnums;
+	</chapter>
+
+        <chapter id="libtinymail-gnomevfs">
+                <title>libtinymail-gnomevfs - an optional implementation library</title>
+                &libtinymail-gnomevfs-TnyVfsStream;
+        </chapter>
+
+	<chapter id="libtinymailui-mozembed">
+	<title>libtinymailui-mozembed - an optional ui implementation library</title>
+		&libtinymailui-mozembed-TnyMozEmbedMsgView;
+		&libtinymailui-mozembed-TnyMozEmbedStream;
+		&libtinymailui-mozembed-TnyMozEmbedHtmlMimePartView;
+	</chapter>
+
+	<chapter id="libtinymail-gnome-desktop">
+	<title>libtinymail-gnome-desktop - implementations for a gnome desktop</title>
+		&libtinymail-gnome-desktop-TnyGnomeAccountStore;
+		&libtinymail-gnome-desktop-TnyGnomePlatformFactory;
+		&libtinymail-gnome-desktop-TnyGnomeDevice;
+	</chapter>
+
+	<chapter id="libtinymail-camel">
+		<title>libtinymail-camel - implementation of the main library</title>
+		&libtinymail-camel-TnyCamelAccount;
+		&libtinymail-camel-TnyCamelStoreAccount;
+		&libtinymail-camel-TnyCamelIMAPStoreAccount;
+		&libtinymail-camel-TnyCamelNNTPStoreAccount;
+		&libtinymail-camel-TnyCamelPOPStoreAccount;
+		&libtinymail-camel-TnyCamelTransportAccount;
+		&libtinymail-camel-TnyCamelSendQueue;
+		&libtinymail-camel-TnyCamelStream;
+		&libtinymail-camel-TnyCamelFolder;
+		&libtinymail-camel-TnyCamelMsgRemoveStrategy;
+		&libtinymail-camel-TnyCamelFullMsgReceiveStrategy;
+		&libtinymail-camel-TnyCamelPartialMsgReceiveStrategy;
+		&libtinymail-camel-TnyCamelIMAPFolder;
+		&libtinymail-camel-TnyCamelNNTPFolder;
+		&libtinymail-camel-TnyCamelPOPFolder;
+		&libtinymail-camel-TnyCamelMimePart;
+		&libtinymail-camel-TnyCamelMsg;
+		&libtinymail-camel-TnyCamelDefaultConnectionPolicy;
+		&libtinymail-camel-TnyCamelRecoverConnectionPolicy;
+		&libtinymail-camel-TnyCamelBsMimePart;
+		&libtinymail-camel-TnyCamelBsMsgReceiveStrategy;
+		&libtinymail-camel-TnyCamelBsMsg;
+		&libtinymail-camel-TnySessionCamel;
+		&libtinymail-camel-TnyStreamCamel;
+		&libtinymail-camel-TnyCamelShared;
+	</chapter>
+
+  </reference>
+
+  <index>
+    <title>Index</title>
+  </index>
+  
+</book>
+

@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelIMAPStoreAccount
+
+<!-- ##### SECTION Short_Description ##### -->
+A IMAP store account type for Camel
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A IMAP #TnyStoreAccount implemented for Camel
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyStoreAccount, #TnyCamelStoreAccount, #TnyFolderStore
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelIMAPStoreAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_imap_store_account_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

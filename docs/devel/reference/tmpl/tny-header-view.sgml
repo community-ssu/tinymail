@@ -1,0 +1,52 @@
+<!-- ##### SECTION Title ##### -->
+TnyHeaderView
+
+<!-- ##### SECTION Short_Description ##### -->
+A type for showing a header
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type for showing a #TnyHeader to the user. This type is often used in a composition
+with a #TnyMsgView implementation.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyHeader, #TnyMsgView, #TnyMsgWindow, #TnyGtkMsgView, #TnyGtkMsgWindow
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyHeaderView ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyHeaderViewIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@set_header: 
+@clear: 
+
+<!-- ##### FUNCTION tny_header_view_set_header ##### -->
+<para>
+
+</para>
+
+@self: 
+@header: 
+
+
+<!-- ##### FUNCTION tny_header_view_clear ##### -->
+<para>
+
+</para>
+
+@self: 
+
+

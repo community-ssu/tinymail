@@ -1,0 +1,76 @@
+<!-- ##### SECTION Title ##### -->
+TnyFolderMonitor
+
+<!-- ##### SECTION Short_Description ##### -->
+A folder observer that updates lists
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyFolderObserver implementation that updates #TnyList implementations by adding and removing #TnyHeader instances
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyFolderMonitor ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_folder_monitor_new ##### -->
+<para>
+
+</para>
+
+@folder: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_monitor_poke_status ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_folder_monitor_add_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+
+
+<!-- ##### FUNCTION tny_folder_monitor_remove_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+
+
+<!-- ##### FUNCTION tny_folder_monitor_stop ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_folder_monitor_start ##### -->
+<para>
+
+</para>
+
+@self: 
+
+

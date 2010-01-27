@@ -1,0 +1,44 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelStoreAccount
+
+<!-- ##### SECTION Short_Description ##### -->
+A store account type implemented for camel.
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyStoreAccount implemented using camel.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyFolderStore, #TnyAccount, #TnyTransportAccount, #TnyTransportAccount, #TnyCamelAccount
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelStoreAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_store_account_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_camel_store_account_factor_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@full_name: 
+@was_new: 
+@Returns: 
+
+

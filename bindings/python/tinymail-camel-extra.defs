@@ -1,0 +1,16 @@
+(define-boxed SessionCamel
+  (in-module "Tny")
+  (c-name "TnySessionCamel")
+  (gtype-id "PYTNY_TYPE_SESSION_CAMEL")
+  (copy-func "pytny_session_camel_copy")
+  (release-func "pytny_session_camel_free")
+)
+
+(define-function session_camel_new
+  (c-name "tny_session_camel_new")
+  (is-constructor-of "TnySessionCamel")
+  (return-type "TnySessionCamel*")
+  (parameters
+    '("TnyAccountStore*" "account_store")
+  )
+)

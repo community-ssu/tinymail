@@ -1,0 +1,391 @@
+<!-- ##### SECTION Title ##### -->
+TnyAccount
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that defines an account
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A abstract type that contains shared functionality of the #TnyStoreAccount and the #TnyTransportAccount types.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyStoreAccount, #TnyTransportAccount
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL TnyAccount::changed ##### -->
+<para>
+
+</para>
+
+@:
+
+@tnyaccount: the object which received the signal.
+
+<!-- ##### SIGNAL TnyAccount::connection-status-changed ##### -->
+<para>
+
+</para>
+
+@:
+
+@Param2: 
+@Param2: 
+
+<!-- ##### STRUCT TnyAccountIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_connection_status: 
+@set_id: 
+@set_name: 
+@set_secure_auth_mech: 
+@set_proto: 
+@set_user: 
+@set_hostname: 
+@set_port: 
+@set_url_string: 
+@set_pass_func: 
+@set_forget_pass_func: 
+@get_pass_func: 
+@get_forget_pass_func: 
+@get_id: 
+@get_name: 
+@get_secure_auth_mech: 
+@get_proto: 
+@get_user: 
+@get_hostname: 
+@get_port: 
+@get_url_string: 
+@get_account_type: 
+@cancel: 
+@matches_url_string: 
+@start_operation: 
+@stop_operation: 
+@is_ready: 
+@get_connection_policy: 
+@set_connection_policy: 
+@connection_status_changed: 
+@changed: 
+
+<!-- ##### MACRO TNY_TYPE_CONNECTION_STATUS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO TNY_TYPE_ACCOUNT_TYPE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO TNY_TYPE_ACCOUNT_SIGNAL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION tny_account_type_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_connection_status_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_signal_type_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_get_connection_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_set_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@id: 
+
+
+<!-- ##### FUNCTION tny_account_set_name ##### -->
+<para>
+
+</para>
+
+@self: 
+@name: 
+
+
+<!-- ##### FUNCTION tny_account_set_secure_auth_mech ##### -->
+<para>
+
+</para>
+
+@self: 
+@mech: 
+
+
+<!-- ##### FUNCTION tny_account_set_proto ##### -->
+<para>
+
+</para>
+
+@self: 
+@proto: 
+
+
+<!-- ##### FUNCTION tny_account_set_user ##### -->
+<para>
+
+</para>
+
+@self: 
+@user: 
+
+
+<!-- ##### FUNCTION tny_account_set_hostname ##### -->
+<para>
+
+</para>
+
+@self: 
+@host: 
+
+
+<!-- ##### FUNCTION tny_account_set_port ##### -->
+<para>
+
+</para>
+
+@self: 
+@port: 
+
+
+<!-- ##### FUNCTION tny_account_set_pass_func ##### -->
+<para>
+
+</para>
+
+@self: 
+@get_pass_func: 
+
+
+<!-- ##### FUNCTION tny_account_set_url_string ##### -->
+<para>
+
+</para>
+
+@self: 
+@url_string: 
+
+
+<!-- ##### FUNCTION tny_account_get_account_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_get_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_get_name ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_get_secure_auth_mech ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_get_proto ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_get_user ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_get_hostname ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_get_port ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_get_url_string ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_get_pass_func ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_set_forget_pass_func ##### -->
+<para>
+
+</para>
+
+@self: 
+@forget_pass_func: 
+
+
+<!-- ##### FUNCTION tny_account_get_forget_pass_func ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_cancel ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_account_matches_url_string ##### -->
+<para>
+
+</para>
+
+@self: 
+@url_string: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_start_operation ##### -->
+<para>
+
+</para>
+
+@self: 
+@domain: 
+@code: 
+@status_callback: 
+@status_user_data: 
+
+
+<!-- ##### FUNCTION tny_account_stop_operation ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancelled: 
+
+
+<!-- ##### FUNCTION tny_account_is_ready ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_get_connection_policy ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_set_connection_policy ##### -->
+<para>
+
+</para>
+
+@self: 
+@policy: 
+
+

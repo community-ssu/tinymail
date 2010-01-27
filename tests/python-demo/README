@@ -1,0 +1,11 @@
+Usage:
+
+cd ../..
+./autogen.sh --prefix=/opt/tinymail --enable-python-bindings
+make && make install
+cd tests/python-demo
+export PYTHONMAJ=`python -V 2>&1 | cut -d " " -f 2 | cut -d "." -f 1-2`
+export PYTHONPATH=/opt/tinymail/lib/python$PYTHONMAJ/site-packages/tinymail-1.0/
+
+python tinymail-python-test.py
+ 

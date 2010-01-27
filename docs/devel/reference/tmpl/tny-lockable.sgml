@@ -1,0 +1,50 @@
+<!-- ##### SECTION Title ##### -->
+TnyLockable
+
+<!-- ##### SECTION Short_Description ##### -->
+A lockable type
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A lockable type with a lock and unlock implementation
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyLockable ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyLockableIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@lock: 
+@unlock: 
+
+<!-- ##### FUNCTION tny_lockable_lock ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_lockable_unlock ##### -->
+<para>
+
+</para>
+
+@self: 
+
+

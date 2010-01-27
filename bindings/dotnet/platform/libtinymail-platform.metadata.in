@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<metadata>
+ <attr path="/api/namespace[@name='Tny']" name="name">Tny.Platform</attr>
+ <attr path="/api/namespace/object[@cname='Tny@PLATFORMSPECIFICNAME@AccountStore']" name="name">AccountStore</attr>
+ <attr path="/api/namespace/object[@cname='Tny@PLATFORMSPECIFICNAME@Device']" name="name">Device</attr>
+ <attr path="/api/namespace/object[@cname='Tny@PLATFORMSPECIFICNAME@PlatformFactory']" name="name">PlatformFactory</attr>
+</metadata>

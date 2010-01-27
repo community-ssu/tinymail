@@ -1,0 +1,112 @@
+<!-- ##### SECTION Title ##### -->
+TnyFolderStoreChange
+
+<!-- ##### SECTION Short_Description ##### -->
+A type with the changes between two states of a folder store
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type with the delta or changes between two states of a #TnyFolderStore. The #TnyFolderStoreObserver will receive instances of this type
+as information about what got changed.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO TNY_TYPE_FOLDER_STORE_CHANGE_CHANGED ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### STRUCT TnyFolderStoreChange ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_folder_store_change_changed_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_store_change_new ##### -->
+<para>
+
+</para>
+
+@folderstore: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_store_change_add_created_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@folder: 
+
+
+<!-- ##### FUNCTION tny_folder_store_change_add_removed_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@folder: 
+
+
+<!-- ##### FUNCTION tny_folder_store_change_get_created_folders ##### -->
+<para>
+
+</para>
+
+@self: 
+@folders: 
+
+
+<!-- ##### FUNCTION tny_folder_store_change_get_removed_folders ##### -->
+<para>
+
+</para>
+
+@self: 
+@folders: 
+
+
+<!-- ##### FUNCTION tny_folder_store_change_reset ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_folder_store_change_get_folder_store ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_store_change_get_changed ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

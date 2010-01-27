@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<metadata>
+ <attr path="/api/namespace[@name='Tny']" name="error_handler">throw Tny.TnyExceptionFactory.Create (error)</attr>
+
+ <attr path="/api/namespace/object[@cname='TnyMergeFolder']/method[@name='SetFolderType']" name="name">SetMergeFolderType</attr>
+ <attr path="/api/namespace/interface[@cname='TnyAccount']" name="consume_only">1</attr>
+ <remove-node path="/api/namespace/interface[@cname='TnyList']/method[@name='RemoveMatches']" />
+ <add-node path="/api/namespace/interface[@cname='TnyList']"><implements><interface name="System.Collections.IEnumerable" /></implements></add-node>
+ <add-node path="/api/namespace/interface[@cname='TnyIterator']"><implements><interface name="System.Collections.IEnumerator" /></implements></add-node>
+ <attr path="/api/namespace/interface[@cname='TnyIterator']/method[@cname='tny_iterator_get_current']" name="name">GetGlibCurrent</attr>
+ <attr path="/api/namespace/interface[@cname='TnyFolder']/virtual_method/parameters/parameter[@name='user_data']" name="scope">private</attr>
+ <attr path="/api/namespace/interface[@cname='TnyFolderStore']/virtual_method/parameters/parameter[@name='user_data']" name="scope">private</attr>
+ <attr path="/api/namespace/interface[@cname='TnySendQueue']/virtual_method/parameters/parameter[@name='user_data']" name="scope">private</attr>
+ <attr path="/api/namespace/interface[@cname='TnyMimePart']/virtual_method/parameters/parameter[@name='user_data']" name="scope">private</attr>
+
+ <attr path="/api/namespace/*/*/parameters/parameter[@name='callback']" name="scope">async</attr>
+ <attr path="/api/namespace/*/*/parameters/parameter[@name='status_callback']" name="scope">call</attr>
+
+ <attr path="/api/namespace/callback[@cname='TnyFolderCallback']/parameters/parameter[@name='err']" name="type">TError</attr>
+ <attr path="/api/namespace/callback[@cname='TnyCopyFolderCallback']/parameters/parameter[@name='err']" name="type">TError</attr>
+ <attr path="/api/namespace/callback[@cname='TnyCreateFolderCallback']/parameters/parameter[@name='err']" name="type">TError</attr>
+ <attr path="/api/namespace/callback[@cname='TnyGetFoldersCallback']/parameters/parameter[@name='err']" name="type">TError</attr>
+ <attr path="/api/namespace/callback[@cname='TnyGetHeadersCallback']/parameters/parameter[@name='err']" name="type">TError</attr>
+ <attr path="/api/namespace/callback[@cname='TnyGetMsgCallback']/parameters/parameter[@name='err']" name="type">TError</attr>
+ <attr path="/api/namespace/callback[@cname='TnyMimePartCallback']/parameters/parameter[@name='err']" name="type">TError</attr>
+ <attr path="/api/namespace/callback[@cname='TnySendQueueAddCallback']/parameters/parameter[@name='err']" name="type">TError</attr>
+ <attr path="/api/namespace/callback[@cname='TnyTransferMsgsCallback']/parameters/parameter[@name='err']" name="type">TError</attr>
+
+ <attr path="/api/namespace/enum[@cname='TnyError']" name="name">ErrorEnum</attr>
+
+ <add-node path="/api"><symbol type="manual" cname="TError" name="Tny.TnyException"/></add-node>
+
+</metadata>
+

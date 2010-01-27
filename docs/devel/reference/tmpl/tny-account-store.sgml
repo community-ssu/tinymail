@@ -1,0 +1,133 @@
+<!-- ##### SECTION Title ##### -->
+TnyAccountStore
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that defines a store for accounts
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A abstract type that defines a store for accounts
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyAccount, #TnyStoreAccount, #TnyTransportAccount, #TnyAccountStoreSignal, #TnyGetAccountsRequestType
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO TNY_TYPE_ACCOUNT_STORE_SIGNAL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO TNY_TYPE_ALERT_TYPE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO TNY_TYPE_GET_ACCOUNTS_REQUEST_TYPE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### STRUCT TnyAccountStore ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL TnyAccountStore::connecting-started ##### -->
+<para>
+
+</para>
+
+@tnyaccountstore: the object which received the signal.
+
+<!-- ##### STRUCT TnyAccountStoreIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_accounts: 
+@get_cache_dir: 
+@get_device: 
+@alert: 
+@find_account: 
+@connecting_started: 
+
+<!-- ##### FUNCTION tny_get_accounts_request_type_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_alert_type_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_store_get_accounts ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+@types: 
+
+
+<!-- ##### FUNCTION tny_account_store_get_cache_dir ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_store_get_device ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_store_alert ##### -->
+<para>
+
+</para>
+
+@self: 
+@account: 
+@type: 
+@question: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_account_store_find_account ##### -->
+<para>
+
+</para>
+
+@self: 
+@url_string: 
+@Returns: 
+
+

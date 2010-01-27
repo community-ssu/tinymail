@@ -1,0 +1,7 @@
+Makefile.in
+.svnignore
+Makefile
+devel/Makefile.in
+devel/Makefile
+devel/reference/Makefile.in
+devel/reference/Makefile

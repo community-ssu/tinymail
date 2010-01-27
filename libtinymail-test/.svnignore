@@ -1,0 +1,6 @@
+Makefile.in
+.deps
+Makefile
+.libs
+check_libtinymail
+check_libtinymailui

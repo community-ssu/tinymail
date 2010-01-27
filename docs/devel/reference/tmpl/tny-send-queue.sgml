@@ -1,0 +1,181 @@
+<!-- ##### SECTION Title ##### -->
+TnySendQueue
+
+<!-- ##### SECTION Short_Description ##### -->
+A type for sending mail
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type for sending mail. Typically using a #TnyTransportAccount. The send queue will asynchonously handle 
+sending the queued E-mails. It will signal when a message got sent. While the queue is busy, it permits
+adding new messages to it.
+</para>
+<para>
+The #TnySendQueue implementation does not necessarily have to classify between multiple #TnyTransportAccount 
+nor is it specified that it should not do this. The contract for the type is that it WILL send the message.
+</para>
+<para>
+It's recommended to make implementations that persist to-send messages on a persistent storage like a 
+filesystem. For example in a so called Outbox folder. Else would your user upon application or device 
+shutdown obviously lose the unsent messages.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyTransportAccount
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnySendQueue ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL TnySendQueue::error-happened ##### -->
+<para>
+
+</para>
+
+@: 
+@: 
+@: 
+@:
+
+@tnysendqueue: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+
+<!-- ##### SIGNAL TnySendQueue::msg-sending ##### -->
+<para>
+
+</para>
+
+@: 
+@: 
+@: 
+@: 
+@:
+
+@tnysendqueue: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+
+<!-- ##### SIGNAL TnySendQueue::msg-sent ##### -->
+<para>
+
+</para>
+
+@: 
+@: 
+@: 
+@: 
+@:
+
+@tnysendqueue: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+
+<!-- ##### SIGNAL TnySendQueue::queue-start ##### -->
+<para>
+
+</para>
+
+@tnysendqueue: the object which received the signal.
+
+<!-- ##### SIGNAL TnySendQueue::queue-stop ##### -->
+<para>
+
+</para>
+
+@tnysendqueue: the object which received the signal.
+
+<!-- ##### STRUCT TnySendQueueIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@msg_sending: 
+@msg_sent: 
+@error_happened: 
+@queue_start: 
+@queue_stop: 
+@add: 
+@add_async: 
+@get_sentbox: 
+@get_outbox: 
+@cancel: 
+
+<!-- ##### MACRO TNY_TYPE_SEND_QUEUE_SIGNAL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### ENUM TnySendQueueCancelAction ##### -->
+<para>
+
+</para>
+
+@TNY_SEND_QUEUE_CANCEL_ACTION_SUSPEND: 
+@TNY_SEND_QUEUE_CANCEL_ACTION_REMOVE: 
+
+<!-- ##### FUNCTION tny_send_queue_add ##### -->
+<para>
+
+</para>
+
+@self: 
+@msg: 
+@err: 
+
+
+<!-- ##### FUNCTION tny_send_queue_add_async ##### -->
+<para>
+
+</para>
+
+@self: 
+@msg: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_send_queue_get_sentbox ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_send_queue_get_outbox ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_send_queue_cancel ##### -->
+<para>
+
+</para>
+
+@self: 
+@cancel_action: 
+@err: 
+
+

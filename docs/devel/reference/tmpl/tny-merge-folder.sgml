@@ -1,0 +1,89 @@
+<!-- ##### SECTION Title ##### -->
+TnyMergeFolder
+
+<!-- ##### SECTION Short_Description ##### -->
+A virtual folder that merges folders together
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type that can merge multiple other folders together
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyMergeFolder ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_merge_folder_new ##### -->
+<para>
+
+</para>
+
+@folder_name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_merge_folder_new_with_ui_locker ##### -->
+<para>
+
+</para>
+
+@folder_name: 
+@ui_locker: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_merge_folder_set_ui_locker ##### -->
+<para>
+
+</para>
+
+@self: 
+@ui_locker: 
+
+
+<!-- ##### FUNCTION tny_merge_folder_add_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@folder: 
+
+
+<!-- ##### FUNCTION tny_merge_folder_remove_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@folder: 
+
+
+<!-- ##### FUNCTION tny_merge_folder_set_folder_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@folder_type: 
+
+
+<!-- ##### FUNCTION tny_merge_folder_get_folders ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+
+

@@ -1,0 +1,6 @@
+Makefile.in
+.libs
+libtinymailui-webkit-1.0.pc
+.deps
+libtinymailui-webkit.pc
+Makefile

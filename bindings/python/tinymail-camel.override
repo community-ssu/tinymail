@@ -1,0 +1,87 @@
+/* -*- Mode: C; c-basic-offset: 4 -*- */
+%%
+headers
+#include <Python.h>
+#include <pygobject.h>
+
+#include <tny-account.h>
+#include <tny-account-store.h>
+#include <tny-device.h>
+#include <tny-fs-stream.h>
+#include <tny-iterator.h>
+#include <tny-simple-list.h>
+#include <tny-list.h>
+#include <tny-folder.h>
+#include <tny-header.h>
+#include <tny-msg.h>
+#include <tny-mime-part.h>
+#include <tny-shared.h>
+#include <tny-store-account.h>
+#include <tny-stream.h>
+#include <tny-transport-account.h>
+#include <tny-folder-store.h>
+#include <tny-folder-store-query.h>
+#include <tny-send-queue.h>
+
+#include <tny-camel-account.h>
+#include <tny-camel-bs-mime-part.h>
+#include <tny-camel-bs-msg.h>
+#include <tny-camel-bs-msg-receive-strategy.h>
+#include <tny-camel-default-connection-policy.h>
+#include <tny-camel-folder.h>
+#include <tny-camel-header.h>
+#include <tny-camel-imap-folder.h>
+#include <tny-camel-imap-store-account.h>
+#include <tny-camel-mime-part.h>
+#include <tny-camel-msg.h>
+#include <tny-camel-msg-remove-strategy.h>
+#include <tny-camel-nntp-folder.h>
+#include <tny-camel-nntp-store-account.h>
+#include <tny-camel-pop-folder.h>
+#include <tny-camel-pop-store-account.h>
+#include <tny-camel-recover-connection-policy.h>
+#include <tny-camel-send-queue.h>
+#include <tny-camel-shared.h>
+#include <tny-camel-store-account.h>
+#include <tny-camel-stream.h>
+#include <tny-camel-transport-account.h>
+#include <tny-session-camel.h>
+#include <tny-stream-camel.h>
+#include <tny-camel-msg-remove-strategy.h>
+#include <tny-camel-full-msg-receive-strategy.h>
+#include <tny-camel-partial-msg-receive-strategy.h>
+#include <tny-camel-mem-stream.h>
+#include <tny-camel-pop-remote-msg-remove-strategy.h>
+
+#include "pytny-session-camel.h"
+
+#define NO_IMPORT_PYGOBJECT
+#include "pygobject.h"
+
+
+%%
+modulename camel
+%%
+ignore-glob
+  *_get_type
+
+%%
+import gobject.GObject as PyGObject_Type
+
+import tinymail.AccountStore as PyTnyAccountStore_Type
+import tinymail.Device as PyTnyDevice_Type
+import tinymail.Stream as PyTnyStream_Type
+import tinymail.Header as PyTnyHeader_Type
+import tinymail.Folder as PyTnyFolder_Type
+import tinymail.FolderStore as PyTnyFolderStore_Type
+import tinymail.StoreAccount as PyTnyStoreAccount_Type
+import tinymail.Lockable as PyTnyLockable_Type
+import tinymail.List as PyTnyList_Type
+import tinymail.Msg as PyTnyMsg_Type
+import tinymail.MsgReceiveStrategy as PyTnyMsgReceiveStrategy_Type
+import tinymail.FolderStoreObserver as PyTnyFolderStoreObserver_Type
+import tinymail.FolderObserver as PyTnyFolderObserver_Type
+import tinymail.MsgRemoveStrategy as PyTnyMsgRemoveStrategy_Type
+import tinymail.MimePart as PyTnyMimePart_Type
+import tinymail.FolderStoreQuery as PyTnyFolderStoreQuery_Type
+import tinymail.Pair as PyTnyPair_Type

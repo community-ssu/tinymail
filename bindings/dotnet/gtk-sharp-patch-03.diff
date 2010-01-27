@@ -1,0 +1,88 @@
+Index: generator/GenBase.cs
+===================================================================
+--- generator/GenBase.cs	(revision 94486)
++++ generator/GenBase.cs	(working copy)
+@@ -60,6 +60,7 @@
+ 				return MarshalType;
+ 			}
+ 		}
++
+ 
+ 		public abstract string MarshalType { get; }
+ 
+@@ -68,7 +69,16 @@
+ 				return elem.GetAttribute ("name");
+ 			}
+ 		}
+-
++
++		public string ErrorHandler {
++			get {
++				string str = ns.GetAttribute ("error_handler");
++				if (str != "")
++					return str;
++				return "throw new GLib.GException (error)";
++			}
++		}
++		
+ 		public string NS {
+ 			get {
+ 				return ns.GetAttribute ("name");
+Index: generator/Method.cs
+===================================================================
+--- generator/Method.cs	(revision 94486)
++++ generator/Method.cs	(working copy)
+@@ -288,7 +288,7 @@
+ 			Body.Finish (sw, indent);
+ 			if (!IsStatic && implementor != null)
+ 				implementor.Finish (sw, indent + "\t\t\t");
+-			Body.HandleException (sw, indent);
++			Body.HandleException (sw, indent, this.container_type.ErrorHandler);
+ 
+ 			if (is_get && Parameters.Count > 0) 
+ 				sw.WriteLine (indent + "\t\t\treturn " + Parameters.AccessorName + ";");
+Index: generator/MethodBody.cs
+===================================================================
+--- generator/MethodBody.cs	(revision 94486)
++++ generator/MethodBody.cs	(working copy)
+@@ -153,11 +153,15 @@
+ 			sw.WriteLine (indent + "\t\t\treturn " + sig.AccessorName + ";");
+ 		}
+ 
+-		public void HandleException (StreamWriter sw, string indent)
++		public void HandleException (StreamWriter sw, string indent, string ErrorHandler)
+ 		{
+ 			if (!ThrowsException)
+-				return;
+-			sw.WriteLine (indent + "\t\t\tif (error != IntPtr.Zero) throw new GLib.GException (error);");
++				return;
++				
++				if (ErrorHandler.EndsWith (";"))
++					sw.WriteLine (indent + "\t\t\tif (error != IntPtr.Zero) {"+ ErrorHandler + " }");
++				else
++					sw.WriteLine (indent + "\t\t\tif (error != IntPtr.Zero) {"+ ErrorHandler + "; }");
+ 		}
+ 		
+ 		public bool ThrowsException {
+Index: generator/Ctor.cs
+===================================================================
+--- generator/Ctor.cs	(revision 94486)
++++ generator/Ctor.cs	(working copy)
+@@ -83,7 +83,7 @@
+ 				sw.Write ("new {0} (", name);
+ 			sw.WriteLine (CName + "(" + Body.GetCallString (false) + "));");
+ 			Body.Finish (sw, ""); 
+-			Body.HandleException (sw, ""); 
++			Body.HandleException (sw, "", this.container_type.ErrorHandler); 
+ 			sw.WriteLine ("\t\t\treturn result;");
+ 		}
+ 
+@@ -152,7 +152,7 @@
+ 				Body.Initialize(gen_info, false, false, ""); 
+ 				sw.WriteLine("\t\t\t{0} = {1}({2});", container_type.AssignToName, CName, Body.GetCallString (false));
+ 				Body.Finish (sw, "");
+-				Body.HandleException (sw, "");
++				Body.HandleException (sw, "", this.container_type.ErrorHandler);
+ 			}
+ 			
+ 			sw.WriteLine("\t\t}");

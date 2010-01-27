@@ -1,0 +1,36 @@
+<!-- ##### SECTION Title ##### -->
+TnyMozEmbedHtmlMimePartView
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that can display a text/html mime part
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type that can display a text/html mime part implemented using #GtkMozEmbed
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMimePart, #TnyMimePartView
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyMozEmbedHtmlMimePartView ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION tny_moz_embed_html_mime_part_view_new ##### -->
+<para>
+
+</para>
+
+@status_callback: 
+@status_user_data: 
+@Returns: 
+
+

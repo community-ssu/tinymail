@@ -1,0 +1,67 @@
+<!-- ##### SECTION Title ##### -->
+TnyGtkFolderTreeModel
+
+<!-- ##### SECTION Short_Description ##### -->
+A tree model for folder instances
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+WARNING: this type is unfinished
+</para>
+<para>
+A #GtkTreeModel implementation for storing #TnyFolder instances.
+</para>
+<para>
+The implementation inherits the #GtkTreeStore, implements #GtkTreeModel and #TnyList
+</para>
+<para>
+It's very important to unreference the instance you will get when doing something like this:
+<programlisting>
+TnyFolder *folder;
+gtk_tree_model_get (model, &amp;iter,
+  TNY_FOLDER_TREE_MODEL_INSTANCE_COLUMN,
+  &amp;folder, -1);
+/* use folder */
+g_object_unref (G_OBJECT(folder));
+</programlisting>
+The column is indeed a G_TYPE_OBJECT column and getting it from the #GtkTreeModel will
+indeed add a reference.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO TNY_TYPE_GTK_FOLDER_TREE_MODEL_COLUMN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### STRUCT TnyGtkFolderTreeModel ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_gtk_folder_tree_model_column_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_folder_tree_model_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

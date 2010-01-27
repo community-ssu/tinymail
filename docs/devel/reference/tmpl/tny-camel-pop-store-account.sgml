@@ -1,0 +1,50 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelPOPStoreAccount
+
+<!-- ##### SECTION Short_Description ##### -->
+A POP store account type for Camel
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A POP #TnyStoreAccount implemented using Camel
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyStoreAccount, #TnyCamelStoreAccount, #TnyPOPFolder, #TnyFolder, #TnyFolderStore
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelPOPStoreAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_pop_store_account_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_camel_pop_store_account_set_leave_messages_on_server ##### -->
+<para>
+
+</para>
+
+@self: 
+@enabled: 
+
+
+<!-- ##### FUNCTION tny_camel_pop_store_account_reconnect ##### -->
+<para>
+
+</para>
+
+@self: 
+
+

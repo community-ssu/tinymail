@@ -1,0 +1,73 @@
+<!-- ##### SECTION Title ##### -->
+tny-error
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO TNY_TYPE_ERROR_DOMAIN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO TNY_TYPE_ERROR ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### TYPEDEF TError ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_error_get_message ##### -->
+<para>
+
+</para>
+
+@err: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_error_get_code ##### -->
+<para>
+
+</para>
+
+@err: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_error_domain_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_error_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

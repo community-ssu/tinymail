@@ -1,0 +1,171 @@
+
+		public System.Collections.IEnumerator GetEnumerator()
+		{
+			return (System.Collections.IEnumerator) this.CreateIterator ();
+		}
+
+
+		public object GetValue(Gtk.TreeIter iter, int column) 
+		{
+			GLib.Value val = GLib.Value.Empty;
+			GetValue (iter, column, ref val);
+			object ret = val.Val;
+			val.Dispose ();
+			return ret;
+		}
+
+		public void GetValue(Gtk.TreeIter iter, Tny.Ui.GTK.HeaderListModelColumn column, ref GLib.Value value) 
+		{
+			this.GetValue (iter, ((int) column), ref value);
+		}
+
+		public void GetValue(Gtk.TreeIter iter, Tny.Ui.GTK.AttachListModelColumn column, ref Tny.Header value) 
+		{
+			GLib.Value val = GLib.Value.Empty;
+			this.GetValue (iter, ((int) column), ref val);
+			value = (Tny.Header) val.Val;
+		}
+
+		public Tny.Header GetHeader (Gtk.TreeIter iter)
+		{
+			try {
+				Tny.Header retval;
+
+				GLib.Value val = GLib.Value.Empty;
+				GetValue (iter, Tny.Ui.GTK.HeaderListModelColumn.InstanceColumn, ref val);
+				retval = (Tny.Header) val.Val;
+				val.Dispose ();
+
+				return retval;
+			} catch {
+				return null;
+			}
+		}
+
+
+		public Tny.Header GetHeader (Gtk.TreeSelection selection)
+		{
+			Gtk.TreeIter iter;
+
+			if (selection.GetSelected (out iter)) {
+				return this.GetHeader (iter);
+			}
+
+			return null;
+		}
+
+
+		[DllImport("libgtk-win32-2.0-0.dll")]
+		static extern bool gtk_tree_model_iter_children (IntPtr raw, out Gtk.TreeIter iter, IntPtr parent);
+		public bool IterChildren (out Gtk.TreeIter iter) 
+		{
+			bool raw_ret = gtk_tree_model_iter_children (Handle, out iter, IntPtr.Zero);
+			bool ret = raw_ret;
+			return ret;
+		}
+
+		public int IterNChildren () 
+		{
+			int raw_ret = gtk_tree_model_iter_n_children (Handle, IntPtr.Zero);
+			int ret = raw_ret;
+			return ret;
+		}
+
+		[DllImport("libgtk-win32-2.0-0.dll")]
+		static extern bool gtk_tree_model_iter_nth_child (IntPtr raw, out Gtk.TreeIter iter, IntPtr parent, int n);
+		public bool IterNthChild (out Gtk.TreeIter iter, int n) 
+		{
+			bool raw_ret = gtk_tree_model_iter_nth_child (Handle, out iter, IntPtr.Zero, n);
+			bool ret = raw_ret;
+			return ret;
+		}
+
+		public void SetValue (Gtk.TreeIter iter, int column, bool value) 
+		{
+			GLib.Value val = new GLib.Value (value);
+			SetValue (iter, column, val);
+			val.Dispose ();
+		}
+
+		public void SetValue (Gtk.TreeIter iter, int column, double value) 
+		{
+			GLib.Value val = new GLib.Value (value);
+			SetValue (iter, column, val);
+			val.Dispose ();
+		}
+
+		public void SetValue (Gtk.TreeIter iter, int column, int value) 
+		{
+			GLib.Value val = new GLib.Value (value);
+			SetValue (iter, column, val);
+			val.Dispose ();
+		}
+
+		public void SetValue (Gtk.TreeIter iter, int column, string value) 
+		{
+			GLib.Value val = new GLib.Value (value);
+			SetValue (iter, column, val);
+			val.Dispose ();
+		}
+
+		public void SetValue (Gtk.TreeIter iter, int column, float value) 
+		{
+			GLib.Value val = new GLib.Value (value);
+			SetValue (iter, column, val);
+			val.Dispose ();
+		}
+
+		public void SetValue (Gtk.TreeIter iter, int column, uint value) 
+		{
+			GLib.Value val = new GLib.Value (value);
+			SetValue (iter, column, val);
+			val.Dispose ();
+		}
+		
+		public void SetValue (Gtk.TreeIter iter, int column, object value) 
+		{
+			GLib.Value val = new GLib.Value (value);
+			SetValue (iter, column, val);
+			val.Dispose ();
+		}
+
+
+		[GLib.CDeclCallback]
+		delegate void RowsReorderedSignalDelegate (IntPtr arg0, IntPtr arg1, IntPtr arg2, IntPtr arg3, IntPtr gch);
+
+		static void RowsReorderedSignalCallback (IntPtr arg0, IntPtr arg1, IntPtr arg2, IntPtr arg3, IntPtr gch)
+		{
+			Gtk.RowsReorderedArgs args = new Gtk.RowsReorderedArgs ();
+			try {
+				GLib.Signal sig = ((GCHandle) gch).Target as GLib.Signal;
+				if (sig == null)
+					throw new Exception("Unknown signal GC handle received " + gch);
+
+				Gtk.ListStore sender = GLib.Object.GetObject (arg0) as Gtk.ListStore;
+				args.Args = new object[3];
+				args.Args[0] = arg1 == IntPtr.Zero ? null : (Gtk.TreePath) GLib.Opaque.GetOpaque (arg1, typeof (Gtk.TreePath), false);
+				args.Args[1] = Gtk.TreeIter.New (arg2);
+				int child_cnt = sender.IterNChildren ();
+				int[] new_order = new int [child_cnt];
+				Marshal.Copy (arg3, new_order, 0, child_cnt);
+				args.Args[2] = new_order;
+				Gtk.RowsReorderedHandler handler = (Gtk.RowsReorderedHandler) sig.Handler;
+				handler (sender, args);
+			} catch (Exception e) {
+				GLib.ExceptionManager.RaiseUnhandledException (e, false);
+			}
+		}
+
+
+		[GLib.Signal("rows_reordered")]
+		public event Gtk.RowsReorderedHandler RowsReordered {
+			add {
+				GLib.Signal sig = GLib.Signal.Lookup (this, "rows_reordered", new RowsReorderedSignalDelegate(RowsReorderedSignalCallback));
+				sig.AddDelegate (value);
+			}
+			remove {
+				GLib.Signal sig = GLib.Signal.Lookup (this, "rows_reordered", new RowsReorderedSignalDelegate(RowsReorderedSignalCallback));
+				sig.RemoveDelegate (value);
+			}
+		}
+

@@ -1,0 +1,35 @@
+<!-- ##### SECTION Title ##### -->
+TnyGtkImageMimePartView
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyGtkImageMimePartView ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_gtk_image_mime_part_view_new ##### -->
+<para>
+
+</para>
+
+@status_callback: 
+@status_user_data: 
+@Returns: 
+
+

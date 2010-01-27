@@ -1,0 +1,9 @@
+camel-lite-provider-1.2.pc
+Makefile
+.svnignore
+camel-lite-provider.pc
+camel-lite-1.2.pc
+Makefile.in
+.deps
+.libs
+camel-lite.pc

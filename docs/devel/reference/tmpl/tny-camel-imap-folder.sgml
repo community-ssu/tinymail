@@ -1,0 +1,25 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelIMAPFolder
+
+<!-- ##### SECTION Short_Description ##### -->
+A IMAP folder type for Camel
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A IMAP #TnyFolder implementation for Camel
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyFolder, #TnyCamelFolder
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelIMAPFolder ##### -->
+<para>
+
+</para>
+
+

@@ -1,0 +1,79 @@
+<!-- ##### SECTION Title ##### -->
+TnyFolderStats
+
+<!-- ##### SECTION Short_Description ##### -->
+A stats object about a folder
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A object with some statistical information about a TnyFolder
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyFolderStats ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_folder_stats_new ##### -->
+<para>
+
+</para>
+
+@folder: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_stats_get_unread_count ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_stats_get_all_count ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_stats_get_local_size ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_stats_set_local_size ##### -->
+<para>
+
+</para>
+
+@self: 
+@local_size: 
+
+
+<!-- ##### FUNCTION tny_folder_stats_get_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

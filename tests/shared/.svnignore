@@ -1,0 +1,6 @@
+libtestsshared.a
+Makefile.in
+.svnignore
+Makefile
+.deps
+.libs

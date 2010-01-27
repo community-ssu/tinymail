@@ -1,0 +1,17 @@
+folder-remove
+account-refresh
+anything
+msg-sender
+msg-transfer
+folder-transfer
+folder-lister-async
+tags
+Makefile.in
+folder-lister
+.svnignore
+stamp-h1
+config.h
+.libs
+.deps
+Makefile
+folder-transfer

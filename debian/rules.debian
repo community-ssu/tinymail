@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/autotools.mk
+
+CFLAGS += -fPIC
+
+make-orig-source: TMPNAME:=$(shell mktemp -d)
+make-orig-source: DATE:=$(shell date --iso)
+make-orig-source: UPSTREAMVER:=0~svn-$(DATE)
+make-orig-source:
+	-make -f debian/rules make-orig-source-internal TMPNAME=$(TMPNAME) DATE=$(DATE) UPSTREAMVER=$(UPSTREAMVER)
+	-rm -rf $(TMPNAME)
+	rm $(CURDIR)/debian/make-orig-source-internal-temp.stamp \
+	  || (echo "Making the Debian source package failed, see above" ; \
+	      false)
+
+make-orig-source-internal:
+	echo -e "Source: tinymail\nBuild-Depends: subversion, autoconf, automake1.9, autotools-dev, libtool, gtk-doc-tools (>= 1.0), libglib2.0-dev (>= 2.6), gnome-common, devscripts, fakeroot\n\nPackage: tinymail\n" | dpkg-checkbuilddeps -
+	svn export . $(TMPNAME)/tinymail-$(UPSTREAMVER)
+	cd $(TMPNAME)/tinymail-$(UPSTREAMVER) && NOCONFIGURE=1 ./autogen.sh
+	cd $(TMPNAME) && tar czf tinymail_$(UPSTREAMVER).orig.tar.gz --exclude tinymail-$(UPSTREAMVER)/debian tinymail-$(UPSTREAMVER)
+	cd $(TMPNAME)/tinymail-$(UPSTREAMVER) && dch -bv $(UPSTREAMVER)-1 "Exported from SVN on $(DATE)"
+	cd $(TMPNAME)/tinymail-$(UPSTREAMVER) && dpkg-buildpackage -rfakeroot -S -uc -us && \
+	cd $(TMPNAME) && mv *.diff.gz *.dsc *.orig.tar.gz $(CURDIR)/
+	touch $(CURDIR)/debian/make-orig-source-internal-temp.stamp
+
+.PHONY: make-orig-source make-orig-source-internal

@@ -1,0 +1,269 @@
+<!-- ##### SECTION Title ##### -->
+Enumerations for tinymail
+
+<!-- ##### SECTION Short_Description ##### -->
+Enumerations for tinymail
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+Enumerations for tinymail
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyHeader, #TnyAccountStore, #TnyAccount, #TnyDevice, #TnyFolder, #TnyFolderStore
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### ENUM TnyStatusCode ##### -->
+<para>
+
+</para>
+
+@TNY_FOLDER_STATUS_CODE_REFRESH: a status that occurs while a folder is being refreshed
+@TNY_FOLDER_STATUS_CODE_GET_MSG: a status that occurs while a message is being downloaded
+@TNY_GET_MSG_QUEUE_STATUS_GET_MSG: 
+@TNY_FOLDER_STATUS_CODE_XFER_MSGS: 
+@TNY_FOLDER_STATUS_CODE_COPY_FOLDER: 
+@TNY_GET_SUPPORTED_SECURE_AUTH_STATUS_GET_SECURE_AUTH: 
+@TNY_FOLDER_STATUS_CODE_SYNC: 
+
+<!-- ##### ENUM TnyStatusDomain ##### -->
+<para>
+
+</para>
+
+@TNY_FOLDER_STATUS: a status domain code for folder
+@TNY_GET_MSG_QUEUE_STATUS: 
+@TNY_GET_SUPPORTED_SECURE_AUTH_STATUS: 
+
+<!-- ##### ENUM TnyFolderCaps ##### -->
+<para>
+
+</para>
+
+@TNY_FOLDER_CAPS_WRITABLE: indicates that the folder is writable
+@TNY_FOLDER_CAPS_PUSHEMAIL: indicates that the folder supports Push E-mail
+
+<!-- ##### ENUM TnyFolderChangeChanged ##### -->
+<para>
+
+</para>
+
+@TNY_FOLDER_CHANGE_CHANGED_ALL_COUNT: indicates that the total count of the folder got changed
+@TNY_FOLDER_CHANGE_CHANGED_UNREAD_COUNT: indicates that the unread count of the folder got changed
+@TNY_FOLDER_CHANGE_CHANGED_ADDED_HEADERS: indicates that a summary item or header got added (that a message got added, this is a typical Push E-mail event)
+@TNY_FOLDER_CHANGE_CHANGED_EXPUNGED_HEADERS: 
+@TNY_FOLDER_CHANGE_CHANGED_FOLDER_RENAME: indicates that the folder got renamed
+@TNY_FOLDER_CHANGE_CHANGED_MSG_RECEIVED: 
+
+<!-- ##### ENUM TnyFolderStoreChangeChanged ##### -->
+<para>
+
+</para>
+
+@TNY_FOLDER_STORE_CHANGE_CHANGED_CREATED_FOLDERS: indicates that a folder got created in the store
+@TNY_FOLDER_STORE_CHANGE_CHANGED_REMOVED_FOLDERS: indicates that a folder got removed from the store
+
+<!-- ##### ENUM TnyErrorDomain ##### -->
+<para>
+
+</para>
+
+@TNY_FOLDER_ERROR: An error domain for errors that occured with a folder
+@TNY_FOLDER_STORE_ERROR: An error domain for errors that occured with a folder store
+@TNY_TRANSPORT_ACCOUNT_ERROR: An error domain for errors that occured with a transport account
+@TNY_ACCOUNT_ERROR: An error domain for errors that occured with a account
+@TNY_ACCOUNT_STORE_ERROR: 
+@TNY_SEND_QUEUE_ERROR: 
+
+<!-- ##### ENUM TnyError ##### -->
+<para>
+
+</para>
+
+@TNY_ERROR_UNSPEC: An unspecified error occured
+@TNY_FOLDER_ERROR_SYNC: 
+@TNY_FOLDER_ERROR_REMOVE_MSG: An error that occured while removing a message
+@TNY_FOLDER_ERROR_ADD_MSG: An error that occured while adding a message
+@TNY_FOLDER_ERROR_REFRESH: An error that occured while refreshing a folder
+@TNY_FOLDER_ERROR_GET_MSG: An error that occured while getting a message
+@TNY_FOLDER_ERROR_TRANSFER_MSGS: An error that occured while transfering a message
+@TNY_FOLDER_ERROR_SET_NAME: An error that occured while renaming a folder
+@TNY_FOLDER_ERROR_COPY: An error that occured while copying a folder
+@TNY_FOLDER_STORE_ERROR_REMOVE_FOLDER: An error that occured while removing a folder
+@TNY_FOLDER_STORE_ERROR_GET_FOLDERS: An error that occured while getting folders
+@TNY_FOLDER_STORE_ERROR_CREATE_FOLDER: An error that occured while creating a folder
+@TNY_TRANSPORT_ACCOUNT_ERROR_SEND: An error that occured while sending a message
+@TNY_TRANSPORT_ACCOUNT_ERROR_SEND_HOST_LOOKUP_FAILED: 
+@TNY_TRANSPORT_ACCOUNT_ERROR_SEND_SERVICE_UNAVAILABLE: 
+@TNY_TRANSPORT_ACCOUNT_ERROR_SEND_AUTHENTICATION_NOT_SUPPORTED: 
+@TNY_TRANSPORT_ACCOUNT_ERROR_SEND_USER_CANCEL: 
+@TNY_ACCOUNT_ERROR_TRY_CONNECT: An error that occured while trying to connect to an account
+@TNY_ACCOUNT_ERROR_TRY_CONNECT_HOST_LOOKUP_FAILED: 
+@TNY_ACCOUNT_ERROR_TRY_CONNECT_SERVICE_UNAVAILABLE: 
+@TNY_ACCOUNT_ERROR_TRY_CONNECT_AUTHENTICATION_NOT_SUPPORTED: 
+@TNY_ACCOUNT_ERROR_TRY_CONNECT_CERTIFICATE: 
+@TNY_ACCOUNT_ERROR_TRY_CONNECT_USER_CANCEL: 
+@TNY_ACCOUNT_STORE_ERROR_UNKNOWN_ALERT: 
+@TNY_ACCOUNT_ERROR_GET_SUPPORTED_AUTH: 
+@TNY_SEND_QUEUE_ERROR_ADD: 
+@TNY_ACCOUNT_STORE_ERROR_CANCEL_ALERT: 
+@TNY_FOLDER_ERROR_REMOVE_MSGS: 
+
+<!-- ##### ENUM TnyAccountType ##### -->
+<para>
+
+</para>
+
+@TNY_ACCOUNT_TYPE_STORE: A account that can store folders and messages
+@TNY_ACCOUNT_TYPE_TRANSPORT: A account that can send and messages (transfer them)
+@TNY_ACCOUNT_TYPE_COMBINED: 
+
+<!-- ##### ENUM TnyAccountSignal ##### -->
+<para>
+
+</para>
+
+@TNY_ACCOUNT_CONNECTION_STATUS_CHANGED: 
+@TNY_ACCOUNT_LAST_SIGNAL: 
+
+<!-- ##### ENUM TnyConnectionStatus ##### -->
+<para>
+
+</para>
+
+@TNY_CONNECTION_STATUS_DISCONNECTED: 
+@TNY_CONNECTION_STATUS_DISCONNECTED_BROKEN: 
+@TNY_CONNECTION_STATUS_CONNECTED_BROKEN: 
+@TNY_CONNECTION_STATUS_CONNECTED: 
+@TNY_CONNECTION_STATUS_RECONNECTING: 
+@TNY_CONNECTION_STATUS_INIT: 
+
+<!-- ##### ENUM TnyAccountStoreSignal ##### -->
+<para>
+
+</para>
+
+@TNY_ACCOUNT_STORE_ACCOUNT_CHANGED: An account has been changed
+@TNY_ACCOUNT_STORE_ACCOUNT_INSERTED: An account was inserted
+@TNY_ACCOUNT_STORE_ACCOUNT_REMOVED: An account was removed
+@TNY_ACCOUNT_STORE_ACCOUNTS_RELOADED: The accounts got reloaded
+@TNY_ACCOUNT_STORE_CONNECTING_STARTED: 
+@TNY_ACCOUNT_STORE_CONNECTING_FINISHED: 
+@TNY_ACCOUNT_STORE_LAST_SIGNAL: Number of signals
+
+<!-- ##### ENUM TnyAlertType ##### -->
+<para>
+
+</para>
+
+@TNY_ALERT_TYPE_INFO: A informative alert
+@TNY_ALERT_TYPE_WARNING: A warning alert
+@TNY_ALERT_TYPE_ERROR: An error alert
+
+<!-- ##### ENUM TnyGetAccountsRequestType ##### -->
+<para>
+
+</para>
+
+@TNY_ACCOUNT_STORE_TRANSPORT_ACCOUNTS: Get only the transport accounts
+@TNY_ACCOUNT_STORE_STORE_ACCOUNTS: Get only the store accounts
+@TNY_ACCOUNT_STORE_BOTH: Get both the transport and the store accounts
+
+<!-- ##### ENUM TnyDeviceSignal ##### -->
+<para>
+
+</para>
+
+@TNY_DEVICE_CONNECTION_CHANGED: The connectivity status of the device changed
+@TNY_DEVICE_LAST_SIGNAL: Number of signals
+
+<!-- ##### ENUM TnyFolderSignal ##### -->
+<para>
+
+</para>
+
+@TNY_FOLDER_FOLDER_INSERTED: A child-folder got inserted
+@TNY_FOLDER_FOLDERS_RELOADED: The child-folders got reloaded
+@TNY_FOLDER_LAST_SIGNAL: Number of signals
+
+<!-- ##### ENUM TnyFolderStoreQueryOption ##### -->
+<para>
+
+</para>
+
+@TNY_FOLDER_STORE_QUERY_OPTION_SUBSCRIBED: Only subscribed folders will match this query
+@TNY_FOLDER_STORE_QUERY_OPTION_MATCH_ON_NAME: Only folders that will match the pattern on folder name will match this query
+@TNY_FOLDER_STORE_QUERY_OPTION_MATCH_ON_ID: Only folders that wil match the pattern on folder id will match this query
+
+<!-- ##### ENUM TnyHeaderFlags ##### -->
+<para>
+When defining new flags, please stay below 1&lt;&lt;12. Starting 1&lt;&lt;12 is being used internally (and you would overwrite that,
+which can cause severe defects like crashes and memory leaks). You are rather advised not to add any new flags unless
+there is really no other way to achieve what you are trying to do (and then still, consider talking to the tinymail
+framework developers about simply getting your "special" cool flag added to tinymail itself).
+</para>
+
+@TNY_HEADER_FLAG_ANSWERED: The messages was answered
+@TNY_HEADER_FLAG_DELETED: The messages is deleted, launching the expunge will wipe it
+@TNY_HEADER_FLAG_DRAFT: The message is a draft
+@TNY_HEADER_FLAG_FLAGGED: The message is flagged
+@TNY_HEADER_FLAG_SEEN: The message is seen
+@TNY_HEADER_FLAG_ATTACHMENTS: The message has attachments
+@TNY_HEADER_FLAG_CACHED: The message is cached
+@TNY_HEADER_FLAG_PARTIAL: The message is retrieved partially
+@TNY_HEADER_FLAG_EXPUNGED: The message got expunged and therefore is the header instance invalid
+@TNY_HEADER_FLAG_PRIORITY: Priority information is available, use the TnyHeaderPriorityFlags type as mask
+
+<!-- ##### ENUM TnyHeaderPriorityFlags ##### -->
+<para>
+
+</para>
+
+@TNY_HEADER_FLAG_HIGH_PRIORITY: 
+@TNY_HEADER_FLAG_NORMAL_PRIORITY: 
+@TNY_HEADER_FLAG_LOW_PRIORITY: 
+@TNY_HEADER_FLAG_SUSPENDED_PRIORITY: 
+
+<!-- ##### ENUM TnyFolderType ##### -->
+<para>
+
+</para>
+
+@TNY_FOLDER_TYPE_UNKNOWN: The type is unknown
+@TNY_FOLDER_TYPE_NORMAL: The folder type is a normal folder
+@TNY_FOLDER_TYPE_INBOX: The folder type is a INBOX folder
+@TNY_FOLDER_TYPE_OUTBOX: The folder type is an OUTBOX folder
+@TNY_FOLDER_TYPE_TRASH: The folder type is a TRASH folder
+@TNY_FOLDER_TYPE_JUNK: The folder type is a JUNK folder
+@TNY_FOLDER_TYPE_SENT: The folder type is a SENT folder
+@TNY_FOLDER_TYPE_ROOT: The folder type is a #TnyAccount that contains this folder (used for the #TnyGtkAccountTreeModel)
+@TNY_FOLDER_TYPE_NOTES: 
+@TNY_FOLDER_TYPE_DRAFTS: 
+@TNY_FOLDER_TYPE_CONTACTS: 
+@TNY_FOLDER_TYPE_CALENDAR: 
+@TNY_FOLDER_TYPE_ARCHIVE: 
+@TNY_FOLDER_TYPE_MERGE: 
+@TNY_FOLDER_TYPE_NUM: 
+
+<!-- ##### ENUM TnySendQueueSignal ##### -->
+<para>
+
+</para>
+
+@TNY_SEND_QUEUE_MSG_SENDING: 
+@TNY_SEND_QUEUE_MSG_SENT: 
+@TNY_SEND_QUEUE_ERROR_HAPPENED: 
+@TNY_SEND_QUEUE_LAST_SIGNAL: 
+
+<!-- ##### ENUM TnyStoreAccountSignal ##### -->
+<para>
+
+</para>
+
+@TNY_STORE_ACCOUNT_SUBSCRIPTION_CHANGED: 
+@TNY_STORE_ACCOUNT_LAST_SIGNAL: 
+

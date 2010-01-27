@@ -1,0 +1,43 @@
+<!-- ##### SECTION Title ##### -->
+TnyGtkTextBufferStream
+
+<!-- ##### SECTION Short_Description ##### -->
+An adaptor between #TnyStream and #GtkTextBuffer
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyStream implementation that adapts a #GtkTextBuffer.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#GtkTextBuffer, #TnyStream, #TnyMsgView, #TnyGtkMsgView
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyGtkTextBufferStream ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_gtk_text_buffer_stream_new ##### -->
+<para>
+
+</para>
+
+@buffer: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_text_buffer_stream_set_text_buffer ##### -->
+<para>
+
+</para>
+
+@self: 
+@buffer: 
+
+

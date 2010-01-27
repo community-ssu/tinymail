@@ -1,0 +1,49 @@
+<!-- ##### SECTION Title ##### -->
+TnyMozEmbedStream
+
+<!-- ##### SECTION Short_Description ##### -->
+A stream that updates a mozembed msg view type
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+This type is internally used by the #TnyMozEmbedMsgView implementation of #TnyMsgView
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMozEmbedMsgView, #TnyMsgView, #GtkMozEmbed, #TnyStream
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyMozEmbedStreamPriv ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMozEmbedStream ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_moz_embed_stream_new ##### -->
+<para>
+
+</para>
+
+@embed: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_moz_embed_stream_set_moz_embed ##### -->
+<para>
+
+</para>
+
+@self: 
+@embed: 
+
+

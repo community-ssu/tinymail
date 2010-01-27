@@ -1,0 +1,25 @@
+How to use Vala bindings
+------------------------
+
+There is a small example in tinymail/tests/vala-demo. You can compile your
+own Vala tinymail application as follows:
+
+	valac --pkg libtinymail-gnome-desktop-1.0 -o mymail mymail.vala
+
+
+How to regenerate Vala bindings
+-------------------------------
+
+ * Install most recent vala release or vala svn
+ * Build and install tinymail
+
+ * Change the current working directory to tinymail/bindings/vala
+ * Generate .gi and .vapi files:
+
+for library in libtinymail-1.0 libtinymail-camel-1.0 libtinymailui-1.0 \
+               libtinymailui-gtk-1.0 libtinymail-gnome-desktop-1.0
+do
+	vala-gen-introspect $library $library
+	vapigen --vapidir . --library $library $library/$library.gi
+done
+

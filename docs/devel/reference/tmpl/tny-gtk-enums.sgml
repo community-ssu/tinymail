@@ -1,0 +1,66 @@
+<!-- ##### SECTION Title ##### -->
+Enumerations for the Gtk+ tree models
+
+<!-- ##### SECTION Short_Description ##### -->
+Enumerations for the Gtk+ tree models
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+Enumerations for the Gtk+ tree models
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyGtkHeaderListModel, #TnyGtkAttachListModel, #TnyGtkAccountTreeModel
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### ENUM TnyGtkHeaderListModelColumn ##### -->
+<para>
+
+</para>
+
+@TNY_GTK_HEADER_LIST_MODEL_FROM_COLUMN: The from header
+@TNY_GTK_HEADER_LIST_MODEL_TO_COLUMN: The to header
+@TNY_GTK_HEADER_LIST_MODEL_SUBJECT_COLUMN: The subject header
+@TNY_GTK_HEADER_LIST_MODEL_CC_COLUMN: The cc header
+@TNY_GTK_HEADER_LIST_MODEL_DATE_SENT_COLUMN: The date-sent header as a string
+@TNY_GTK_HEADER_LIST_MODEL_DATE_RECEIVED_TIME_T_COLUMN: The date-received header as a time_t
+@TNY_GTK_HEADER_LIST_MODEL_DATE_SENT_TIME_T_COLUMN: The date-sent header as a time_t
+@TNY_GTK_HEADER_LIST_MODEL_DATE_RECEIVED_COLUMN: The date-received header as a string
+@TNY_GTK_HEADER_LIST_MODEL_INSTANCE_COLUMN: The instance column (typically invisible), make sure that you unref instances you get from this folder if you use gtk_tree_model_get
+@TNY_GTK_HEADER_LIST_MODEL_FLAGS_COLUMN: The flags of the message (unread status, also checkout #TnyHeaderFlags)
+@TNY_GTK_HEADER_LIST_MODEL_N_COLUMNS: The amount of available columns
+
+<!-- ##### ENUM TnyGtkAttachListModelColumn ##### -->
+<para>
+
+</para>
+
+@TNY_GTK_ATTACH_LIST_MODEL_PIXBUF_COLUMN: The icon for the attachment. Typically an icon representing the mime-part or a preview icon
+@TNY_GTK_ATTACH_LIST_MODEL_FILENAME_COLUMN: The filename of the attachment
+@TNY_GTK_ATTACH_LIST_MODEL_INSTANCE_COLUMN: The mime-part instance, make sure that you unref instances you get from this folder if you use gtk_tree_model_get
+@TNY_GTK_ATTACH_LIST_MODEL_N_COLUMNS: The amount of available columns
+
+<!-- ##### ENUM TnyGtkFolderStoreTreeModelColumn ##### -->
+<para>
+
+</para>
+
+@TNY_GTK_FOLDER_STORE_TREE_MODEL_NAME_COLUMN: 
+@TNY_GTK_FOLDER_STORE_TREE_MODEL_UNREAD_COLUMN: 
+@TNY_GTK_FOLDER_STORE_TREE_MODEL_TYPE_COLUMN: 
+@TNY_GTK_FOLDER_STORE_TREE_MODEL_INSTANCE_COLUMN: 
+@TNY_GTK_FOLDER_STORE_TREE_MODEL_N_COLUMNS: 
+
+<!-- ##### ENUM TnyGtkAccountListModelColumn ##### -->
+<para>
+
+</para>
+
+@TNY_GTK_ACCOUNT_LIST_MODEL_NAME_COLUMN: Account-name
+@TNY_GTK_ACCOUNT_LIST_MODEL_INSTANCE_COLUMN: Always a #TnyAccount instance
+@TNY_GTK_ACCOUNT_LIST_MODEL_N_COLUMNS: Amount of available columns
+

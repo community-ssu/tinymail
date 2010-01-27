@@ -1,0 +1,68 @@
+When adding requirements here:
+
+  * Please be brief about the build procedure. Try to refer to building.txt
+    for build procedures
+
+  * Try to get as much features as possible documented and working on the
+    host. Specifiy when, how and where you can choose (network manager,
+    GtkMozEmbed, Python bindings, etc, etc)
+
+  * Don't forget packages that are not pulled by the package management
+    automatically (for example of there's no package management on the
+    platform)
+
+Debian based distributions (Ubuntu, Debian etc)
+-----------------------------------------------
+The easiest way to build tinymail is to use the Debian package builder. There
+are several ways to do that, but a common way is to run:
+    dpkg-buildpackage -rfakeroot
+If you don't have dpkg-buildpackage, install dpkg-dev. This command if
+you have any missing dependencies. Install dependency $DEP with root command
+    apt-get install $DEP
+
+Before you can build the first time, you must choose the control file for your
+distribution. The control files have names debian/control.debian-unstable,
+debian/control.ubuntu-edgy and so on. If you run Debian Unstable, link with
+    ln -s debian/control.debian-unstable debian/control
+You must do something similar with the rules file
+    ln -s debian/rules.debian debian/rules
+And you must also make sure ./autogen.sh is run the first time after checkout
+from svn.
+
+All Debian specific files reside in debian/.
+
+Ubuntu Edgy, Dapper, etc etc
+----------------------------
+On a standard Ubuntu Edgy or Dapper all you have to do to get yourself a more
+or less interesting tinymail (interesting in terms of enabled components) is
+the following apt-get:
+
+apt-get install gnome-devel firefox-dev libnm-glib-dev subversion \
+	automake1.9 autoconf2.13 autotools-dev gnome-common
+
+mkdir -p $HOME/repos/tinymail/
+cd $HOME/repos/tinymail/
+svn co https://svn.tinymail.org/svn/tinymail
+cd tinymail/trunk
+./autogen.sh --prefix=/opt/tinymail
+make
+make install
+
+If you also want to build the Python bindings, install python-gtk2-dev python-dev
+add --enable-python-bindings to the autogen.sh line.
+
+If you also want to build the .NET bindings, read bindings/dotnet/README. You'll
+need to checkout gtk-sharp and apply two patches, then rebuild it and install it
+in for example /opt/gtk-sharp. It's possible that the patches have been accepted
+upstream by the time that you read this.
+
+If you also want to (re)build the Vala bindings, you'll need vapigen and valac,
+for more information check the README file in bindings/vala/README
+
+Redhat, Fedora, etc etc
+-----------------------
+TODO
+
+Insert other distro here, etc
+-----------------------------
+TODO

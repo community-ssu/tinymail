@@ -1,0 +1,71 @@
+<!-- ##### SECTION Title ##### -->
+TnyPair
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that has a name and a value property
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type that has a name and a valye property. For example a single header line of a mime part
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMimePart
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyPair ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_pair_new ##### -->
+<para>
+
+</para>
+
+@name: 
+@value: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_pair_set_name ##### -->
+<para>
+
+</para>
+
+@self: 
+@name: 
+
+
+<!-- ##### FUNCTION tny_pair_get_name ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_pair_set_value ##### -->
+<para>
+
+</para>
+
+@self: 
+@value: 
+
+
+<!-- ##### FUNCTION tny_pair_get_value ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

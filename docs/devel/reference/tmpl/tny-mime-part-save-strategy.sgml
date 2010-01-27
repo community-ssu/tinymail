@@ -1,0 +1,43 @@
+<!-- ##### SECTION Title ##### -->
+TnyMimePartSaveStrategy
+
+<!-- ##### SECTION Short_Description ##### -->
+A strategy for saving a mime part
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type typically used by a #TnyMsgView implementation for saving a #TnyMimePart or a #TnyMsg 
+(which inherits from #TnyMimePart) to a file.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMsgView, #TnyMimePart, #TnyMsg
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyMimePartSaveStrategy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMimePartSaveStrategyIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@perform_save: 
+
+<!-- ##### FUNCTION tny_mime_part_save_strategy_perform_save ##### -->
+<para>
+
+</para>
+
+@self: 
+@part: 
+
+

@@ -1,0 +1,27 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=test-conic-initial-signal
+Comment=mcen_ap_name_thumb
+Exec=/usr/bin/test-conic-initial-signal
+
+# X-Osso-Service=com.nokia.modest
+# X-Osso-Type=application/x-executable
+
+Icon=qgn_list_messagin
+X-Window-Icon=qgn_list_messagin
+X-Window-Icon-Dimmed=qgn_list_messagin
+
+StartupWMClass=test-conic-initial-signal
+
+MimeType=application/x-executable;
+
+#
+# below to be activated when dbus/send to functionality works
+#
+# X-Osso-URI-Actions=mailto;
+# [X-Osso-URI-Action Handler mailto]
+# Method=MailTo
+# Name=uri_link_compose_email
+# TranslationDomain=osso-uri

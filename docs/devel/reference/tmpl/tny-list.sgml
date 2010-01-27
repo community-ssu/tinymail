@@ -1,0 +1,125 @@
+<!-- ##### SECTION Title ##### -->
+TnyList
+
+<!-- ##### SECTION Short_Description ##### -->
+A list type
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+An iteratable list type
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyIterator
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyList ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyListIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_length: 
+@prepend: 
+@append: 
+@remove: 
+@foreach: 
+@copy: 
+@create_iterator: 
+@remove_matches: 
+
+<!-- ##### USER_FUNCTION TnyListMatcher ##### -->
+<para>
+
+</para>
+
+@list: 
+@item: 
+@match_data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_list_get_length ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_list_prepend ##### -->
+<para>
+
+</para>
+
+@self: 
+@item: 
+
+
+<!-- ##### FUNCTION tny_list_append ##### -->
+<para>
+
+</para>
+
+@self: 
+@item: 
+
+
+<!-- ##### FUNCTION tny_list_remove ##### -->
+<para>
+
+</para>
+
+@self: 
+@item: 
+
+
+<!-- ##### FUNCTION tny_list_foreach ##### -->
+<para>
+
+</para>
+
+@self: 
+@func: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_list_create_iterator ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_list_copy ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_list_remove_matches ##### -->
+<para>
+
+</para>
+
+@self: 
+@matcher: 
+@match_data: 
+
+

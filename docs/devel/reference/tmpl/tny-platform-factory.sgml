@@ -1,0 +1,92 @@
+<!-- ##### SECTION Title ##### -->
+TnyPlatformFactory
+
+<!-- ##### SECTION Short_Description ##### -->
+A factory that returns implementations for a platform
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A factory type that returns specific implementations for a specific platform.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyDevice, #TnyMsgView, #TnySaveStrategy, #TnyAccountStore
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyPlatformFactory ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyPlatformFactoryIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@new_account_store: 
+@new_device: 
+@new_msg_view: 
+@new_msg: 
+@new_mime_part: 
+@new_password_getter: 
+
+<!-- ##### FUNCTION tny_platform_factory_new_account_store ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_platform_factory_new_device ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_platform_factory_new_msg_view ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_platform_factory_new_msg ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_platform_factory_new_mime_part ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_platform_factory_new_password_getter ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

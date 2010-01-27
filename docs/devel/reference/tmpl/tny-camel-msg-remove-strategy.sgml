@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelMsgRemoveStrategy
+
+<!-- ##### SECTION Short_Description ##### -->
+A default implementation for removing a message
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A default implementation for #TnyMsgRemoveStrategy which is a delegate for removing a message from a #TnyFolder implementation. Like the #TnyCamelFolder one.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMsgRemoveStrategy, #TnyFolder, #TnyMsg, #TnyHeader, #TnyCamelFolder
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelMsgRemoveStrategy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_msg_remove_strategy_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

@@ -1,0 +1,73 @@
+<!-- ##### SECTION Title ##### -->
+tny-connection-policy
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyConnectionPolicy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyConnectionPolicyIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@on_connect: 
+@on_connection_broken: 
+@on_disconnect: 
+@set_current: 
+
+<!-- ##### FUNCTION tny_connection_policy_on_connect ##### -->
+<para>
+
+</para>
+
+@self: 
+@account: 
+
+
+<!-- ##### FUNCTION tny_connection_policy_on_disconnect ##### -->
+<para>
+
+</para>
+
+@self: 
+@account: 
+
+
+<!-- ##### FUNCTION tny_connection_policy_on_connection_broken ##### -->
+<para>
+
+</para>
+
+@self: 
+@account: 
+
+
+<!-- ##### FUNCTION tny_connection_policy_set_current ##### -->
+<para>
+
+</para>
+
+@self: 
+@account: 
+@folder: 
+
+

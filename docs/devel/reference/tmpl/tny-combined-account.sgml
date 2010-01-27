@@ -1,0 +1,53 @@
+<!-- ##### SECTION Title ##### -->
+TnyCombinedAccount
+
+<!-- ##### SECTION Short_Description ##### -->
+A account type that can combine a store and a transport account
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyAccount implementation that decorates a #TnyStoreAccount and a #TnyTransportAccount
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCombinedAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_combined_account_new ##### -->
+<para>
+
+</para>
+
+@ta: 
+@sa: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_combined_account_get_transport_account ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_combined_account_get_store_account ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

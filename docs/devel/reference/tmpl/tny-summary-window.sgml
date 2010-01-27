@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnySummaryWindow
+
+<!-- ##### SECTION Short_Description ##### -->
+A type for displaying the summary of a folder
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type for displaying the summary of a folder
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnySummaryWindow ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION tny_summary_window_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

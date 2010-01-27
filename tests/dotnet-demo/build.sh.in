@@ -1,0 +1,14 @@
+
+export PKG_CONFIG_PATH=/opt/gtk-sharp/lib/pkgconfig:@prefix@/lib/pkgconfig
+export LD_LIBRARY_PATH=@prefix@/lib/:/opt/gtk-sharp/lib/
+export MONO_PATH=/opt/gtk-sharp/lib/mono/gtk-sharp-2.0/:\
+@prefix@/lib/mono/libtinymail-sharp-1.0/:\
+@prefix@/lib/mono/libtinymailui-sharp-1.0/:\
+@prefix@/lib/mono/libtinymailui-gtk-sharp-1.0/:\
+@prefix@/lib/mono/libtinymail-camel-sharp-1.0/:\
+@prefix@/lib/mono/libtinymail-platform-sharp-1.0/
+
+mcs -r:Mono.Posix.dll -pkg:libtinymail-platform-sharp-1.0 *cs gtk-gui/*.cs -resource:gtk-gui/gui.stetic -o dotnet-demo.exe
+
+mono dotnet-demo.exe
+

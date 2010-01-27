@@ -1,0 +1,43 @@
+<!-- ##### SECTION Title ##### -->
+TnyMaemoAccountStore
+
+<!-- ##### SECTION Short_Description ##### -->
+A account store type for Maemo devices
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyAccountStore implementation for Maemo devices
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyAccountStore
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyMaemoAccountStore ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION tny_maemo_account_store_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_maemo_account_store_get_session ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

@@ -1,0 +1,15 @@
+<gapi-parser-input>
+
+  <api filename="@top_builddir@/bindings/dotnet/tny/libtinymail-api.raw">
+    <library name="libtinymail-@API_VERSION@.dll">
+      <namespace name="Tny">
+        <directory path="@top_srcdir@/libtinymail/">
+	        <exclude>tny-common-priv.h</exclude>
+		<exclude>tny-simple-list-iterator-priv.h</exclude>
+		<exclude>tny-simple-list-priv.h</exclude>
+	</directory>
+      </namespace>
+    </library>
+  </api>
+
+</gapi-parser-input>

@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnySimpleList
+
+<!-- ##### SECTION Short_Description ##### -->
+A simple list implementation
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A simple list implementation that uses a #GList (a doubly linked list) internally
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyList, #GList
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnySimpleList ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_simple_list_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

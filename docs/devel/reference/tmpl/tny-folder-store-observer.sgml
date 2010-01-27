@@ -1,0 +1,42 @@
+<!-- ##### SECTION Title ##### -->
+TnyFolderStoreObserver
+
+<!-- ##### SECTION Short_Description ##### -->
+A type for observing changes to a folder store
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type that observes changes that happen to a #TnyFolderStore
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyFolderStoreObserver ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderStoreObserverIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@update: 
+
+<!-- ##### FUNCTION tny_folder_store_observer_update ##### -->
+<para>
+
+</para>
+
+@self: 
+@change: 
+
+

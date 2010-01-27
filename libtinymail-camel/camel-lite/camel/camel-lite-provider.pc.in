@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+camel_lite_providerdir=@camel_lite_providerdir@
+
+Name: camel-lite-provider
+Requires: camel-lite-1.2
+Description: A light mail access library
+Version: 1.2
+Libs: -L${libdir} -lcamel-lite-1.2
+Cflags: -I${includedir}/camel-lite -I${includedir}/libedataserver-lite

@@ -1,0 +1,36 @@
+<!-- ##### SECTION Title ##### -->
+TnyTestStream
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyTestStream ##### -->
+<para>
+
+</para>
+
+@parent: 
+@eos_count: 
+@wrote: 
+
+<!-- ##### FUNCTION tny_test_stream_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

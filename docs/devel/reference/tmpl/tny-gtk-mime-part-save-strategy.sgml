@@ -1,0 +1,42 @@
+<!-- ##### SECTION Title ##### -->
+TnyGtkMimePartSaveStrategy
+
+<!-- ##### SECTION Short_Description ##### -->
+A strategy for saving a mime part using Gtk+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A strategy type, used by a #TnyMsgView implementation, that uses Gtk+ 
+for saving a #TnyMimePart instance. It will for example instantiate 
+a #GtkFileChooserDialog instance for asking the user where to put the file.
+</para><para>
+If the library is compiled with gnome features, it will use the
+#TnyVfsStream for GnomeVFS support. If not, it will
+use a #TnyFsStream #TnyStream implementation for saving to a
+normal file descriptor.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnySaveStrategy, #TnyMimePart, #TnyMsgView, #GtkFileChooserDialog, #TnyVfsStream, #TnyFsStream, #TnyStream, GnomeVFS
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyGtkMimePartSaveStrategy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_gtk_mime_part_save_strategy_new ##### -->
+<para>
+
+</para>
+
+@status_callback: 
+@status_user_data: 
+@Returns: 
+
+

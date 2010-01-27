@@ -1,0 +1,34 @@
+<gapi-parser-input>
+
+  <api filename="@top_builddir@/bindings/dotnet/camel/libtinymail-camel-api.raw">
+    <library name="libtinymail-camel-@API_VERSION@.dll">
+      <namespace name="Tny">
+	<directory path="@top_srcdir@/libtinymail-camel/">
+		<exclude>tny-camel-account-priv.h</exclude>
+		<exclude>tny-camel-imap-folder-priv.h</exclude>
+		<exclude>tny-camel-queue-priv.h</exclude>
+		<exclude>tny-camel-bs-mime-part-priv.h</exclude>
+		<exclude>tny-camel-mime-part-priv.h</exclude>
+		<exclude>tny-camel-send-queue-priv.h</exclude>
+		<exclude>tny-camel-bs-msg-header-priv.h</exclude>
+		<exclude>tny-camel-msg-header-priv.h</exclude>
+		<exclude>tny-camel-store-account-priv.h</exclude>
+		<exclude>tny-camel-bs-msg-priv.h</exclude>
+		<exclude>tny-camel-msg-priv.h</exclude>
+		<exclude>tny-camel-stream-priv.h</exclude>
+		<exclude>tny-stream-camel.h</exclude>
+		<exclude>tny-session-camel.h</exclude>
+		<exclude>tny-camel-common-priv.h</exclude>
+		<exclude>tny-camel-nntp-folder-priv.h</exclude>
+		<exclude>tny-camel-transport-account-priv.h</exclude>
+		<exclude>tny-camel-folder-priv.h</exclude>
+		<exclude>tny-camel-pop-folder-priv.h</exclude>
+		<exclude>tny-session-camel-priv.h</exclude>
+		<exclude>tny-camel-header-priv.h</exclude>
+		<exclude>tny-camel-pop-store-account-priv.h</exclude>
+	</directory>
+      </namespace>
+    </library>
+  </api>
+
+</gapi-parser-input>

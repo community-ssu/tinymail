@@ -1,0 +1,529 @@
+/* -*- Mode: C; c-basic-offset: 4 -*- */
+%%
+headers
+#include <Python.h>
+#include <pygobject.h>
+
+#include <tny-shared.h>
+
+#include <tny-error.h>
+#include <tny-account.h>
+#include <tny-account-store.h>
+#include <tny-device.h>
+#include <tny-fs-stream.h>
+#include <tny-iterator.h>
+#include <tny-simple-list.h>
+#include <tny-list.h>
+#include <tny-folder.h>
+#include <tny-header.h>
+#include <tny-msg.h>
+#include <tny-mime-part.h>
+#include <tny-store-account.h>
+#include <tny-stream.h>
+#include <tny-transport-account.h>
+#include <tny-folder-store.h>
+#include <tny-folder-store-query.h>
+#include <tny-send-queue.h>
+#include <tny-msg-remove-strategy.h>
+#include <tny-msg-receive-strategy.h>
+#include <tny-pair.h>
+#include <tny-folder-monitor.h>
+#include <tny-folder-change.h>
+#include <tny-lockable.h>
+#include <tny-noop-lockable.h>
+#include <tny-folder-observer.h>
+#include <tny-folder-store-observer.h>
+#include <tny-folder-store-change.h>
+#include <tny-folder-stats.h>
+#include <tny-password-getter.h>
+#include <tny-merge-folder.h>
+#include <tny-combined-account.h>
+
+#include <tny-status.h>
+#include <tny-folder-change.h>
+#include <tny-folder-store-change.h>
+#include <tny-account-store.h>
+#include <tny-device.h>
+
+#include "pytny-status.h"
+
+#define NO_IMPORT_PYGOBJECT
+#include "pygobject.h"
+
+
+%%
+modulename tinymail
+%%
+ignore-glob
+  *_get_type
+%%
+ignore
+ tny_status_new_literal 
+ tny_clear_status
+ tny_set_status
+%%
+import gobject.GObject as PyGObject_Type
+%%
+override tny_account_stop_operation noargs
+static PyObject *
+_wrap_tny_account_stop_operation(PyGObject *self)
+{
+    gboolean result;
+
+    tny_account_stop_operation(TNY_ACCOUNT(self->obj), &result);
+    if(result)
+      Py_RETURN_TRUE;
+    else
+      Py_RETURN_FALSE;
+}
+%%
+override tny_password_getter_get_password args
+static PyObject *
+_wrap_tny_password_getter_get_password(PyGObject *self, PyObject *args)
+{
+    const gchar *aid;
+    const gchar *prompt;
+    const gchar *password;
+    gboolean     cancel; 
+
+    PyObject*    password_object;
+
+    if (!PyArg_ParseTuple(args, "ss", &aid, &prompt))
+        return NULL;
+    password = tny_password_getter_get_password(TNY_PASSWORD_GETTER(self->obj),
+				              aid, prompt, &cancel);
+    if(cancel)
+    {
+	if(!password)
+	  g_free((gchar*)password);
+        Py_RETURN_NONE;	
+    }
+    else
+    {
+        if(!(password_object = Py_BuildValue("s", password)))
+	{
+	    if(!password)
+	        g_free((gchar*)password);
+	    return NULL;
+	}
+	else
+	{
+	    g_free((gchar*)password);
+	    return password_object;
+	}
+    }
+}
+%%
+override tny_status_new kwargs
+static int
+_wrap_tny_status_new(PyGBoxed *self, PyObject *args, PyObject *kwargs)
+{
+    static char *kwlist[] = { "domain", "code", "position", "of_total", "message", NULL };
+    TnyStatus status;
+    const gchar *domain_string;
+    GQuark domain_quark;
+
+    status.domain = 0;
+    status.code = 0;
+    status.position = 0;
+    status.of_total = 0;
+    status.message = "";
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, "s|iiis:TnyStatus.__init__", kwlist,
+				     domain_string, &status.code, &status.position,
+				     &status.of_total, status.message))
+    {
+	return -1;
+    }
+
+    if (!(domain_quark = g_quark_try_string((const gchar*) status.message)))
+    {
+        PyErr_SetString(PyExc_ValueError, "Domain must match a registered GQuark");
+        return -1;
+    }
+
+    status.domain = domain_quark;
+
+    self->boxed =  g_boxed_copy(PYTNY_TYPE_STATUS, &status);
+    self->free_on_dealloc = TRUE;
+    self->gtype = PYTNY_TYPE_STATUS;
+    
+    return 0;
+}
+%%
+override tny_status_matches args
+static PyObject *
+_wrap_tny_status_matches(PyObject *self, PyObject *args)
+{
+    const gchar *domain;
+    gint         code;
+    GQuark       domain_quark;
+
+    if (!PyArg_ParseTuple(args, "si", domain, &code))
+        return NULL;
+
+    domain_quark = g_quark_try_string(domain);
+
+    if(tny_status_matches(pyg_boxed_get(self, TnyStatus), domain_quark, code))
+      Py_RETURN_TRUE;
+    else
+      Py_RETURN_FALSE;
+}
+%%
+override tny_folder_change_get_rename noargs
+static PyObject*
+_wrap_tny_folder_change_get_rename (PyGObject *self)
+{
+    const gchar *rename, *oldname;
+
+    rename = tny_folder_change_get_rename(TNY_FOLDER_CHANGE(self->obj), &oldname);
+
+    return Py_BuildValue("ss", rename, oldname);
+}
+%%
+override tny_list_foreach args 
+
+typedef struct {
+    PyObject* func;
+    PyObject* data;
+} PyTnyListForeachCaller;
+
+static void
+pytny_list_foreach_marshal(GObject* obj, gpointer data)
+{
+    PyGILState_STATE state;
+    PyTnyListForeachCaller *call =  (PyTnyListForeachCaller*) data;
+    PyObject *pyobj, *retobj;
+
+    g_assert(call->func);
+
+    state = pyg_gil_state_ensure();
+
+    pyobj = pygobject_new(obj);
+    if (call->data)
+        retobj = PyEval_CallFunction(call->func, "(NO)",
+                                     pyobj, call->data);
+    else
+        retobj = PyEval_CallFunction(call->func, "(N)",
+                                     pyobj);
+
+    if (retobj == NULL) {
+        PyErr_Print();
+    }
+
+    Py_XDECREF(retobj);
+
+    pyg_gil_state_release(state);
+}
+    
+
+static PyObject *
+_wrap_tny_list_foreach(PyGObject* self, PyObject* args)
+{
+    PyTnyListForeachCaller call;
+    call.data = NULL;
+
+    if (!PyArg_ParseTuple(args, "O|O", 
+                          &call.func, &call.data))
+         return NULL;
+
+    tny_list_foreach(TNY_LIST(self->obj), (GFunc) pytny_list_foreach_marshal, &call);
+    Py_RETURN_NONE;
+}
+
+%%
+override TnyList__do_foreach_func args
+
+static PyObject *
+_wrap_TnyList__do_foreach_func(PyGObject *self, PyObject *args)
+{
+    TnyListIface *iface;
+    PyTnyListForeachCaller call;
+
+    if (!PyArg_ParseTuple(args, "O|O", 
+                          &call.func, &call.data))
+         return NULL;
+
+    iface = g_type_interface_peek(g_type_class_peek(pyg_type_from_object((PyObject*)self)), TNY_TYPE_LIST);
+    if (iface->foreach_func)
+        iface->foreach_func(TNY_LIST(self->obj), (GFunc) pytny_list_foreach_marshal, (gpointer) &call);
+    else {
+        PyErr_SetString(PyExc_NotImplementedError, "interface method TnyList.foreach not implemented");
+        return NULL;
+    }
+    Py_RETURN_NONE;
+}
+
+%%
+override TnyList__proxy_do_foreach_func
+
+typedef struct {
+    GFunc func;
+    gpointer data;
+} PyTnyListFuncData;
+
+static PyObject *
+pytny_list_forall_proxy_func(PyObject *self, PyObject *args)
+{
+    PyObject *py_obj;
+    PyObject *py_data;
+    PyTnyListFuncData *data; 
+    if (!PyArg_ParseTuple(args, "O!O!",
+			  &PyGObject_Type, &py_obj,
+                          &PyCObject_Type, &py_data))
+        return NULL;
+    
+    data = PyCObject_AsVoidPtr(py_data);
+    data->func(G_OBJECT(pygobject_get(py_obj)), data->data);
+    
+    Py_RETURN_NONE;
+}
+
+static void
+_wrap_TnyList__proxy_do_foreach_func (TnyList* self,
+                                      GFunc func,
+                                      gpointer user_data)
+{
+    PyGILState_STATE state;
+    PyObject *py_obj, *py_func, *py_data;
+    PyMethodDef py_func_def = { "TnyList.do_foreach callback",
+                                (PyCFunction) pytny_list_forall_proxy_func,
+                                METH_VARARGS };
+    PyTnyListFuncData *data; 
+
+    state = pyg_gil_state_ensure();
+    py_obj = pygobject_new((GObject*) self);
+    py_func = PyCFunction_NewEx(&py_func_def, NULL, NULL);
+
+    data = g_new(PyTnyListFuncData, 1);
+    data->func = func;
+    data->data = user_data;
+    py_data = PyCObject_FromVoidPtr(data, g_free); 
+    if (!PyObject_CallMethod(py_obj, "do_foreach_func", "NN", 
+			     py_func,
+			     py_data))
+	PyErr_Print();
+    
+    pyg_gil_state_release(state);
+}
+
+%%
+override tny_account_set_pass_func args 
+
+typedef struct {
+    PyObject* func;
+    PyObject* data;
+} PyTnyAccSetPassCaller;
+
+static void
+pytny_list_foreach_marshal(GObject* obj, gpointer data);
+
+static void
+pytny_account_set_pass_func_marshal(GObject* obj, gpointer data)
+{
+    PyGILState_STATE state;
+    PyTnyAccSetPassCaller *call =  (PyTnyAccSetPassCaller*) data;
+    PyObject *pyobj, *retobj;
+
+    g_assert(call->func);
+
+    state = pyg_gil_state_ensure();
+
+    pyobj = pygobject_new(obj);
+    if (call->data)
+        retobj = PyEval_CallFunction(call->func, "(NO)",
+                                     pyobj, call->data);
+    else
+        retobj = PyEval_CallFunction(call->func, "(N)",
+                                     pyobj);
+
+    if (retobj == NULL) {
+        PyErr_Print();
+    }
+
+    Py_XDECREF(retobj);
+
+    pyg_gil_state_release(state);
+}
+    
+
+static PyObject *
+_wrap_tny_account_set_pass_func(PyGObject *self, PyObject *args)
+{
+    PyTnyAccSetPassCaller call;
+    call.data = NULL;
+
+    if (!PyArg_ParseTuple(args, "O|O", 
+                          &call.func, &call.data))
+         return NULL;
+
+    tny_list_foreach(TNY_LIST(self->obj), (GFunc) pytny_list_foreach_marshal, &call);
+    Py_RETURN_NONE;
+}
+
+
+    
+
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
+%%
+override tny_folder_get_msg_async kwargs
+
+static void
+tny_get_msg_cb (TnyFolder *self, gboolean cancelled, TnyMsg *msg, GError *err, gpointer user_data)
+{
+    PyObject *callback, *args, *ret;
+    PyGILState_STATE state;
+
+    state = pyg_gil_state_ensure();
+    callback = PyTuple_GetItem((PyObject *)user_data, 1);
+    args = Py_BuildValue("(NNNO)",
+                         pygobject_new((GObject *)self),
+			 PyBool_FromLong (cancelled), 
+			 pygobject_new((GObject *)msg),
+                         PyTuple_GetItem((PyObject *)user_data, 3));
+    ret = PyObject_CallObject(callback, args);
+    if (!ret)
+        PyErr_Print();
+
+    Py_XDECREF(ret);
+    Py_DECREF(args);
+    Py_DECREF ((PyObject *)user_data);
+    pyg_gil_state_release(state);
+}
+
+
+static void
+tny_get_msg_status_cb (GObject *self, TnyStatus *status, gpointer user_data)
+{
+    PyObject *callback, *args, *ret;
+    PyGILState_STATE state;
+
+    state = pyg_gil_state_ensure();
+    callback = PyTuple_GetItem((PyObject *)user_data, 2);
+    args = Py_BuildValue("(NsiiO)",
+                         pygobject_new((GObject *)self),
+			 status->message, status->position, status->of_total,
+                         PyTuple_GetItem((PyObject *)user_data, 3));
+    ret = PyObject_CallObject(callback, args);
+    if (!ret)
+        PyErr_Print();
+    Py_XDECREF(ret);
+    Py_DECREF(args);
+    pyg_gil_state_release(state);
+}
+
+static PyObject *
+_wrap_tny_folder_get_msg_async (PyGObject *self, PyObject *args, PyObject *kwargs)
+{
+    static char *kwlist[] = { "header", "get_msg_func", "get_msg_status_func", "user_data", NULL };
+    PyObject *get_msg_func, *get_msg_status_func, *user_data = Py_None;
+    TnyHeader *header;
+    PyObject *data;
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs,
+                                     "OO|O:TnyFolder.get_msg_async",kwlist,
+                                     &header, &get_msg_func, &user_data))
+        return NULL;
+    if (!PyCallable_Check(get_msg_func)) {
+        PyErr_SetString(PyExc_TypeError, "get_msg_func must be callable");
+        return NULL;
+    }
+
+    data = Py_BuildValue("(OOOO)", header, get_msg_func, 
+		get_msg_status_func, user_data);
+
+    tny_folder_get_msg_async (TNY_FOLDER (self->obj), header,
+			tny_get_msg_cb,
+			tny_get_msg_status_cb, data);
+
+    return Py_None;
+}
+
+%%
+override tny_folder_refresh_async kwargs
+
+static void
+tny_refresh_folder_cb (TnyFolder *self, gboolean cancelled, GError *err, gpointer user_data)
+{
+    PyObject *callback, *args, *ret;
+    PyGILState_STATE state;
+
+    state = pyg_gil_state_ensure();
+    callback = PyTuple_GetItem((PyObject *)user_data, 0);
+    args = Py_BuildValue("(NNO)",
+			 pygobject_new((GObject *)self),
+			 PyBool_FromLong (cancelled), 
+			 PyTuple_GetItem((PyObject *)user_data, 2));
+    ret = PyObject_CallObject(callback, args);
+    if (!ret)
+	PyErr_Print();
+
+    Py_XDECREF(ret);
+    Py_DECREF(args);
+    Py_DECREF ((PyObject *)user_data);
+    pyg_gil_state_release(state);
+}
+
+static void
+tny_refresh_folder_status_cb (GObject *self, TnyStatus *status, gpointer user_data)
+{
+    PyObject *callback, *args, *ret;
+    PyGILState_STATE state;
+
+    state = pyg_gil_state_ensure();
+    callback = PyTuple_GetItem((PyObject *)user_data, 1);
+    args = Py_BuildValue("(NsiiO)",
+                         pygobject_new((GObject *)self),
+			 status->message, status->position, status->of_total,
+                         PyTuple_GetItem((PyObject *)user_data, 2));
+    ret = PyObject_CallObject(callback, args);
+    if (!ret)
+        PyErr_Print();
+    Py_XDECREF(ret);
+    Py_DECREF(args);
+    pyg_gil_state_release(state);
+}
+
+
+static PyObject *
+_wrap_tny_folder_refresh_async (PyGObject *self, PyObject *args, PyObject *kwargs)
+{
+    static char *kwlist[] = { "refresh_func", "status_func", "user_data", NULL };
+    PyObject *refresh_func, *status_func = Py_None, *user_data = Py_None;
+    PyObject *data;
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs,
+                                     "OO|O:TnyFolder.refresh_async",kwlist,
+                                     &refresh_func, &status_func,
+				     &user_data))
+        return NULL;
+    if (!PyCallable_Check(refresh_func)) {
+	PyErr_SetString(PyExc_TypeError, "refresh_func must be callable");
+	return NULL;
+    }
+
+    if (!PyCallable_Check(status_func)) {
+	PyErr_SetString(PyExc_TypeError,"status_func must be callable");
+	return NULL;
+    }
+  
+    data = Py_BuildValue("(OOO)", refresh_func, status_func, user_data);
+
+    tny_folder_refresh_async (TNY_FOLDER (self->obj),
+				      tny_refresh_folder_cb, 
+				      tny_refresh_folder_status_cb,
+				      data);
+    return Py_None;
+}

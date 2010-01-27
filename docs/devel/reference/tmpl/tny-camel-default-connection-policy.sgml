@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelDefaultConnectionPolicy
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelDefaultConnectionPolicy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_default_connection_policy_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

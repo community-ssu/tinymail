@@ -1,0 +1,448 @@
+;; -*- scheme -*-
+; boxed definitions ...
+
+; interface definitions ...
+
+(define-interface AccountStoreView
+  (in-module "Tny")
+  (c-name "TnyAccountStoreView")
+  (gtype-id "TNY_TYPE_ACCOUNT_STORE_VIEW")
+  (prerequisite "GObject")
+)
+
+(define-interface HeaderView
+  (in-module "Tny")
+  (c-name "TnyHeaderView")
+  (gtype-id "TNY_TYPE_HEADER_VIEW")
+  (prerequisite "GObject")
+)
+
+(define-interface MimePartSaveStrategy
+  (in-module "Tny")
+  (c-name "TnyMimePartSaveStrategy")
+  (gtype-id "TNY_TYPE_MIME_PART_SAVE_STRATEGY")
+  (prerequisite "GObject")
+)
+
+(define-interface MimePartSaver
+  (in-module "Tny")
+  (c-name "TnyMimePartSaver")
+  (gtype-id "TNY_TYPE_MIME_PART_SAVER")
+)
+
+(define-interface MimePartView
+  (in-module "Tny")
+  (c-name "TnyMimePartView")
+  (gtype-id "TNY_TYPE_MIME_PART_VIEW")
+)
+
+(define-interface MsgView
+  (in-module "Tny")
+  (c-name "TnyMsgView")
+  (gtype-id "TNY_TYPE_MSG_VIEW")
+  (prerequisite "TnyMimePartView")
+)
+
+(define-interface MsgWindow
+  (in-module "Tny")
+  (c-name "TnyMsgWindow")
+  (gtype-id "TNY_TYPE_MSG_WINDOW")
+  (prerequisite "TnyMsgView")
+  (prerequisite "TnyMimePartView")
+)
+
+(define-interface PlatformFactory
+  (in-module "Tny")
+  (c-name "TnyPlatformFactory")
+  (gtype-id "TNY_TYPE_PLATFORM_FACTORY")
+  (prerequisite "GObject")
+)
+
+(define-interface SummaryView
+  (in-module "Tny")
+  (c-name "TnySummaryView")
+  (gtype-id "TNY_TYPE_SUMMARY_VIEW")
+  (prerequisite "GObject")
+)
+
+; object definitions ...
+
+; pointer definitions ...
+
+;; Enumerations and Flags ...
+
+
+;; From tny-account-store-view.h
+
+(define-function account_store_view_get_type
+  (c-name "tny_account_store_view_get_type")
+  (return-type "GType")
+)
+
+(define-method set_account_store
+  (of-object "TnyAccountStoreView")
+  (c-name "tny_account_store_view_set_account_store")
+  (return-type "none")
+  (parameters
+    '("TnyAccountStore*" "account_store")
+  )
+)
+
+(define-virtual set_account_store
+  (of-object "TnyAccountStoreView")
+  (return-type "none")
+  (parameters
+    '("TnyAccountStore*" "account_store")
+  )
+)
+
+
+
+;; From tny-header-view.h
+
+(define-function header_view_get_type
+  (c-name "tny_header_view_get_type")
+  (return-type "GType")
+)
+
+(define-method set_header
+  (of-object "TnyHeaderView")
+  (c-name "tny_header_view_set_header")
+  (return-type "none")
+  (parameters
+    '("TnyHeader*" "header")
+  )
+)
+
+(define-method clear
+  (of-object "TnyHeaderView")
+  (c-name "tny_header_view_clear")
+  (return-type "none")
+)
+
+(define-virtual set_header
+  (of-object "TnyHeaderView")
+  (return-type "none")
+  (parameters
+    '("TnyHeader*" "header")
+  )
+)
+
+(define-virtual clear
+  (of-object "TnyHeaderView")
+  (return-type "none")
+)
+
+
+
+;; From tny-mime-part-save-strategy.h
+
+(define-function mime_part_save_strategy_get_type
+  (c-name "tny_mime_part_save_strategy_get_type")
+  (return-type "GType")
+)
+
+(define-method perform_save
+  (of-object "TnyMimePartSaveStrategy")
+  (c-name "tny_mime_part_save_strategy_perform_save")
+  (return-type "none")
+  (parameters
+    '("TnyMimePart*" "part")
+  )
+)
+
+(define-virtual perform_save
+  (of-object "TnyMimePartSaveStrategy")
+  (return-type "none")
+  (parameters
+    '("TnyMimePart*" "part")
+  )
+)
+
+
+
+;; From tny-mime-part-saver.h
+
+(define-function mime_part_saver_get_type
+  (c-name "tny_mime_part_saver_get_type")
+  (return-type "GType")
+)
+
+(define-method get_save_strategy
+  (of-object "TnyMimePartSaver")
+  (c-name "tny_mime_part_saver_get_save_strategy")
+  (return-type "TnyMimePartSaveStrategy*")
+)
+
+(define-method set_save_strategy
+  (of-object "TnyMimePartSaver")
+  (c-name "tny_mime_part_saver_set_save_strategy")
+  (return-type "none")
+  (parameters
+    '("TnyMimePartSaveStrategy*" "strategy")
+  )
+)
+
+(define-method save
+  (of-object "TnyMimePartSaver")
+  (c-name "tny_mime_part_saver_save")
+  (return-type "none")
+  (parameters
+    '("TnyMimePart*" "part")
+  )
+)
+
+(define-virtual get_save_strategy
+  (of-object "TnyMimePartSaver")
+  (return-type "TnyMimePartSaveStrategy*")
+)
+
+(define-virtual set_save_strategy
+  (of-object "TnyMimePartSaver")
+  (return-type "none")
+  (parameters
+    '("TnyMimePartSaveStrategy*" "strategy")
+  )
+)
+
+(define-virtual save
+  (of-object "TnyMimePartSaver")
+  (return-type "none")
+  (parameters
+    '("TnyMimePart*" "part")
+  )
+)
+
+
+
+;; From tny-mime-part-view.h
+
+(define-function mime_part_view_get_type
+  (c-name "tny_mime_part_view_get_type")
+  (return-type "GType")
+)
+
+(define-method clear
+  (of-object "TnyMimePartView")
+  (c-name "tny_mime_part_view_clear")
+  (return-type "none")
+)
+
+(define-method set_part
+  (of-object "TnyMimePartView")
+  (c-name "tny_mime_part_view_set_part")
+  (return-type "none")
+  (parameters
+    '("TnyMimePart*" "mime_part")
+  )
+)
+
+(define-method get_part
+  (of-object "TnyMimePartView")
+  (c-name "tny_mime_part_view_get_part")
+  (return-type "TnyMimePart*")
+)
+
+(define-virtual get_part
+  (of-object "TnyMimePartView")
+  (return-type "TnyMimePart*")
+)
+
+(define-virtual set_part
+  (of-object "TnyMimePartView")
+  (return-type "none")
+  (parameters
+    '("TnyMimePart*" "part")
+  )
+)
+
+(define-virtual clear
+  (of-object "TnyMimePartView")
+  (return-type "none")
+)
+
+
+
+;; From tny-msg-view.h
+
+(define-function msg_view_get_type
+  (c-name "tny_msg_view_get_type")
+  (return-type "GType")
+)
+
+(define-method get_msg
+  (of-object "TnyMsgView")
+  (c-name "tny_msg_view_get_msg")
+  (return-type "TnyMsg*")
+)
+
+(define-method set_msg
+  (of-object "TnyMsgView")
+  (c-name "tny_msg_view_set_msg")
+  (return-type "none")
+  (parameters
+    '("TnyMsg*" "msg")
+  )
+)
+
+(define-method clear
+  (of-object "TnyMsgView")
+  (c-name "tny_msg_view_clear")
+  (return-type "none")
+)
+
+(define-method set_unavailable
+  (of-object "TnyMsgView")
+  (c-name "tny_msg_view_set_unavailable")
+  (return-type "none")
+)
+
+(define-method create_mime_part_view_for
+  (of-object "TnyMsgView")
+  (c-name "tny_msg_view_create_mime_part_view_for")
+  (return-type "TnyMimePartView*")
+  (parameters
+    '("TnyMimePart*" "part")
+  )
+)
+
+(define-method create_new_inline_viewer
+  (of-object "TnyMsgView")
+  (c-name "tny_msg_view_create_new_inline_viewer")
+  (return-type "TnyMsgView*")
+)
+
+(define-virtual get_msg
+  (of-object "TnyMsgView")
+  (return-type "TnyMsg*")
+)
+
+(define-virtual set_msg
+  (of-object "TnyMsgView")
+  (return-type "none")
+  (parameters
+    '("TnyMsg*" "msg")
+  )
+)
+
+(define-virtual set_unavailable
+  (of-object "TnyMsgView")
+  (return-type "none")
+)
+
+(define-virtual clear
+  (of-object "TnyMsgView")
+  (return-type "none")
+)
+
+(define-virtual create_mime_part_view_for
+  (of-object "TnyMsgView")
+  (return-type "TnyMimePartView*")
+  (parameters
+    '("TnyMimePart*" "part")
+  )
+)
+
+(define-virtual create_new_inline_viewer
+  (of-object "TnyMsgView")
+  (return-type "TnyMsgView*")
+)
+
+
+
+;; From tny-msg-window.h
+
+(define-function msg_window_get_type
+  (c-name "tny_msg_window_get_type")
+  (return-type "GType")
+)
+
+
+
+;; From tny-platform-factory.h
+
+(define-function platform_factory_get_type
+  (c-name "tny_platform_factory_get_type")
+  (return-type "GType")
+)
+
+(define-method new_account_store
+  (of-object "TnyPlatformFactory")
+  (c-name "tny_platform_factory_new_account_store")
+  (return-type "TnyAccountStore*")
+)
+
+(define-method new_device
+  (of-object "TnyPlatformFactory")
+  (c-name "tny_platform_factory_new_device")
+  (return-type "TnyDevice*")
+)
+
+(define-method new_msg_view
+  (of-object "TnyPlatformFactory")
+  (c-name "tny_platform_factory_new_msg_view")
+  (return-type "TnyMsgView*")
+)
+
+(define-method new_msg
+  (of-object "TnyPlatformFactory")
+  (c-name "tny_platform_factory_new_msg")
+  (return-type "TnyMsg*")
+)
+
+(define-method new_mime_part
+  (of-object "TnyPlatformFactory")
+  (c-name "tny_platform_factory_new_mime_part")
+  (return-type "TnyMimePart*")
+)
+
+(define-method new_password_getter
+  (of-object "TnyPlatformFactory")
+  (c-name "tny_platform_factory_new_password_getter")
+  (return-type "TnyPasswordGetter*")
+)
+
+(define-virtual new_account_store
+  (of-object "TnyPlatformFactory")
+  (return-type "TnyAccountStore*")
+)
+
+(define-virtual new_device
+  (of-object "TnyPlatformFactory")
+  (return-type "TnyDevice*")
+)
+
+(define-virtual new_msg_view
+  (of-object "TnyPlatformFactory")
+  (return-type "TnyMsgView*")
+)
+
+(define-virtual new_msg
+  (of-object "TnyPlatformFactory")
+  (return-type "TnyMsg*")
+)
+
+(define-virtual new_mime_part
+  (of-object "TnyPlatformFactory")
+  (return-type "TnyMimePart*")
+)
+
+(define-virtual new_password_getter
+  (of-object "TnyPlatformFactory")
+  (return-type "TnyPasswordGetter*")
+)
+
+
+
+;; From tny-summary-view.h
+
+(define-function summary_view_get_type
+  (c-name "tny_summary_view_get_type")
+  (return-type "GType")
+)
+
+
+
+;; From tnyui.h
+
+

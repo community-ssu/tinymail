@@ -1,0 +1,7 @@
+(define-boxed Status
+  (in-module "Tny")
+  (c-name "TnyStatus")
+  (gtype-id "PYTNY_TYPE_STATUS")
+  (copy-func "tny_status_copy")
+  (release-func "tny_status_free")
+)

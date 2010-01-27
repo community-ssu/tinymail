@@ -1,0 +1,21 @@
+<!-- ##### SECTION Title ##### -->
+TnySummaryWindowIface
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that defines a summary window
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+You can let your summary window type implement this type. Not that it defines a lot at this moment.
+</para>
+<para>
+Typical implementations will go in a composition relation with a type that implements #TnyAccountStoreViewIface.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+

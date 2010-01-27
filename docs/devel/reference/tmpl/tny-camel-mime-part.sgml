@@ -1,0 +1,51 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelMimePart
+
+<!-- ##### SECTION Short_Description ##### -->
+A mimepart type for
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyMimePart implemented using Camel that plays proxy for a #CamelMimePart.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMsg, #TnyCamelMsg, #TnyMimePart
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelMimePart ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_mime_part_new_with_part ##### -->
+<para>
+
+</para>
+
+@part: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_camel_mime_part_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_camel_mime_part_get_part ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

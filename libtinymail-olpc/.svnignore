@@ -1,0 +1,6 @@
+Makefile.in
+libtinymail-olpc-1.0.pc
+.libs
+.deps
+libtinymail-olpc.pc
+Makefile

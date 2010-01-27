@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnyGtkLockable
+
+<!-- ##### SECTION Short_Description ##### -->
+A lockable for Gdk-Threads
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyLockable implementation that uses gdk_threads_enter and gdk_threads_leave to implement the lock and unlock operations
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyGtkLockable ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_gtk_lockable_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

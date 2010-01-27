@@ -1,0 +1,37 @@
+Index: generator/ManagedCallString.cs
+===================================================================
+--- generator/ManagedCallString.cs	(revision 94486)
++++ generator/ManagedCallString.cs	(working copy)
+@@ -84,6 +84,8 @@
+ 
+ 		public override string ToString ()
+ 		{
++			int actual = 0;
++			
+ 			if (parms.Count < 1)
+ 				return "";
+ 
+@@ -91,14 +93,17 @@
+ 
+ 			for (int i = 0; i < parms.Count; i ++) {
+ 				Parameter p = parms [i] as Parameter;
+-				result [i] = p.PassAs == "" ? "" : p.PassAs + " ";
+-				if (p.Generatable is CallbackGen)
+-					result [i] += p.Name + "_invoker.Handler";
+-				else
+-					result [i] += ((bool)special[i]) ? "my" + p.Name : p.FromNative (p.Name);
++				if (p.Scope == null || p.Scope != "private") {
++					actual++;
++					result [i] = p.PassAs == "" ? "" : p.PassAs + " ";
++					if (p.Generatable is CallbackGen)
++						result [i] += p.Name + "_invoker.Handler";
++					else
++						result [i] += ((bool)special[i]) ? "my" + p.Name : p.FromNative (p.Name);
++				} 
+ 			}
+ 
+-			return String.Join (", ", result);
++			return String.Join (", ", result, 0, actual);
+ 		}
+ 
+ 		public string Finish (string indent)

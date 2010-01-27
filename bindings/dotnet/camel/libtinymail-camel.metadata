@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<metadata>
+ <attr path="/api/namespace[@name='Tny']" name="name">Tny.Camel</attr>
+ <attr path="/api/namespace[@name='Tny']" name="error_handler">throw Tny.TnyExceptionFactory.Create (error)</attr>
+
+ <attr path="/api/namespace/object[@cname='TnyCamelAccount']" name="name">Account</attr>
+ <attr path="/api/namespace/enum[@cname='_TnyCamelAccountSignal']" name="name">AccountSignal</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelBsMimePart']" name="name">BsMimePart</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelBsMsg']" name="name">BsMsg</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelBsMsgReceiveStrategy']" name="name">BsMsgReceiveStrategy</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelDefaultConnectionPolicy']" name="name">DefaultConnectionPolicy</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelFolder']" name="name">Folder</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelFullMsgReceiveStrategy']" name="name">FullMsgReceiveStrategy</attr>
+ <attr path="/api/namespace/callback[@cname='TnyCamelGetSupportedSecureAuthCallback']" name="name">GetSupportedSecureAuthCallback</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelIMAPFolder']" name="name">IMAPFolder</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelIMAPStoreAccount']" name="name">IMAPStoreAccount</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelMemStream']" name="name">MemStream</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelMimePart']" name="name">MimePart</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelMsg']" name="name">Msg</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelMsgRemoveStrategy']" name="name">MsgRemoveStrategy</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelNNTPFolder']" name="name">NNTPFolder</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelNNTPStoreAccount']" name="name">NNTPStoreAccount</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelPartialMsgReceiveStrategy']" name="name">PartialMsgReceiveStrategy</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelPOPFolder']" name="name">POPFolder</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelPopRemoteMsgRemoveStrategy']" name="name">PopRemoteMsgRemoveStrategy</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelPOPStoreAccount']" name="name">POPStoreAccount</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelRecoverConnectionPolicy']" name="name">RecoverConnectionPolicy</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelSendQueue']" name="name">SendQueue</attr>
+ <attr path="/api/namespace/callback[@cname='TnyCamelSetOnlineCallback']" name="name">SetOnlineCallback</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelStoreAccount']" name="name">StoreAccount</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelStream']" name="name">Stream</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelTransportAccount']" name="name">TransportAccount</attr>
+ <attr path="/api/namespace/object[@cname='TnyCamelHeader']" name="name">Header</attr>
+
+
+ <attr path="/api/namespace/*/*/parameters/parameter[@name='callback']" name="scope">async</attr>
+ <attr path="/api/namespace/*/*/parameters/parameter[@name='status_callback']" name="scope">call</attr>
+ 
+
+</metadata>
+

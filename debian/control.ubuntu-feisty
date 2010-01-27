@@ -1,0 +1,42 @@
+Source: tinymail
+Section: gnome
+Priority: optional
+Maintainer: Oystein Gisnas <oystein@gisnas.net>
+Build-Depends: debhelper (>= 4), cdbs, dpkg-dev (>= 1.13.19), gtk-doc-tools (>= 1.0), libglib2.0-dev (>= 2.6), libgtk2.0-dev, libgnomevfs2-dev, libgnomeui-dev, libgnome-keyring-dev, libgconf2-dev, libnm-glib-dev, firefox-dev
+Standards-Version: 3.7.2
+
+Package: tinymail-gtk
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: memory-effective framework for accessing e-mail - GTK GUI
+ Tinymail is a development framework for accessing E-mail services using
+ devices with few memory resources.
+ .
+ It supports local mail storage (Maildir,mh,spool & mbox), IMAP, Exchange
+ and NNTP. It can be used to send messages over SMTP and by using sendmail.
+ .
+ This package contains a simple, GTK-based interface to tinymail.
+
+Package: libtinymail-1.0-0
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: memory-effective framework for accessing e-mail - library
+ Tinymail is a development framework for accessing E-mail services using
+ devices with few memory resources.
+ .
+ It supports local mail storage (Maildir,mh,spool & mbox), IMAP, Exchange
+ and NNTP. It can be used to send messages over SMTP and by using sendmail.
+ .
+ This package contains the C library.
+
+Package: libtinymail-1.0-0-dev
+Architecture: any
+Depends: libtinymail-1.0-0 (= ${binary:Version})
+Description: memory-effective framework for accessing e-mail - development files
+ Tinymail is a development framework for accessing E-mail services using
+ devices with few memory resources.
+ .
+ It supports local mail storage (Maildir,mh,spool & mbox), IMAP, Exchange
+ and NNTP. It can be used to send messages over SMTP and by using sendmail.
+ .
+ This package contains the development files.

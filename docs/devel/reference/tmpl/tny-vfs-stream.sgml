@@ -1,0 +1,43 @@
+<!-- ##### SECTION Title ##### -->
+TnyVfsStream
+
+<!-- ##### SECTION Short_Description ##### -->
+An adaptor between #TnyStream and #GnomeVFSHandle
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type that adapts a #GnomeVFSHandle to a #TnyStream
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnySaveStrategy, #TnyStream, #TnySaveStrategy
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyVfsStream ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_vfs_stream_new ##### -->
+<para>
+
+</para>
+
+@handle: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_vfs_stream_set_handle ##### -->
+<para>
+
+</para>
+
+@self: 
+@handle: 
+
+

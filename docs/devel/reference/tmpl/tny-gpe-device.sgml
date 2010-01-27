@@ -1,0 +1,34 @@
+<!-- ##### SECTION Title ##### -->
+TnyGpeDevice
+
+<!-- ##### SECTION Short_Description ##### -->
+A device type for GPE devices
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyDevice implementation for GPE devices
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyDevice
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyGpeDevice ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION tny_gpe_device_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

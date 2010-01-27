@@ -1,0 +1,22 @@
+<!-- ##### SECTION Title ##### -->
+TnyGenericSendQueue
+
+<!-- ##### SECTION Short_Description ##### -->
+A queue for sending messages
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A queue for sending messages. The queue observers the outbox that you have to give it at its
+contructor. When messages get added, it'll automatically assume that those messages must be
+transferred and after that is successful for a message, moved to the sentbox. The type also
+implements #TnySendQueue and you can also use that API with it to add messages.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyQueue, #TnySendQueue, #TnyFolderObserver
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+

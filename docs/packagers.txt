@@ -1,0 +1,38 @@
+The make distcheck target
+-------------------------
+Read building.txt
+
+The directories
+---------------
+= Abstraction libraries (common) =
+libtinymail
+libtinymailui
+
+= Implementation specific =
+libtinymail-camel
+libtinymailui-gtk
+
+= Platform specific =
+libtinymail-gnome-desktop
+libtinymail-maemo
+libtinymail-gpe
+libtinymail-olpc
+
+= Extra features =
+libtinymailui-mozembed
+libtinymail-gnomevfs
+
+= Demo ui =
+tinymail
+tests/python-demo
+
+= Documentation =
+docs/devel/reference
+
+= Unit tests =
+libtinymail-test
+
+= Generic tests =
+tests/functional
+tests/memory
+

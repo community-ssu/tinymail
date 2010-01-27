@@ -1,0 +1,18 @@
+
+		public object Current {
+			get {
+				return (object) this.GlibCurrent;
+			}
+		}
+
+		public bool MoveNext ()
+		{
+			this.Next ();
+			return this.IsDone;
+		}
+
+		public void Reset ()
+		{
+			this.First();
+		}
+

@@ -1,0 +1,117 @@
+%define suse %(if [ -e /etc/SuSE-release ]; then echo 1; else echo 0; fi;)
+%define redhat %(if [ -e /etc/redhat-release ]; then echo 1; else echo 0; fi;)
+%define debian %(if [ -e /etc/debian_version ]; then echo 1; else echo 0; fi;)
+%define mdk %(if [ -e /etc/mandrake-release ]; then echo 1; else echo 0; fi;)
+%define conectiva %(if [ -e /etc/conectiva-release ]; then echo 1; else echo 0; fi;)
+
+Name:           @PACKAGE_NAME@
+Version:        @VERSION@
+Release:        0
+Summary:        Tinymail e-mail library and development framework
+Group:          System/Libraries
+Vendor:         Pvanhoof
+Distribution:   Neutral
+Packager:       Philip Van Hoof
+URL:            http://www.pvanhoof.be/
+Source:         @PACKAGE_NAME@-%{version}.tar.gz
+License:        LGPL
+BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+Prefix:         /usr/local
+PreReq:         /sbin/ldconfig
+
+%if %{suse} || %{mdk} || %{redhat} || %{connectivia}
+
+### Unfinished ##
+
+BuildRequires:  make
+BuildRequires:  gcc
+BuildRequires:	pkgconfig
+
+### Unfinished ##
+
+%endif
+
+%if %{debian}
+Requires:	libglib2.0-0
+Requires:	firefox
+Requires:	libcamel1.2-8
+Requires:	libgnome-vfs0
+Requires:	python-gtk2
+Requires:	libgnomeui-0
+
+BuildRequires:  make
+BuildRequires:  gcc
+BuildRequires:	pkg-config
+BuildRequires:	libcamel1.2-dev
+BuildRequires:	firefox-dev
+BuildRequires:	libglib2.0-0-dev
+BuildRequires:	libgnome-vfs-dev
+BuildRequires:	python-gtk2-dev
+BuildRequires:	libgnomeui-dev
+%endif
+
+%description
+Tinymail e-mail library and development framework
+
+%package devel
+Summary:        Devel package for libtinymail
+Group:          Development/Libraries
+Requires:       %{name} = %{version}-%{release}
+
+%description devel
+### Unfinished ##
+libtinymail header files
+
+%prep
+%setup -q
+
+%build
+%configure \
+	--prefix=%{_prefix} \
+	--bindir=%{_bindir} \
+	--sbindir=%{_sbindir} \
+	--libexecdir=%{_libexecdir} \
+	--libdir=%{_libdir} \
+	--datadir=%{_datadir} \
+	--sysconfdir=%{_sysconfdir} \
+	--sharedstatedir=%{_sharedstatedir} \
+	--localstatedir=%{_localstatedir} \
+	--libdir=%{_libdir} \
+	--includedir=%{_includedir} \
+	--oldincludedir=%{_oldincludedir} \
+	--infodir=%{_infodir} \
+	--mandir=%{_mandir}
+
+make clean
+make
+
+%install
+[ "%{buildroot}" != / ] && rm -rf "%{buildroot}"
+%makeinstall prefix=%{buildroot}
+
+%clean
+[ "%{buildroot}" != / ] && rm -rf "%{buildroot}"
+
+%post -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
+
+%files
+%defattr(-,root,root)
+%{_libdir}/*.so
+%{_libdir}/*.a
+%{_libdir}/*.la
+
+%files devel
+%defattr(-,root,root)
+%{_includedir}/libtinymail-1.0
+%{_includedir}/libtinymail-camel-1.0
+%{_includedir}/libtinymail-gnome-desktop-1.0
+%{_includedir}/libtinymail-gnomevfs-1.0
+%{_includedir}/libtinymailui-1.0
+%{_includedir}/libtinymailui-gtk-1.0
+%{_includedir}/libtinymailui-mozembed-1.0
+%{_libdir}/pkgconfig/*.pc
+
+%changelog
+* Tue May 16 2006 Philip Van Hoof <pvanhoof@gnome.org>
+- Initial version 

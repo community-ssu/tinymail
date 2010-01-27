@@ -1,0 +1,75 @@
+
+		public System.Collections.IEnumerator GetEnumerator()
+		{
+			return (System.Collections.IEnumerator) this.CreateIterator ();
+		}
+
+
+		public void GetValue(Gtk.TreeIter iter, Tny.Ui.GTK.FolderStoreTreeModelColumn column, ref GLib.Value value) 
+		{
+			this.GetValue (iter, ((int) column), ref value);
+		}
+
+		public void GetValue(Gtk.TreeIter iter, Tny.Ui.GTK.AttachListModelColumn column, ref Tny.Folder value) 
+		{
+			GLib.Value val = GLib.Value.Empty;
+			this.GetValue (iter, ((int) column), ref val);
+			value = (Tny.Folder) val.Val;
+		}
+
+		public Tny.Folder GetFolder (Gtk.TreeIter iter)
+		{
+			try {
+				Tny.Folder retval;
+
+				GLib.Value val = GLib.Value.Empty;
+				GetValue (iter, Tny.Ui.GTK.FolderStoreTreeModelColumn.InstanceColumn, ref val);
+				retval = (Tny.Folder) val.Val;
+				val.Dispose ();
+
+				return retval;
+			} catch {
+				return null;
+			}
+		}
+
+		public Tny.FolderStore GetFolderStore (Gtk.TreeIter iter)
+		{
+			try {
+				Tny.FolderStore retval;
+
+				int column = (int) Tny.Ui.GTK.FolderStoreTreeModelColumn.InstanceColumn;
+				GLib.Value val = GLib.Value.Empty;
+				GetValue (iter, column, ref val);
+				retval = (Tny.FolderStore) val.Val;
+				val.Dispose ();
+
+				return retval;
+			} catch {
+				return null;
+			}
+		}
+
+		public Tny.FolderStore GetFolderStore (Gtk.TreeSelection selection)
+		{
+			Gtk.TreeIter iter;
+
+			if (selection.GetSelected (out iter)) {
+				return this.GetFolderStore (iter);
+			}
+
+			return null;
+		}
+
+
+		public Tny.Folder GetFolder (Gtk.TreeSelection selection)
+		{
+			Gtk.TreeIter iter;
+
+			if (selection.GetSelected (out iter)) {
+				return this.GetFolder (iter);
+			}
+
+			return null;
+		}
+

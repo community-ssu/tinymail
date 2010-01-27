@@ -1,0 +1,34 @@
+<!-- ##### SECTION Title ##### -->
+TnyGnomePlatformFactory
+
+<!-- ##### SECTION Short_Description ##### -->
+A platform factory type for a GNOME desktop
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyPlatformFactory implementation for a GNOME desktop that can give you a #TnyGtkMsgView or a #TnyMozEmbedMsgView both with a #TnyGtkSaveStrategy as save strategy, a #TnyGnomeDevice and a #TnyGnomeAccountStore. Whether a #TnyGtkMsgView or a #TnyMozEmbedMsgView is picked depends on the -DMOZEMBED compilation flag (--with-html-component).
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyGtkMsgView, #TnyMozEmbedMsgView, #TnyGtkSaveStrategy, #TnyGnomeDevice, #TnyGnomeAccountStore
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyGnomePlatformFactory ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION tny_gnome_platform_factory_get_instance ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

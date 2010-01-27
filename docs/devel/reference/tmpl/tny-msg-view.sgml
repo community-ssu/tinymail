@@ -1,0 +1,92 @@
+<!-- ##### SECTION Title ##### -->
+TnyMsgView
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that defines a view for a message
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type that defines a view for a #TnyMsg implementation. The type is sometimes decorated by a 
+#TnyMsgWindow implementation.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMsg, #TnyMsgMimePart, #TnyMsgWindow, #TnyGtkMsgView, #TnyGtkMsgWindow
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyMsgView ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMsgViewIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_msg: 
+@set_msg: 
+@set_unavailable: 
+@clear: 
+@create_mime_part_view_for: 
+@create_new_inline_viewer: 
+
+<!-- ##### FUNCTION tny_msg_view_get_msg ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_msg_view_set_msg ##### -->
+<para>
+
+</para>
+
+@self: 
+@msg: 
+
+
+<!-- ##### FUNCTION tny_msg_view_clear ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_msg_view_set_unavailable ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_msg_view_create_mime_part_view_for ##### -->
+<para>
+
+</para>
+
+@self: 
+@part: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_msg_view_create_new_inline_viewer ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

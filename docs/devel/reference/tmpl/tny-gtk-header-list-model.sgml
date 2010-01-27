@@ -1,0 +1,114 @@
+<!-- ##### SECTION Title ##### -->
+TnyGtkHeaderListModel
+
+<!-- ##### SECTION Short_Description ##### -->
+A tree model for header instances
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+It implements both #GtkTreeModel and #TnyList</para>
+<para>
+It's very important to unreference the instance you will get when doing something like this:
+<programlisting>
+TnyHeader *header;
+gtk_tree_model_get (model, &amp;iter, 
+  TNY_HEADER_LIST_MODEL_INSTANCE_COLUMN, 
+  &amp;header, -1);
+/* use header */
+g_object_unref (G_OBJECT(header));
+</programlisting>
+The column is indeed a G_TYPE_OBJECT column and getting it from the #GtkTreeModel will indeed add a reference.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyList, #GtkTreeModel, #TnyHeader, #TnyGtkHeaderListModelColumn
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO TNY_TYPE_GTK_HEADER_LIST_MODEL_COLUMN ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### STRUCT TnyGtkHeaderListModel ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_gtk_header_list_model_column_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_header_list_model_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_header_list_model_set_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@folder: 
+@refresh: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_gtk_header_list_model_received_date_sort_func ##### -->
+<para>
+
+</para>
+
+@model: 
+@a: 
+@b: 
+@user_data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_header_list_model_sent_date_sort_func ##### -->
+<para>
+
+</para>
+
+@model: 
+@a: 
+@b: 
+@user_data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gtk_header_list_model_set_no_duplicates ##### -->
+<para>
+
+</para>
+
+@self: 
+@setting: 
+
+
+<!-- ##### FUNCTION tny_gtk_header_list_model_get_no_duplicates ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

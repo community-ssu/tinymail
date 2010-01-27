@@ -1,0 +1,11 @@
+<gapi-parser-input>
+
+  <api filename="@top_builddir@/bindings/dotnet/ui/libtinymailui-api.raw">
+    <library name="libtinymailui-@API_VERSION@.dll">
+      <namespace name="Tny">
+        <dir>@top_srcdir@/libtinymailui/</dir>
+      </namespace>
+    </library>
+  </api>
+
+</gapi-parser-input>

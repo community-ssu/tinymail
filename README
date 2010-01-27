@@ -1,0 +1,175 @@
+About
+=====
+
+Project tinymail is an attempt to create an E-mail client framework for small
+devices.
+
+Documentation
+=============
+
+Online :
+
+API reference manual per API version: http://tinymail.org/API/
+Development website and info: http://tinymail.org/trac/tinymail
+Marketing documentation & contact: http://tinymail.org
+
+To generate the API documentation yourself:
+
+./autogen.sh --enable-gtk-doc --enable-tests && make
+./autogen.sh --enable-doxygen && make
+
+Your documentation will be generated in docs/devel/reference and 
+docs/devel/doxygen. Tinymail being glib/gobject based will give you the best 
+results when using gtk-doc for API documentation generation.
+
+Development tips
+================
+You can find the Check unit test framework at http://check.sourceforge.net/
+You'll need it if you build with --enable-unit-tests which will compile the
+unit tests. Check the sources of the unit tests for more information.
+
+It's highly recommended to set the CFLAGS environment to include -DDEBUG and 
+-DDBC: CFLAGS="-DDBC -DDEBUG" ./autogen.sh --enable-unit-tests ....
+
+The DBC define will enable Design By Contract assertions, the DEBUG define will
+enable certain debugging checks, assertions, features and messages.
+
+Run all unit tests with 'make check'.
+
+Building tips
+=============
+
+Checkout docs/building.txt 
+
+You can set the CFLAGS="-DDEVEL" environment variable to enable a debug build.
+
+For building from repository source code, you simply do something like this:
+
+./autogen.sh --prefix=/opt/tinymail 
+make
+make install
+
+You can use --enable-gtk-doc to build API documentation in docs/devel/reference
+You can use --enable-gnome=no/yes to disable or enable some GNOME features.
+You can use --with-html-component=COMPONENT to select which HTML component to
+use. There's also the option "none" to build no HTML component.
+
+Packager tips
+=============
+
+You can use make dist, make distcheck and make distclean for distribution
+building and package preparations. You can of course use --prefix and all other
+typical autotools settings and configuration flags.
+
+Supported platforms & devices
+=============================
+
+  o. One Laptop Per Child platform (OLPC)
+  o. Maemo platform (For example for the Nokia 770)
+  o. GPE platform (For example for PocketPC)
+  o. GNOME desktop platform
+
+Information for developers who would like to tryout the demo user interface:
+============================================================================
+
+This information only applies to the desktop support of tinymail!
+
+The libtinymail-gnome-desktop is an implementation that will work on a typical
+GNOME desktop. It has been tested on Ubuntu Breezy, Dapper and on Fedora Core 4
+and 5.
+
+It uses GConf for storing the account settings, it can use gnome-keyring and
+GnomePasswordDialog for password management. It can also use build-in infrast-
+ructure for password handling. It can use GnomeVFS and normal FILE operations.
+It can use a GtkMozEmbed HTML component (which is not recommended). It can 
+(soon) also use a GtkHTML HTMl component (recommended).
+
+To disable GnomeVFS, icon lookups using the MIME-type, GnomePasswordDialog and
+gnome-keyring, you use the --enable-gnome=no compilation option during the 
+./autogen.sh or ./configure.
+
+To select the HTML component you use the --with-html-component=COMPONENT
+option. Possible values for COMPONENT are mozembed, none and gtkhtml.
+
+If you want to create a test account, use something like this. You should also
+take a look at tny-account-store.c in libtinymail-gnome-desktop. Please note
+that *this* example does *not* mean that *all* tinymail-using applications will
+be configurable using this method! This method is for the demo-ui only!
+
+gconftool-2 -s /apps/tinymail/cache_dir -t string .tinymail
+gconftool-2 -s /apps/tinymail/accounts/count -t int 1
+gconftool-2 -s /apps/tinymail/accounts/0/name -t string "Account name"
+gconftool-2 -s /apps/tinymail/accounts/0/proto -t string imap
+gconftool-2 -s /apps/tinymail/accounts/0/type -t string store
+gconftool-2 -s /apps/tinymail/accounts/0/user -t string [username]
+gconftool-2 -s /apps/tinymail/accounts/0/hostname -t string [mailserver]
+
+To use SSL (other values are "tls" - recommended - and "never"):
+
+gconftool-2 -s /apps/tinymail/accounts/0/options -t list --list-type=string '[use_ssl=wrapped]'
+
+Distribution specific: also check out requirements.txt
+------------------------------------------------------
+
+Ubuntu Breezy & Dapper
+----------------------
+
+Required Packages
+
+  gnome-devel
+  subversion
+  firefox-dev
+  libcamel1.2-dev or install camel-lite via camel-lite-builder
+  libnm-glib-0-dev
+  automake-1.7
+
+Building
+
+  Both Ubuntu Breezy & Dapper support the default ./autogen.sh && make && make 
+  install. Provided you installed the above packages.
+
+Dependencies
+
+  If you want the unit tests, check above at the Development tips section. You
+  can find a URL to Check. There's often also Debian packages that will work
+  with Ubuntu Dapper & Breezy (and maybe/probably also with newer versions of
+  both the Debian and Ubuntu distributions).
+
+ If you want the Python bindings: python-gtk2-dev, python2.4-dev
+
+Ubuntu Edgy Eft & Debian
+------------------------
+
+See Ubuntu Breezy and Dapper above
+
+Packages
+  The debian/ directory contains ready to use packaging scripts for a desktop
+  configuration. To compile packages, run ./autogen.sh and then start the
+  packaging script with for example 'dpkg-buildpackage -rfakeroot'.
+
+Fedora Core 4 & 5
+-----------------
+
+Required Packages
+
+  Subversion
+  gnome-common
+  evolution-data-server-devel
+  NetworkManager-devel
+  NetworkManager-glib
+  NetworkManager-glib-devel
+  gnome-keyring-devel
+  automake-1.7
+
+Building
+  
+  Use --with-html-component=none to disable building any HTML component. Because
+  Fedora Core 4 uses a quite old gnome-keyring API, it's recommended to also use
+  --enable-gnome=no when building on Fedora Core 4. 
+
+Dependencies
+
+  If you want the unit tests, check above at the Development tips section. You
+  can find a URL to Check sources.
+
+

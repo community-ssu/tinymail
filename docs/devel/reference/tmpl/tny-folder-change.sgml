@@ -1,0 +1,203 @@
+<!-- ##### SECTION Title ##### -->
+TnyFolderChange
+
+<!-- ##### SECTION Short_Description ##### -->
+A type with the changes between two states of a folder
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type with the delta or changes between two states of a #TnyFolder. The #TnyFolderObserver will receive instances of this type
+as information about what got changed.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyFolderObserver, #TnyFolder, #TnyFolderMonitor
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO TNY_TYPE_FOLDER_CHANGE_CHANGED ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### STRUCT TnyFolderChange ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_folder_change_changed_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_change_new ##### -->
+<para>
+
+</para>
+
+@folder: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_change_get_rename ##### -->
+<para>
+
+</para>
+
+@self: 
+@oldname: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_change_set_rename ##### -->
+<para>
+
+</para>
+
+@self: 
+@newname: 
+
+
+<!-- ##### FUNCTION tny_folder_change_set_received_msg ##### -->
+<para>
+
+</para>
+
+@self: 
+@msg: 
+
+
+<!-- ##### FUNCTION tny_folder_change_get_received_msg ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_change_set_new_all_count ##### -->
+<para>
+
+</para>
+
+@self: 
+@new_all_count: 
+
+
+<!-- ##### FUNCTION tny_folder_change_set_new_unread_count ##### -->
+<para>
+
+</para>
+
+@self: 
+@new_unread_count: 
+
+
+<!-- ##### FUNCTION tny_folder_change_get_new_unread_count ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_change_get_new_all_count ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_change_add_added_header ##### -->
+<para>
+
+</para>
+
+@self: 
+@header: 
+
+
+<!-- ##### FUNCTION tny_folder_change_add_expunged_header ##### -->
+<para>
+
+</para>
+
+@self: 
+@header: 
+
+
+<!-- ##### FUNCTION tny_folder_change_get_added_headers ##### -->
+<para>
+
+</para>
+
+@self: 
+@headers: 
+
+
+<!-- ##### FUNCTION tny_folder_change_get_expunged_headers ##### -->
+<para>
+
+</para>
+
+@self: 
+@headers: 
+
+
+<!-- ##### FUNCTION tny_folder_change_reset ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_folder_change_get_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_change_get_check_duplicates ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_folder_change_set_check_duplicates ##### -->
+<para>
+
+</para>
+
+@self: 
+@check_duplicates: 
+
+
+<!-- ##### FUNCTION tny_folder_change_get_changed ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

@@ -1,0 +1,43 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelMemStream
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelMemStream ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_mem_stream_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_camel_mem_stream_new_with_buffer ##### -->
+<para>
+
+</para>
+
+@buffer: 
+@len: 
+@Returns: 
+
+

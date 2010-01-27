@@ -1,0 +1,8 @@
+debian/tmp/usr/include/libtinymail-camel-1.0
+debian/tmp/usr/include/camel-lite
+debian/tmp/usr/include/libedataserver-lite
+debian/tmp/usr/lib/pkgconfig/libtinymail-camel-1.0.pc
+debian/tmp/usr/lib/pkgconfig/camel-lite-1.2.pc
+debian/tmp/usr/lib/pkgconfig/camel-lite-provider-1.2.pc
+debian/tmp/usr/lib/libtinymail-camel-1.0.so
+debian/tmp/usr/lib/libcamel-lite-1.2.so

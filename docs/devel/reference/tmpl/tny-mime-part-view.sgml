@@ -1,0 +1,61 @@
+<!-- ##### SECTION Title ##### -->
+TnyMimePartView
+
+<!-- ##### SECTION Short_Description ##### -->
+A type for displaying a mime part
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type for displaying a #TnyMimePart
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMimePart
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyMimePartView ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMimePartViewIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_part: 
+@set_part: 
+@clear: 
+
+<!-- ##### FUNCTION tny_mime_part_view_clear ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_mime_part_view_set_part ##### -->
+<para>
+
+</para>
+
+@self: 
+@mime_part: 
+
+
+<!-- ##### FUNCTION tny_mime_part_view_get_part ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

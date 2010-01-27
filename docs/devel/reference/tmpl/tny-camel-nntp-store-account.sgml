@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelNNTPStoreAccount
+
+<!-- ##### SECTION Short_Description ##### -->
+A NNTP store account type for Camel
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A NNTP #TnyStoreAccount implemented using for Camel
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyStoreAccount, #TnyCamelStoreAccount, #TnyNNTPFolder
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelNNTPStoreAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_nntp_store_account_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

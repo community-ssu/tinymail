@@ -1,0 +1,17 @@
+Write the name of the tool in the filename of the document.                 80c
+
+libtinymail-amatarasuml.cld:
+	Overview of libtinymail. Updated on Sep 18 2006. This document uses 
+	AmaterasUML which is an Eclipse plugin. 
+	http://amateras.sourceforge.jp/cgi-bin/fswiki_en/wiki.cgi?page=AmaterasUML
+	You can find a JPG of this document on the wiki of tinymail:
+	http://tinymail.org/trac/tinymail/wiki/ClassDiagrams
+
+Below are outdated class diagrams:
+-----------------------------------
+
+TnyMsgWindow_decorates_TnyMsgView.umbrello.xmi
+	Interaction and relations between TnyMsgView and TnyMsgWindow. 
+	Illustrates the usage of the decorator pattern. A TnyMsgWindow
+	can decorate a TnyMsgView. 
+

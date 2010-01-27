@@ -1,0 +1,6 @@
+Makefile.in
+.libs
+libtinymailui-gtkhtml-1.0.pc
+.deps
+libtinymailui-gtkhtml.pc
+Makefile

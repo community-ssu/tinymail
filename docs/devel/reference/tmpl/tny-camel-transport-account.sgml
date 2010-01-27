@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnyCamelTransportAccount
+
+<!-- ##### SECTION Short_Description ##### -->
+A transport account type for Camel
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyTransportAccount implemented using camel.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyCamelTransportAccount ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_camel_transport_account_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

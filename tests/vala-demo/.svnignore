@@ -1,0 +1,8 @@
+Makefile.in
+tinymail-vala-test.c
+.deps
+tinymail-vala-test.vala.stamp
+tinymail-vala-test.h
+Makefile
+tinymail-vala-test
+.libs

@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libtinymail-gpe
+Description: TinyMail library for GPE
+Version: @VERSION@
+Requires: libtinymail-@API_VERSION@ libtinymailui-@API_VERSION@ libtinymailui-gtk-@API_VERSION@ libtinymail-camel-@API_VERSION@
+Libs: -L${libdir} -ltinymail-gpe-@API_VERSION@
+Cflags: -I${includedir}/libtinymail-gpe-@API_VERSION@

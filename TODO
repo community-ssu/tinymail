@@ -1,0 +1,6 @@
+o. Refactor TnySaveStrategy to a TnyGnomeVfsSaveStrategy and a TnyPosixSaveStrategy
+o. camel-lite-builder builds without nspr-dev resulting in a compilation error
+o. The docs don't describe the TnyGetFoldersCallback
+o. The prerequisites of some types add GObject (this often isn't needed)
+o. Implement and design removing messages (TnyFolderStore)
+o. Implement and design copying messages (TnyFolderStore)

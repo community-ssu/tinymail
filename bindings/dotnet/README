@@ -1,0 +1,92 @@
+#
+## .NET bindings for Tinymail
+#
+
+This is the documentation about the .NET bindings for Tinymail.
+
+#
+## About the patches
+#
+
+At this moment you need to apply the patch attached in the Novell bbug
+https://bugzilla.novell.com/show_bug.cgi?id=358012 to make these DotNet
+bindings generate correct CS proxy/adapter code.
+
+The same patch is also available here: ./gtk-sharp-patch-01.diff
+
+You also need to patch ./gtk-sharp-patch-02.diff discussed in Novell
+bug https://bugzilla.novell.com/show_bug.cgi?id=357324
+
+You also need to patch ./gtk-sharp-patch-03.diff discussed in Novell
+bug https://bugzilla.novell.com/show_bug.cgi?id=361504
+
+And you need apt-get install libxml-libxml-perl
+
+Tracker bug: https://bugzilla.novell.com/show_bug.cgi?id=361505
+
+
+#
+## Instructions to get it working
+#
+
+svn co svn://anonsvn.mono-project.com/source/trunk/gtk-sharp gtk-sharp
+cd gtk-sharp
+
+# Depending on the version of GtkSharp, this might not be necessary.
+# Check the bugs mentioned above:
+
+patch -p0 < gtk-sharp-patch-01.diff
+patch -p0 < gtk-sharp-patch-02.diff
+patch -p0 < gtk-sharp-patch-03.diff
+
+# Make sure that you DO set a prefix, else you will overwrite your
+# existing GtkSharp installation with a patched one (not good)
+# We just need the adapted generator, but GtkSharp's build system
+# does not make it possible to compile just that part :-( :
+
+./bootstrap-2.12 --prefix=/opt/gtk-sharp
+
+make && sudo make install
+export PKG_CONFIG_PATH=/opt/gtk-sharp/lib/pkgconfig:/opt/tinymail/lib/pkgconfig
+export PATH=$PATH:/opt/gtk-sharp/bin
+cd ..
+./autogen.sh --prefix=/opt/tinymail --enable-dotnet-bindings
+make && sudo make install
+
+#
+## Testing it with a little demo ui written in C#
+#
+
+cd tests/dotnet-demo
+sh ./build.sh
+
+#
+## To compile something simple
+#
+
+mcs -pkg:libtinymail-platform-sharp-1.0 *cs gtk-gui/*.cs \
+	-resource:gtk-gui/gui.stetic -o test.exe
+
+# Or for example:
+
+mcs -r:Mono.Posix.dll -pkg:libtinymail-platform-sharp-1.0 \
+	*cs gtk-gui/*.cs -resource:gtk-gui/gui.stetic -o test.exe
+
+export LD_LIBRARY_PATH=/opt/tinymail/lib/:/opt/gtk-sharp/lib/
+export MONO_PATH=/opt/gtk-sharp/lib/mono/gtk-sharp-2.0/:\
+/opt/tinymail/lib/mono/libtinymail-sharp-1.0/:\
+/opt/tinymail/lib/mono/libtinymailui-sharp-1.0/:\
+/opt/tinymail/lib/mono/libtinymailui-gtk-sharp-1.0/:\
+/opt/tinymail/lib/mono/libtinymail-camel-sharp-1.0/:\
+/opt/tinymail/lib/mono/libtinymail-platform-sharp-1.0/
+
+mono test.exe
+
+#
+## Note about those insane LD_LIBRARY_PATH and MONO_PATH variables:
+#
+
+A normal install does not require these. They are required because the 
+assemblies and shared object files, when installed in /opt, wont be found by 
+Mono unless you specify MONO_PATH and LD_LIBRARY_PATH.
+

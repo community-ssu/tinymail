@@ -1,0 +1,34 @@
+<!-- ##### SECTION Title ##### -->
+TnyOlpcDevice
+
+<!-- ##### SECTION Short_Description ##### -->
+A device type for the OLPC device
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyDevice implementation for the OLPC device
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyDevice
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyOlpcDevice ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION tny_olpc_device_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

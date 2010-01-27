@@ -1,0 +1,114 @@
+<!-- ##### SECTION Title ##### -->
+TnyFolderStore
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that defines a store for folders
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A abstract type that defines a store for child folders
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyStoreAccount, #TnyFolder, #TnyCamelFolder, #TnyCamelStoreAccount
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyFolderStore ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyFolderStoreIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@remove_folder: 
+@create_folder: 
+@create_folder_async: 
+@get_folders: 
+@get_folders_async: 
+@add_observer: 
+@remove_observer: 
+
+<!-- ##### FUNCTION tny_folder_store_remove_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@folder: 
+@err: 
+
+
+<!-- ##### FUNCTION tny_folder_store_create_folder_async ##### -->
+<para>
+
+</para>
+
+@self: 
+@name: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_folder_store_get_folders_async ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+@query: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_folder_store_add_observer ##### -->
+<para>
+
+</para>
+
+@self: 
+@observer: 
+
+
+<!-- ##### FUNCTION tny_folder_store_remove_observer ##### -->
+<para>
+
+</para>
+
+@self: 
+@observer: 
+
+
+<!-- ##### FUNCTION tny_folder_store_get_folders ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+@query: 
+@err: 
+
+
+<!-- ##### FUNCTION tny_folder_store_create_folder ##### -->
+<para>
+
+</para>
+
+@self: 
+@name: 
+@err: 
+@Returns: 
+
+

@@ -1,0 +1,33 @@
+<!-- ##### SECTION Title ##### -->
+TnyDevice
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyTestDevice ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION tny_test_device_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+

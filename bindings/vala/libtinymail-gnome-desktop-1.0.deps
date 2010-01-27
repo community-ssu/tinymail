@@ -1,0 +1,10 @@
+libtinymail-1.0
+libtinymail-camel-1.0
+libtinymailui-1.0
+libtinymailui-gtk-1.0
+atk
+cairo
+pango
+gdk-2.0
+gdk-pixbuf-2.0
+gtk+-2.0

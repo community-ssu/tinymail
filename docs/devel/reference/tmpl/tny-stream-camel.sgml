@@ -1,0 +1,95 @@
+<!-- ##### SECTION Title ##### -->
+TnyStreamCamel
+
+<!-- ##### SECTION Short_Description ##### -->
+A #CamelStream as adaptor for a #TnyStream
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+This type adapts the #TnyStream to a #CamelStream. It's used in the 
+libtinymail-camel implementation library for converting a #TnyStream 
+to a #CamelStream.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyStream, #CamelStream, #TnyCamelStream
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### MACRO TNY_TYPE_STREAM_CAMEL_STREAM ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO TNY_TYPE_STREAM_CAMEL ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO TNY_STREAM_CAMEL ##### -->
+<para>
+
+</para>
+
+@obj: 
+
+
+<!-- ##### MACRO TNY_STREAM_CAMEL_CLASS ##### -->
+<para>
+
+</para>
+
+@k: 
+
+
+<!-- ##### STRUCT TnyStreamCamel ##### -->
+<para>
+
+</para>
+
+@parent: 
+@stream: 
+
+<!-- ##### FUNCTION tny_stream_camel_get_type ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_stream_camel_new ##### -->
+<para>
+
+</para>
+
+@stream: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_stream_camel_set_stream ##### -->
+<para>
+
+</para>
+
+@self: 
+@stream: 
+
+
+<!-- ##### FUNCTION tny_stream_camel_write_to_stream ##### -->
+<para>
+
+</para>
+
+@self: 
+@output: 
+@Returns: 
+
+

@@ -1,0 +1,43 @@
+<!-- ##### SECTION Title ##### -->
+Shared camel routines
+
+<!-- ##### SECTION Short_Description ##### -->
+A few shared camel routines
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A few shared camel routines
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnySessionCamel ##### -->
+<para>
+
+</para>
+
+@parent_object: 
+@priv: 
+
+<!-- ##### STRUCT TnySessionCamelClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION tny_session_camel_new ##### -->
+<para>
+
+</para>
+
+@account_store: 
+@Returns: 
+
+

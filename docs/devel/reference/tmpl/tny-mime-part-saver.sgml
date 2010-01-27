@@ -1,0 +1,62 @@
+<!-- ##### SECTION Title ##### -->
+TnyMimePartSaver
+
+<!-- ##### SECTION Short_Description ##### -->
+A type for saving a mime part
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A type that can save a #TnyMimePart
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMsgView, #TnyMimePartView
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyMimePartSaver ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMimePartSaverIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_save_strategy: 
+@set_save_strategy: 
+@save: 
+
+<!-- ##### FUNCTION tny_mime_part_saver_get_save_strategy ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_saver_set_save_strategy ##### -->
+<para>
+
+</para>
+
+@self: 
+@strategy: 
+
+
+<!-- ##### FUNCTION tny_mime_part_saver_save ##### -->
+<para>
+
+</para>
+
+@self: 
+@part: 
+
+

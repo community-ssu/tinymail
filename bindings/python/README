@@ -1,0 +1,34 @@
+What will happen
+----------------
+
+The generator will generate a binding for libtinymail, libtinymailui
+and libtinymail-camel.
+
+o. The .defs files are checked in as tinymail-base.defs. These can be generated 
+using the Makefile in /gendefs, but this is not done during the normal course of a build.
+
+o. Using those .defs files and the .override files, pygtk-codegen
+generates -glue.c files. Those are compiled to the .so file that gets installed
+in the site-packages directory.
+
+o. A .pth file is installed in the site-packages directory
+ 
+
+When .h files are added
+-----------------------
+You can use this little command-line to get a nice list of files the way you 
+should put it in the Makefile.am:
+
+ls DIR/*h | grep -v \\-priv | sed s/^/\\t\$\(top_srcdir\)\\//g | sed s/$/\\t\\\\/g
+
+
+Special defines
+---------------
+You can override and define extra defines in tinymail-extra.defs,
+tinymailui-extra.defs, tinymailui-gtk-extra.defs and 
+tinymail-camel-extra.defs
+
+Overrides
+---------
+
+Overrides go in the .override files

@@ -1,0 +1,32 @@
+/* -*- Mode: C; c-basic-offset: 4 -*- */
+%%
+headers
+#include <Python.h>
+#include <pygobject.h>
+
+#include <tny-account-store-view.h>
+#include <tny-header-view.h>
+#include <tny-msg-view.h>
+#include <tny-msg-window.h>
+#include <tny-msg.h>
+#include <tny-platform-factory.h>
+#include <tny-mime-part-save-strategy.h>
+#include <tny-summary-view.h>
+#include <tny-account-store.h>
+#include <tny-mime-part-saver.h>
+
+#define NO_IMPORT_PYGOBJECT
+#include "pygobject.h"
+
+%%
+modulename tinymail.ui
+%%
+ignore-glob
+  *_get_type
+
+%%
+import gobject.GObject as PyGObject_Type
+import tinymail.Header as PyTnyHeader_Type
+import tinymail.Msg as PyTnyMsg_Type
+import tinymail.MimePart as PyTnyMimePart_Type
+import tinymail.AccountStore as PyTnyAccountStore_Type

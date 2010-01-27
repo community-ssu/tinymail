@@ -1,0 +1,153 @@
+# French translation of tinymail.
+# Copyright (C) 2006 Free Software Foundation, Inc.
+# This file is distributed under the same license as the tinymail package.
+#
+# Robert-André Mauchin <zebob.m@gmail.com>, 2006-2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tinymail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-01-02 02:40+0100\n"
+"PO-Revision-Date: 2007-01-02 02:47+0100\n"
+"Last-Translator: Robert-André Mauchin <zebob.m@gmail.com>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+
+#: ../libtinymail-gpe/tny-gpe-password-dialog.c:93
+#: ../libtinymail-maemo/tny-maemo-password-dialog.c:93
+#: ../libtinymail-gnome-desktop/tny-gnome-password-dialog.c:94
+#: ../libtinymail-olpc/tny-olpc-password-dialog.c:93
+msgid "Password input"
+msgstr "Zone de saisie du mot de passe"
+
+#: ../libtinymail-camel/tny-camel-folder.c:708
+#, c-format
+msgid "Reading folder `%s'"
+msgstr "Lecture du dossier « %s »"
+
+#: ../libtinymail-camel/tny-camel-folder.c:1813
+#: ../libtinymail-camel/tny-camel-store-account.c:383
+msgid "Failed to create folder with no name"
+msgstr "La création d'un dossier sans nom a échoué"
+
+#: ../libtinymail-camel/tny-camel-folder.c:1822
+#, c-format
+msgid "Failed to create folder %s"
+msgstr "La création du dossier %s a échoué"
+
+#: ../libtinymail-camel/tny-camel-common.c:90
+msgid "Invalid e-mail address in field"
+msgstr "Adresse électronique invalide dans le champ"
+
+#: ../libtinymail-camel/tny-camel-mime-part.c:271
+#: ../libtinymail-camel/tny-camel-mime-part.c:377
+msgid ""
+"Mime part does not yet have a source stream, use "
+"tny_mime_part_construct_from_stream first"
+msgstr ""
+"La partie Mime n'a pas encore un flux source, utilisez "
+"tny_mime_part_construct_from_stream d'abord"
+
+#: ../libtinymail-camel/tny-session-camel.c:238
+#, c-format
+msgid "Enter password for %s"
+msgstr "Saisissez un mot de passe pour %s"
+
+#: ../libtinymail-camel/tny-session-camel.c:256
+msgid "You cancelled when you had to enter a password"
+msgstr "Vous avez annulé quand vous aviez à saisir un mot de passe"
+
+#: ../libtinymail-camel/tny-session-camel.c:545
+#, c-format
+msgid "Critical ERROR: Cannot init %s as camel directory\n"
+msgstr "Erreur critique : impossible d'initialiser %s comme répertoire camel\n"
+
+#: ../libtinymail-camel/tny-camel-store-account.c:65
+#, c-format
+msgid "Couldn't get service %s: %s\n"
+msgstr "Impossible d'obtenir le service %s : %s\n"
+
+#. TODO: Handle priv->ex using GError
+#: ../libtinymail-camel/tny-camel-store-account.c:153
+#, c-format
+msgid "Not connected with %s: %s\n"
+msgstr "Non connecté avec %s : %s\n"
+
+#: ../libtinymail-camel/tny-camel-store-account.c:206
+#, c-format
+msgid "Could not %s folder %s: %s\n"
+msgstr "Impossible de %s le dossier %s : %s\n"
+
+#: ../libtinymail-camel/tny-camel-store-account.c:207
+msgid "subscribe to"
+msgstr "s'abonner à"
+
+#: ../libtinymail-camel/tny-camel-store-account.c:207
+msgid "unsubscribe"
+msgstr "se désabonner"
+
+#: ../libtinymail-camel/tny-camel-account.c:173
+msgid "Cancellation failed, retrying\n"
+msgstr "L'annulation a échoué, réessai\n"
+
+#: ../libtinymailui-gtk/tny-gtk-header-view.c:54
+#: ../libtinymailui-gtk/tny-gtk-header-list-model.c:265
+msgid "%Y-%m-%d, %-I:%M %p"
+msgstr "%d-%m-%Y, %-I:%M %p"
+
+#: ../libtinymailui-gtk/tny-gtk-header-view.c:149
+msgid "<b>to:</b>"
+msgstr "<b>À :</b>"
+
+#: ../libtinymailui-gtk/tny-gtk-header-view.c:157
+msgid "<b>Subject:</b>"
+msgstr "<b>Sujet :</b>"
+
+#: ../libtinymailui-gtk/tny-gtk-header-view.c:165
+msgid "<b>Date:</b>"
+msgstr "<b>Date :</b>"
+
+#: ../libtinymailui-gtk/tny-gtk-header-view.c:201
+msgid "<b>From:</b>"
+msgstr "<b>De :</b>"
+
+#: ../libtinymailui-gtk/tny-gtk-mime-part-save-strategy.c:112
+msgid "Save File"
+msgstr "Enregistrer le fichier"
+
+#: ../libtinymailui-gtk/tny-gtk-mime-part-save-strategy.c:149
+#, c-format
+msgid "Saving to %s failed\n"
+msgstr "L'enregistrement vers %s a échoué\n"
+
+#: ../libtinymailui-gtk/tny-gtk-msg-view.c:438
+msgid "Email message attachment"
+msgstr "Pièce jointe d'un courriel"
+
+#: ../libtinymailui-gtk/tny-gtk-msg-view.c:474
+#, c-format
+msgid "I don't have a mime part viewer for %s\n"
+msgstr "Je n'ai pas de visionneur mime pour %s\n"
+
+#: ../libtinymail-gnome-desktop/tny-gnome-account-store.c:96
+msgid "Enter password"
+msgstr "Saisissez le mot de passe"
+
+#: ../libtinymail-gnome-desktop/tny-gnome-device.c:133
+msgid "Invalid network manager installation. Going to assume Offline status\n"
+msgstr ""
+"Installation invalide du gestionnaire de réseau. Votre état est présumé hors "
+"ligne\n"
+
+#~ msgid "No save strategy for this message view\n"
+#~ msgstr "Aucune stratégie d'enregistrement pour cette vue de message\n"
+
+#~ msgid "Message is unavailable"
+#~ msgstr "Le message n'est pas disponible"
+
+#~ msgid "Can't write %s\n"
+#~ msgstr "Impossible d'écrire %s\n"

@@ -1,0 +1,43 @@
+<!-- ##### SECTION Title ##### -->
+TnyGnomeAccountStore
+
+<!-- ##### SECTION Short_Description ##### -->
+A account store type for GNOME
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A #TnyAccountStore implementation using GNOME's GConf and libtinymail-camel
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyAccountStore
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyGnomeAccountStore ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION tny_gnome_account_store_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_gnome_account_store_get_session ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

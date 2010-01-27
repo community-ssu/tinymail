@@ -1,0 +1,314 @@
+<!-- ##### SECTION Title ##### -->
+TnyMimePart
+
+<!-- ##### SECTION Short_Description ##### -->
+A type that defines a mime part
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+A mime part is a part of a message. Like the body, an attachment or the PGP key of a message.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#TnyMsg, #TnyCamelMimePart
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT TnyMimePart ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT TnyMimePartIface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@get_content_type: 
+@content_type_is: 
+@get_stream: 
+@get_decoded_stream: 
+@decode_to_stream: 
+@write_to_stream: 
+@construct: 
+@get_filename: 
+@get_content_id: 
+@get_description: 
+@get_content_location: 
+@is_purged: 
+@set_content_location: 
+@set_description: 
+@set_content_id: 
+@set_filename: 
+@set_content_type: 
+@set_purged: 
+@is_attachment: 
+@get_parts: 
+@del_part: 
+@add_part: 
+@get_header_pairs: 
+@set_header_pair: 
+@decode_to_stream_async: 
+@get_transfer_encoding: 
+@set_transfer_encoding: 
+
+<!-- ##### FUNCTION tny_mime_part_get_content_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_content_type_is ##### -->
+<para>
+
+</para>
+
+@self: 
+@type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_get_stream ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_get_decoded_stream ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_write_to_stream ##### -->
+<para>
+
+</para>
+
+@self: 
+@stream: 
+@err: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_construct ##### -->
+<para>
+
+</para>
+
+@self: 
+@stream: 
+@mime_type: 
+@transfer_encoding: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_get_filename ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_get_content_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_get_description ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_get_content_location ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_is_purged ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_set_content_location ##### -->
+<para>
+
+</para>
+
+@self: 
+@content_location: 
+
+
+<!-- ##### FUNCTION tny_mime_part_set_description ##### -->
+<para>
+
+</para>
+
+@self: 
+@description: 
+
+
+<!-- ##### FUNCTION tny_mime_part_set_content_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@content_id: 
+
+
+<!-- ##### FUNCTION tny_mime_part_set_filename ##### -->
+<para>
+
+</para>
+
+@self: 
+@filename: 
+
+
+<!-- ##### FUNCTION tny_mime_part_set_content_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@contenttype: 
+
+
+<!-- ##### FUNCTION tny_mime_part_set_purged ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION tny_mime_part_is_attachment ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_decode_to_stream ##### -->
+<para>
+
+</para>
+
+@self: 
+@stream: 
+@err: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_get_parts ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+
+
+<!-- ##### FUNCTION tny_mime_part_add_part ##### -->
+<para>
+
+</para>
+
+@self: 
+@part: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_del_part ##### -->
+<para>
+
+</para>
+
+@self: 
+@part: 
+
+
+<!-- ##### FUNCTION tny_mime_part_get_header_pairs ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+
+
+<!-- ##### FUNCTION tny_mime_part_set_header_pair ##### -->
+<para>
+
+</para>
+
+@self: 
+@name: 
+@value: 
+
+
+<!-- ##### FUNCTION tny_mime_part_decode_to_stream_async ##### -->
+<para>
+
+</para>
+
+@self: 
+@stream: 
+@callback: 
+@status_callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION tny_mime_part_get_transfer_encoding ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION tny_mime_part_set_transfer_encoding ##### -->
+<para>
+
+</para>
+
+@self: 
+@transfer_encoding: 
+
+
