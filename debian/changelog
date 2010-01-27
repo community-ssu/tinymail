@@ -1,3 +1,9 @@
+tinymail (1.1.90) unstable; urgency=low
+
+  * Prerelease 1.1.90
+
+ -- Sergio Villar Senin <svillar@igalia.com>  Wed, 27 Jan 2010 12:31:19 +0200
+
 tinymail (1.0-svn1913) unstable; urgency=low
 
   * Package subversion revision svn1868

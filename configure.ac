@@ -1,6 +1,6 @@
 m4_define([tny_major_version], [1])
-m4_define([tny_minor_version], [0])
-m4_define([tny_micro_version], [0])
+m4_define([tny_minor_version], [1])
+m4_define([tny_micro_version], [90])
 m4_define([tny_version],
           [tny_major_version.tny_minor_version.tny_micro_version])
 m4_define([tny_interface_age], [0])
