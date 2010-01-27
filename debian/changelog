@@ -1,6 +1,7 @@
 tinymail (1.1.90) unstable; urgency=low
 
   * Prerelease 1.1.90
+  * Added debian/control.maemo-fremantle
 
  -- Sergio Villar Senin <svillar@igalia.com>  Wed, 27 Jan 2010 12:31:19 +0200
 
