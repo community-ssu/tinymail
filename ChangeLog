@@ -1,3 +1,16 @@
+2010-01-27  Sergio Villar Senin  <svillar@igalia.com>
+
+	* configure.ac: changed library version.
+	* debian/libtinymail-gnome-desktop-1.0-0.install:
+	* debian/libtinymail-camel-1.0-0.install:
+	* debian/libtinymailui-gtk-1.0-0.install:
+	* debian/libtinymail-gnomevfs-1.0-0.install:
+	* debian/libtinymail-maemo-1.0-0.install:
+	* debian/libtinymailui-1.0-0.install:
+	* debian/libtinymailui-mozembed-1.0-0.install:
+	* debian/libtinymail-1.0-0.install: do not assume that .so files
+	end with "0.0.0"
+
 2010-01-26  Sergio Villar Senin  <svillar@igalia.com>
 
 	* camel/providers/imap/camel-imap-store.c (imap_connect_online):

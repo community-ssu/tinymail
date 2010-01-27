@@ -1,12 +1,17 @@
 m4_define([tny_major_version], [1])
 m4_define([tny_minor_version], [1])
 m4_define([tny_micro_version], [90])
-m4_define([tny_version],
-          [tny_major_version.tny_minor_version.tny_micro_version])
 m4_define([tny_interface_age], [0])
+
 m4_define([tny_binary_age],
           [m4_eval(100 * tny_minor_version + tny_micro_version)])
+m4_define([tny_version],
+          [tny_major_version.tny_minor_version.tny_micro_version])
+
+# This is the X.Y used in -ltinymail-FOO-X.Y
 m4_define([tny_api_version], [1.0])
+
+# libtool versioning
 m4_define([lt_current], [m4_eval(100 * tny_minor_version + tny_micro_version - tny_interface_age)])
 m4_define([lt_revision], [tny_interface_age])
 m4_define([lt_age], [m4_eval(tny_binary_age - tny_interface_age)])
