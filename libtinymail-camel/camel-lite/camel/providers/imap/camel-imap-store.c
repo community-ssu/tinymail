@@ -2329,8 +2329,24 @@ imap_connect_online (CamelService *service, CamelException *ex)
 	    && camel_store_summary_count((CamelStoreSummary *)store->summary) == 0)
 	{
 		CamelStoreInfo *si;
+		gchar *pattern;
 
-		get_folders_sync(store, NULL, ex);
+		if (store->capabilities & IMAP_CAPABILITY_NAMESPACE) {
+			get_folders_sync(store, store->namespace, ex);
+
+			/* Some servers return NO (Zimbra) when issuing LIST
+			   commands with wildcards in Other namespaces. In
+			   those cases we don't want to disconnect */
+			if (camel_exception_is_set(ex)) {
+				if (camel_exception_get_id (ex) == CAMEL_EXCEPTION_SERVICE_PROTOCOL &&
+				    strstr (camel_exception_get_description (ex), "wildcards not permitted")) {
+					camel_exception_clear (ex);
+				}
+			}
+		} else {
+			get_folders_sync(store, NULL, ex);
+		}
+
 		if (camel_exception_is_set(ex))
 			goto done;
 
@@ -3936,68 +3952,15 @@ static void
 get_folders_sync_ns(CamelImapStore *imap_store, struct _namespace *namespace, gboolean has_other, gboolean has_shared, CamelException *ex)
 {
 	CamelImapResponse *response;
-	CamelFolderInfo *fi = NULL, *first = NULL, *hfi;
+	CamelFolderInfo *fi = NULL, *hfi;
 	char *list;
 	int i, count, j;
 	GHashTable *present;
 	CamelStoreInfo *si;
 	int loops = 2;
 	char *prefix, *lst = "*";
-	gboolean bah = FALSE;
 
-	if (!namespace->prefix || strlen (namespace->prefix) == 0) {
-
-		/**
-		 * NAMESPACE (("" ".") ("x" "y") ("x" "y") ... 
-		 * In this case the IMAP server didn't give us a cute namespace,
-		 * for personal but it has other namespaces. Therefore we'll
-		 * have to do two LIST requests (to get personal): 
-		 * 
-		 *    o. LIST "" %   -  and store the first in thefirst
-		 *
-		 *    o. - If there was a thefirst in the result, we ask for
-		 *         LIST "thefirst." *, 
-		 *         
-		 *       - If there was no thefirst in the result, we ask for
-		 *         LIST "INBOX." *
-		 * 
-		 * But in case there are no other namespaces than personal, we'll
-		 * just ask for LIST "" *, which will be fine (in that case) as
-		 * we won't get a huge list for the shared and other namespaces.
-		 **/
-
- 		/* We'll start with SELECT context */
-		prefix = g_strdup ("");
-
- 		/* We'll start with % if we know that there are other namespaces.
-		 * The reason is that otherwise we'd ask for LIST "" * here:
-		 * That request could result in a huge LIST on some IMAP servers.
-		 * For example IMAP servers that proxy NNTP newsgroups the 
-		 * shared or other namespaces. */
-
-		if (has_other || has_shared) {
-			bah = TRUE;
-			lst = "%";
-			imap_store->needs_lsub = TRUE;
-		}
-
-	} else if (namespace->prefix[strlen(namespace->prefix)-1] == namespace->delim) {
-
-		/**
-		 * NAMESPACE (("something" ".") ...
-		 * Usually, IMAP servers give you "something.". I don't really
-		 * understand from the IMAP spec what the correct way is, looks
-		 * like there's quite a bit of confusion among the IMAP server
-		 * developers about this too. So let's just cope with both here.
-		 **/
-		prefix = g_strndup(namespace->prefix, strlen(namespace->prefix)-1);
-	} else {
-		/**
-		 * NAMESPACE (("something." ".")..
-		 * This one is fine as-is. We'll just ask for LIST "something." *
-		 **/
-		prefix = g_strdup(namespace->prefix);
-	}
+	prefix = g_strdup(namespace->prefix);
 
 	present = g_hash_table_new(folder_hash, folder_eq);
 
@@ -4007,11 +3970,7 @@ get_folders_sync_ns(CamelImapStore *imap_store, struct _namespace *namespace, gb
 
 		/* If we have LIST-EXTENDED (we can forget about LSUB if we 
 		 * add (SUBSCRIBED) and parse the flags). */
-
-		if (bah)
-			loops = 2;
-		else
-			loops = 1;
+		loops = 1;
 
 		for (j = 0; j < loops; j++) {
 
@@ -4020,8 +3979,6 @@ get_folders_sync_ns(CamelImapStore *imap_store, struct _namespace *namespace, gb
 				 * list under that first. */
 				gchar *str = "INBOX";
 				g_free (prefix);
-				if (first && first->full_name)
-					str = first->full_name;
 				prefix = g_strdup_printf ("%s%c", str, namespace->delim);
 				lst = "*";
 			}
@@ -4053,8 +4010,6 @@ get_folders_sync_ns(CamelImapStore *imap_store, struct _namespace *namespace, gb
 					hfi = g_hash_table_lookup(present, fi->full_name);
 					if (hfi == NULL) {
 						g_hash_table_insert(present, fi->full_name, fi);
-						if (!first)
-							first = fi;
 					} else {
 						hfi->unread = fi->unread;
 						hfi->total = fi->total;
@@ -4072,10 +4027,7 @@ get_folders_sync_ns(CamelImapStore *imap_store, struct _namespace *namespace, gb
 		   LIST and the LSUB (this one is about the personal namespace,
 		   so recursively asking for all is probably fine). */
 
-		if (bah)
-			loops = 4;
-		else
-			loops = 2;
+		loops = 2;
 
 		for (j = 0; j < loops; j++) {
 
@@ -4084,8 +4036,6 @@ get_folders_sync_ns(CamelImapStore *imap_store, struct _namespace *namespace, gb
 				 * list under that first. */
 				gchar *str = "INBOX";
 				g_free (prefix);
-				if (first && first->full_name)
-					str = first->full_name;
 				prefix = g_strdup_printf ("%s%c", str, namespace->delim);
 				lst = "*";
 			}
@@ -4112,8 +4062,6 @@ get_folders_sync_ns(CamelImapStore *imap_store, struct _namespace *namespace, gb
 							imap_store->needs_lsub = TRUE;
 						}
 						g_hash_table_insert(present, fi->full_name, fi);
-						if (!first)
-							first = fi;
 					} else {
 						/* It's in LSUB and in LIST, so subscribed */
 						if (j == 1 || j == 3) {
