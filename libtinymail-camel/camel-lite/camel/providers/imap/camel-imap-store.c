@@ -2332,7 +2332,7 @@ imap_connect_online (CamelService *service, CamelException *ex)
 		gchar *pattern;
 
 		if (store->capabilities & IMAP_CAPABILITY_NAMESPACE) {
-			get_folders_sync(store, store->namespace, ex);
+			get_folders_sync(store, "*", ex);
 
 			/* Some servers return NO (Zimbra) when issuing LIST
 			   commands with wildcards in Other namespaces. In
