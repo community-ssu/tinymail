@@ -466,7 +466,7 @@ CamelImapStoreNamespace * camel_imap_store_summary_namespace_add(CamelImapStoreS
 	}
 
 	if (add) {
-		s->namespaces = g_list_prepend (s->namespaces, ns);
+		s->namespaces = g_list_append (s->namespaces, ns);
 		ret = ns;
 	} else
 		namespace_free((CamelStoreSummary*)s, ns);
