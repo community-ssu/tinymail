@@ -658,10 +658,18 @@ imap_read_response (CamelImapStore *store, CamelException *ex)
 	if (p && !g_ascii_strncasecmp (p, " OK", 3))
 		return response;
 
+	/* From RFC 3501: the NO response indicates an operational
+	   error message from the server.  When tagged, it indicates
+	   unsuccessful completion of the associated command.  The
+	   untagged format indicates a warning; the command can still
+	   complete successfully */
+	if (!p && !g_ascii_strncasecmp(p, " NO", 3) && type == CAMEL_IMAP_RESPONSE_UNTAGGED)
+		return response;
+
 	/* We should never get BAD, or anything else but +, OK, or NO
 	 * for that matter.  Well, we could get BAD, treat as NO.
 	 */
-	if (!p || (g_ascii_strncasecmp(p, " NO", 3) != 0 && g_ascii_strncasecmp(p, " BAD", 4)) ) {
+	if (!p || (g_ascii_strncasecmp(p, " NO", 3) != 0 || g_ascii_strncasecmp(p, " BAD", 4)) ) {
 		g_warning ("Unexpected response from IMAP server: %s",
 			   respbuf);
 		camel_exception_setv (ex, CAMEL_EXCEPTION_SERVICE_PROTOCOL,
