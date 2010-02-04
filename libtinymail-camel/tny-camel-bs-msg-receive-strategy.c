@@ -86,15 +86,10 @@ tny_camel_bs_msg_receive_strategy_start_receiving_part (TnyCamelBsMsgReceiveStra
 		char *text_part_spec;
 		CamelFolder *cfolder = _tny_camel_folder_get_camel_folder (TNY_CAMEL_FOLDER (folder));
 
-		if (TNY_IS_CAMEL_BS_MSG (part)) {
-			if (part_spec && *part_spec) {
-				text_part_spec = g_strconcat (part_spec, ".TEXT", NULL);
-			} else {
-				text_part_spec = g_strdup ("TEXT");
-			}
-		} else {
+		if (part_spec && *part_spec)
 			text_part_spec = g_strdup (part_spec);
-		}
+		else
+			text_part_spec = g_strdup ("TEXT");
 
 		/* TODO: play with IMAP's CONVERT here ... */
 
@@ -149,8 +144,8 @@ retrieve_subparts_headers (CamelFolder *folder, const gchar *uid, bodystruct_t *
 {
 	bodystruct_t *children;
 
-	if (!strcasecmp (bodystructure->content.type, "message") && 
-	    !strcasecmp (bodystructure->content.subtype, "rfc822") && 
+	if (!g_ascii_strcasecmp (bodystructure->content.type, "message") &&
+	    !g_ascii_strcasecmp (bodystructure->content.subtype, "rfc822") &&
 	    bodystructure->parent != NULL) {
 		gchar *part_spec;
 		gboolean hdr_bin = FALSE;
@@ -171,6 +166,9 @@ retrieve_subparts_headers (CamelFolder *folder, const gchar *uid, bodystruct_t *
 				if (sb.st_size == 0) {
 					gchar *prefix;
 					gchar *new_prefix;
+
+					/* First of all remove the old file */
+					unlink (mpstr);
 
 					prefix = g_strdup (bodystructure->part_spec);
 					new_prefix = g_strconcat (prefix, ".1", NULL);
@@ -193,7 +191,7 @@ retrieve_subparts_headers (CamelFolder *folder, const gchar *uid, bodystruct_t *
 	while (children != NULL) {
 
 		retrieve_subparts_headers (folder, uid, children, ex);
-		
+
 		if (camel_exception_is_set (ex))
 			return;
 		children = children->next;
