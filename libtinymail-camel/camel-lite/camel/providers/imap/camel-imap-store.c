@@ -3960,7 +3960,19 @@ get_folders_sync_ns(CamelImapStore *imap_store, struct _namespace *namespace, gb
 	int loops = 2;
 	char *prefix, *lst = "*";
 
-	prefix = g_strdup(namespace->prefix);
+	if (namespace->prefix[strlen(namespace->prefix)-1] == namespace->delim) {
+		/**
+		 * NAMESPACE (("something" ".") ...  Sometimes IMAP
+		 * servers give you "something.". I don't really
+		 * understand from the IMAP spec what the correct way
+		 * is, looks like there's quite a bit of confusion
+		 * among the IMAP server developers about this too. So
+		 * let's just cope with both here.
+		 **/
+               prefix = g_strndup(namespace->prefix, strlen(namespace->prefix)-1);
+	} else {
+		prefix = g_strdup(namespace->prefix);
+	}
 
 	present = g_hash_table_new(folder_hash, folder_eq);
 
