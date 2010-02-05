@@ -1,9 +1,3 @@
-2010-02-04  Sergio Villar Senin  <svillar@igalia.com>
-
-	* camel/providers/imap/camel-imap-store.c (get_folders_sync_ns):
-	sometimes IMAP servers return the personal namespace with
-	delitimer at the end. Take this into account when doing LIST
-
 2010-01-27  Sergio Villar Senin  <svillar@igalia.com>
 
 	* configure.ac: changed library version.
