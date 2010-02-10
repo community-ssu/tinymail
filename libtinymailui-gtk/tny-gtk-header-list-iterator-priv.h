@@ -84,6 +84,7 @@ struct _TnyGtkHeaderListModelPriv
 	gint show_latest;
 	GPtrArray *not_latest_items;
 	time_t oldest_received;
+	guint headers_per_batch;
 };
 
 G_END_DECLS

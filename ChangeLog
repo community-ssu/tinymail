@@ -1,3 +1,12 @@
+2010-02-10  Jose Dapena Paz  <jdapena@igalia.com>
+
+	* libtinymailui-gtk/tny-gtk-header-list-model.c:
+	new method tny_gtk_header_list_model_set_update_in_batches
+	to change the way headers are exposed to tree model. It
+	sets the number of headers that will be added to tree model
+	per batch. By default it's 3000 (old behavior). You can set
+	a lower value to make ui more responsive.
+
 2010-01-27  Sergio Villar Senin  <svillar@igalia.com>
 
 	* configure.ac: changed library version.

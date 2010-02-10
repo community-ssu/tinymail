@@ -79,6 +79,7 @@ void tny_gtk_header_list_model_set_no_duplicates (TnyGtkHeaderListModel *self, g
 gboolean tny_gtk_header_list_model_get_no_duplicates (TnyGtkHeaderListModel *self);
 void tny_gtk_header_list_model_set_show_latest (TnyGtkHeaderListModel *self, gint show_latest_n);
 gint tny_gtk_header_list_model_get_show_latest (TnyGtkHeaderListModel *self);
+void tny_gtk_header_list_model_set_update_in_batches (TnyGtkHeaderListModel *self, guint headers_per_batch);
 
 G_END_DECLS
 
