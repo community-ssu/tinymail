@@ -1478,6 +1478,9 @@ tny_gtk_header_list_model_set_show_latest (TnyGtkHeaderListModel *self, gint sho
 	TnyGtkHeaderListModelPriv *priv = TNY_GTK_HEADER_LIST_MODEL_GET_PRIVATE (self);
 	gint recover_latest = 0;
 
+	g_static_rec_mutex_lock (priv->iterator_lock);
+	g_static_rec_mutex_lock (priv->ra_lock);
+
 	if (priv->not_latest_items->len > 0 && show_latest_n == 0) {
 		/* recover all elements */
 		recover_latest = priv->not_latest_items->len;
@@ -1511,6 +1514,9 @@ tny_gtk_header_list_model_set_show_latest (TnyGtkHeaderListModel *self, gint sho
 	}
 
 	priv->show_latest = show_latest_n;
+
+	g_static_rec_mutex_unlock (priv->ra_lock);
+	g_static_rec_mutex_unlock (priv->iterator_lock);
 
 }
 
