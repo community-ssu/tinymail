@@ -1,3 +1,8 @@
+2010-02-16  Jose Dapena Paz  <jdapena@igalia.com>
+
+	* libtinymailui-gtk/tny-gtk-header-list-model.c: trivial fix
+	for wrong usage of mutexes in set_show_latest fix.
+
 2010-02-15  Jose Dapena Paz  <jdapena@igalia.com>
 
 	* libtinymailui-gtk/tny-gtk-header-list-model.c: add proper
