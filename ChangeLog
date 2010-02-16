@@ -1,3 +1,8 @@
+2010-02-15  Jose Dapena Paz  <jdapena@igalia.com>
+
+	* libtinymailui-gtk/tny-gtk-header-list-model.c: add proper
+	locks on set_show_latest method to avoid concurrency problems.
+
 2010-02-10  Jose Dapena Paz  <jdapena@igalia.com>
 
 	* libtinymailui-gtk/tny-gtk-header-list-model.c:
