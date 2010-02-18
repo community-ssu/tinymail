@@ -1,3 +1,9 @@
+2010-02-18  Jose Dapena Paz  <jdapena@igalia.com>
+
+	* libtinymail/tny-fs-stream-cache.c
+	(tny_fs_stream_cache_get_stream): return original stream
+	if we cannot put the stream in cache.
+
 2010-02-17  Sergio Villar Senin  <svillar@igalia.com>
 
 	* camel/providers/imap/camel-imap-folder.c (imap_fetch_structure):

@@ -193,6 +193,8 @@ tny_fs_stream_cache_get_stream (TnyStreamCache *self, const gchar *id,
 			g_hash_table_insert (priv->cached_files, g_strdup (id), cached_file);
 			g_static_mutex_unlock (priv->cache_lock);
 			result = tny_cached_file_get_stream (cached_file);
+		} else {
+			result = input_stream;
 		}
 	}
 
