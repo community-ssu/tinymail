@@ -1470,7 +1470,7 @@ tny_camel_mime_part_register_type (gpointer notused)
 	g_type_add_interface_static (type, TNY_TYPE_MIME_PART, 
 				     &tny_mime_part_info);
 
-	return GUINT_TO_POINTER (type);
+	return GSIZE_TO_POINTER (type);
 }
 
 /**
@@ -1495,5 +1495,5 @@ tny_camel_mime_part_get_type (void)
 	}
 
 	g_once (&once, tny_camel_mime_part_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }

@@ -735,7 +735,7 @@ tny_header_register_type (gpointer notused)
 				       "TnyHeader", &info, 0);
 	g_type_interface_add_prerequisite (type, G_TYPE_OBJECT);
 	
-	return GUINT_TO_POINTER (type);
+	return GSIZE_TO_POINTER (type);
 }
 
 GType
@@ -743,7 +743,7 @@ tny_header_get_type (void)
 {
 	static GOnce once = G_ONCE_INIT;
 	g_once (&once, tny_header_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
 
 static gpointer
@@ -767,7 +767,7 @@ tny_header_flags_register_type (gpointer notused)
 		{ 0, NULL, NULL }
 	};
 	etype = g_flags_register_static ("TnyHeaderFlags", values);
-	return GUINT_TO_POINTER (etype);
+	return GSIZE_TO_POINTER (etype);
 }
 
 /**
@@ -782,7 +782,7 @@ tny_header_flags_get_type (void)
 {
 	static GOnce once = G_ONCE_INIT;
 	g_once (&once, tny_header_flags_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
 
 static gpointer

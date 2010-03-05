@@ -441,7 +441,7 @@ tny_fs_stream_cache_register_type (gpointer notused)
 	g_type_add_interface_static (type, TNY_TYPE_STREAM_CACHE, 
 				     &tny_stream_cache_info);
 	
-	return GUINT_TO_POINTER (type);
+	return GSIZE_TO_POINTER (type);
 }
 
 GType 
@@ -449,5 +449,5 @@ tny_fs_stream_cache_get_type (void)
 {
 	static GOnce once = G_ONCE_INIT;
 	g_once (&once, tny_fs_stream_cache_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }

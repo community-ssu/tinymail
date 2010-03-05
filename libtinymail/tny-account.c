@@ -1111,7 +1111,7 @@ tny_account_register_type (gpointer notused)
 				       "TnyAccount", &info, 0);
 	g_type_interface_add_prerequisite (type, G_TYPE_OBJECT);
 	
-	return GUINT_TO_POINTER (type);
+	return GSIZE_TO_POINTER (type);
 }
 
 /**
@@ -1127,7 +1127,7 @@ tny_account_get_type (void)
 	static GOnce once = G_ONCE_INIT;
 
 	g_once (&once, tny_account_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
 
 static gpointer
@@ -1140,7 +1140,7 @@ tny_account_type_register_type (gpointer notused)
 	  { 0, NULL, NULL }
   };
   etype = g_enum_register_static ("TnyAccountType", values);
-  return GUINT_TO_POINTER (etype);
+  return GSIZE_TO_POINTER (etype);
 }
 
 /**
@@ -1157,7 +1157,7 @@ tny_account_type_get_type (void)
 
 	g_once (&once, tny_account_type_register_type, NULL);
 
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
 
 static gpointer
@@ -1171,7 +1171,7 @@ tny_account_signal_type_register_type (gpointer notused)
 		{ 0, NULL, NULL }
 	};
 	etype = g_enum_register_static ("TnyAccountSignal", values);
-	return GUINT_TO_POINTER (etype);
+	return GSIZE_TO_POINTER (etype);
 }
 
 /**
@@ -1188,7 +1188,7 @@ tny_account_signal_type_get_type (void)
 
 	g_once (&once, tny_account_signal_type_register_type, NULL);
 	
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
 
 static gpointer
@@ -1205,7 +1205,7 @@ tny_connection_status_register_type (gpointer notused)
 		{ 0, NULL, NULL }
 	};
 	etype = g_enum_register_static ("TnyConnectionStatus", values);
-	return GUINT_TO_POINTER (etype);
+	return GSIZE_TO_POINTER (etype);
 }
 
 /**
@@ -1222,7 +1222,7 @@ tny_connection_status_get_type (void)
 
 	g_once (&once, tny_connection_status_register_type, NULL);
 
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
 
 

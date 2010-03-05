@@ -171,7 +171,7 @@ tny_mime_part_saver_register_type (gpointer notused)
 	type = g_type_register_static (G_TYPE_INTERFACE, 
 				       "TnyMimePartSaver", &info, 0);
 
-	return GUINT_TO_POINTER (type);
+	return GSIZE_TO_POINTER (type);
 }
 
 GType
@@ -179,5 +179,5 @@ tny_mime_part_saver_get_type (void)
 {
 	static GOnce once = G_ONCE_INIT;
 	g_once (&once, tny_mime_part_saver_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }

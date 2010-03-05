@@ -213,7 +213,7 @@ tny_store_account_register_type (gpointer notused)
 	g_type_interface_add_prerequisite (type, TNY_TYPE_FOLDER_STORE);
 	g_type_interface_add_prerequisite (type, TNY_TYPE_ACCOUNT);
 
-	return GUINT_TO_POINTER (type);
+	return GSIZE_TO_POINTER (type);
 }
 
 /**
@@ -228,7 +228,7 @@ tny_store_account_get_type (void)
 {
 	static GOnce once = G_ONCE_INIT;
 	g_once (&once, tny_store_account_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
 
 static gpointer
@@ -241,7 +241,7 @@ tny_store_account_signal_register_type (gpointer notused)
     { 0, NULL, NULL }
   };
   etype = g_enum_register_static ("TnyStoreAccountSignal", values);
-  return GUINT_TO_POINTER (etype);
+  return GSIZE_TO_POINTER (etype);
 }
 
 /**
@@ -256,5 +256,5 @@ tny_store_account_signal_get_type (void)
 {
   static GOnce once = G_ONCE_INIT;
   g_once (&once, tny_store_account_signal_register_type, NULL);
-  return GPOINTER_TO_UINT (once.retval);
+  return GPOINTER_TO_SIZE (once.retval);
 }

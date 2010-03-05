@@ -139,7 +139,7 @@ tny_folder_store_query_register_type (gpointer notused)
 	object_type = g_type_register_static (G_TYPE_OBJECT, 
 					      "TnyFolderStoreQuery", &object_info, 0);
 
-	return GUINT_TO_POINTER (object_type);
+	return GSIZE_TO_POINTER (object_type);
 }
 
 GType
@@ -147,7 +147,7 @@ tny_folder_store_query_get_type (void)
 {
 	static GOnce once = G_ONCE_INIT;
 	g_once (&once, tny_folder_store_query_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
 
 static gpointer
@@ -171,7 +171,7 @@ tny_folder_store_query_item_register_type (gpointer notused)
 	object_type = g_type_register_static (G_TYPE_OBJECT, 
 					      "TnyFolderStoreQueryItem", &object_info, 0);
 	
-	return GUINT_TO_POINTER (object_type);
+	return GSIZE_TO_POINTER (object_type);
 }
 
 /**
@@ -186,7 +186,7 @@ tny_folder_store_query_item_get_type (void)
 {
 	static GOnce once = G_ONCE_INIT;
 	g_once (&once, tny_folder_store_query_item_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
 
 static gchar*
@@ -389,7 +389,7 @@ tny_folder_store_query_option_register_type (gpointer notused)
 		{ 0, NULL, NULL }
 	};
 	etype = g_flags_register_static ("TnyFolderStoreQueryOption", values);
-	return GUINT_TO_POINTER (etype);
+	return GSIZE_TO_POINTER (etype);
 }
 
 /**
@@ -404,5 +404,5 @@ tny_folder_store_query_option_get_type (void)
 {
 	static GOnce once = G_ONCE_INIT;
 	g_once (&once, tny_folder_store_query_option_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }

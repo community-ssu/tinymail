@@ -162,4 +162,6 @@ Thomas Viehmann <tv@beamnet.de>
 
 	* Packaging for Debian
 
+Simon Schubert  <2@0x2c.org>
 
+     * Fix for 64-bit architectures

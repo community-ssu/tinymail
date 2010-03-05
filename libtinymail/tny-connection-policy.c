@@ -175,7 +175,7 @@ tny_connection_policy_register_type (gpointer notused)
 		};
 	type = g_type_register_static (G_TYPE_INTERFACE, 
 				       "TnyConnectionPolicy", &info, 0);
-	return GUINT_TO_POINTER (type);
+	return GSIZE_TO_POINTER (type);
 }
 
 GType
@@ -185,5 +185,5 @@ tny_connection_policy_get_type (void)
 
 	g_once (&once, tny_connection_policy_register_type, NULL);
 
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }

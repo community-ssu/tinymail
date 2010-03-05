@@ -1,3 +1,10 @@
+2010-03-04  Simon Schubert  <2@0x2c.org>
+
+	Reviewed by: Sergio Villar Senin <svillar@igalia.com>
+
+	Use GPOINTER_TO_SIZE (once.retval) to retrieve GType values.
+	This fixes crashes on 64-bit machines.
+
 2010-02-18  Jose Dapena Paz  <jdapena@igalia.com>
 
 	* libtinymail/tny-fs-stream-cache.c

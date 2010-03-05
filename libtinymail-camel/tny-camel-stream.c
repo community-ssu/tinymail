@@ -312,7 +312,7 @@ tny_camel_stream_register_type (gpointer notused)
 				     &tny_seekable_info);
 	
 
-	return GUINT_TO_POINTER (type);
+	return GSIZE_TO_POINTER (type);
 }
 
 /**
@@ -337,5 +337,5 @@ tny_camel_stream_get_type (void)
 	}
 
 	g_once (&once, tny_camel_stream_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }

@@ -405,7 +405,7 @@ tny_account_store_register_type (gpointer notused)
 
 	g_type_interface_add_prerequisite (type, G_TYPE_OBJECT);
 
-	return GUINT_TO_POINTER (type);
+	return GSIZE_TO_POINTER (type);
 }
 
 /**
@@ -423,7 +423,7 @@ tny_account_store_get_type (void)
 
 	g_once (&once, tny_account_store_register_type, NULL);
 
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
 
 static gpointer
@@ -439,7 +439,7 @@ tny_alert_type_register_type (gpointer notused)
 
   etype = g_enum_register_static ("TnyAlertType", values);
 
-  return GUINT_TO_POINTER (etype);
+  return GSIZE_TO_POINTER (etype);
 }
 
 /**
@@ -457,7 +457,7 @@ tny_alert_type_get_type (void)
   
   g_once (&once, tny_alert_type_register_type, NULL);
 
-  return GPOINTER_TO_UINT (once.retval);;
+  return GPOINTER_TO_SIZE (once.retval);;
 }
 
 static gpointer
@@ -472,7 +472,7 @@ tny_get_accounts_request_type_register_type (gpointer notused)
   };
 
   etype = g_enum_register_static ("TnyGetAccountsRequestType", values);
-  return GUINT_TO_POINTER (etype);
+  return GSIZE_TO_POINTER (etype);
 }
 
 /**
@@ -488,7 +488,7 @@ tny_get_accounts_request_type_get_type (void)
 {
   static GOnce once = G_ONCE_INIT;
   g_once (&once, tny_get_accounts_request_type_register_type, NULL);
-  return GPOINTER_TO_UINT (once.retval);
+  return GPOINTER_TO_SIZE (once.retval);
 }
 
 static gpointer
@@ -501,7 +501,7 @@ tny_account_store_signal_register_type (gpointer notused)
     { 0, NULL, NULL }
   };
   etype = g_enum_register_static ("TnyAccountStoreSignal", values);
-  return GUINT_TO_POINTER (etype);
+  return GSIZE_TO_POINTER (etype);
 }
 
 /**
@@ -519,5 +519,5 @@ tny_account_store_signal_get_type (void)
 
   g_once (&once, tny_account_store_signal_register_type, NULL);
 
-  return GPOINTER_TO_UINT (once.retval);
+  return GPOINTER_TO_SIZE (once.retval);
 }

@@ -1415,7 +1415,7 @@ tny_gtk_header_list_model_register_type (gpointer notused)
 	g_type_add_interface_static (object_type, TNY_TYPE_LIST,
 				     &tny_list_info);
 
-	return GUINT_TO_POINTER (object_type);
+	return GSIZE_TO_POINTER (object_type);
 }
 
 /**
@@ -1430,7 +1430,7 @@ tny_gtk_header_list_model_get_type (void)
 {
 	static GOnce once = G_ONCE_INIT;
 	g_once (&once, tny_gtk_header_list_model_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
 
 static gpointer
@@ -1454,7 +1454,7 @@ tny_gtk_header_list_model_column_register_type (gpointer notused)
       { 0, NULL, NULL }
   };
   etype = g_enum_register_static ("TnyGtkHeaderListModelColumn", values);
-  return GUINT_TO_POINTER (etype);
+  return GSIZE_TO_POINTER (etype);
 }
 
 /**
@@ -1469,7 +1469,7 @@ tny_gtk_header_list_model_column_get_type (void)
 {
 	static GOnce once = G_ONCE_INIT;
 	g_once (&once, tny_gtk_header_list_model_column_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
 
 void 

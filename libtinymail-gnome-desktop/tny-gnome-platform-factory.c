@@ -224,7 +224,7 @@ tny_gnome_platform_factory_register_type (gpointer notused)
 				     &tny_platform_factory_info);
 
 
-	return GUINT_TO_POINTER (type);
+	return GSIZE_TO_POINTER (type);
 }
 
 GType 
@@ -232,5 +232,5 @@ tny_gnome_platform_factory_get_type (void)
 {
 	static GOnce once = G_ONCE_INIT;
 	g_once (&once, tny_gnome_platform_factory_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }

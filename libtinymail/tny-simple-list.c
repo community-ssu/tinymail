@@ -249,7 +249,7 @@ tny_simple_list_register_type (gpointer notused)
 	g_type_add_interface_static (object_type, TNY_TYPE_LIST,
 				     &tny_list_info);
 
-	return GUINT_TO_POINTER (object_type);
+	return GSIZE_TO_POINTER (object_type);
 }
 
 GType
@@ -257,5 +257,5 @@ tny_simple_list_get_type (void)
 {
 	static GOnce once = G_ONCE_INIT;
 	g_once (&once, tny_simple_list_register_type, NULL);
-	return GPOINTER_TO_UINT (once.retval);
+	return GPOINTER_TO_SIZE (once.retval);
 }
