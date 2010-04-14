@@ -1,3 +1,11 @@
+2010-04-14  Alexander Chumakov  <alexander.chumakov@teleca.com>
+
+	Reviewed by: Sergio Villar Senin <svillar@igalia.com>
+
+	* libtinymail-camel/tny-camel-common.c (_string_to_camel_inet_addr):
+	Fixed handling addresses with a new line between display-name and
+	angle-addr
+
 2010-03-04  Simon Schubert  <2@0x2c.org>
 
 	Reviewed by: Sergio Villar Senin <svillar@igalia.com>

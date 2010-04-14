@@ -279,6 +279,7 @@ _string_to_camel_inet_addr (gchar *tok, CamelInternetAddress *target)
 	
 		if (G_LIKELY (lname && *lname == ' '))
 			*lname-- = '\0';
+		name = g_strstrip (name);
 		remove_quotes (name);
 		camel_internet_address_add (target, name, email);
 	} else {
