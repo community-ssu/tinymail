@@ -382,6 +382,8 @@ PKG_CHECK_MODULES(LIBTINYMAIL_CAMEL, glib-2.0 >= 2.8 gobject-2.0)
 
 if test x$debug == xtrue; then
 	EXTRA_CFLAGS="-DDEBUG -DDBC -g -ggdb -O0"
+else
+	EXTRA_CFLAGS="-DG_DISABLE_CAST_CHECKS"
 fi
 
 if test x$enable_deprecated == xfalse; then

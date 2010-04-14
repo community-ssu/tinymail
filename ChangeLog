@@ -1,3 +1,8 @@
+2010-04-14  Sergio Villar Senin  <svillar@igalia.com>
+
+	* configure.ac: disable glib cast checks in code built for
+	releases
+
 2010-04-14  Alexander Chumakov  <alexander.chumakov@teleca.com>
 
 	Reviewed by: Sergio Villar Senin <svillar@igalia.com>
