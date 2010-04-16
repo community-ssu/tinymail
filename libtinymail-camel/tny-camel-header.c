@@ -316,7 +316,8 @@ tny_camel_header_dup_message_id (TnyHeader *self)
 	gchar *retval = NULL;
 
 	camel_folder_summary_lock ();
-	retval = (gchar*) camel_message_info_message_id (me->info);
+	retval = g_strndup ((const gchar *) camel_message_info_message_id (me->info),
+			    sizeof (CamelSummaryMessageID));
 	camel_folder_summary_unlock ();
 
 	return retval;

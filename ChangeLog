@@ -1,3 +1,12 @@
+2010-04-16  Alexander Chumakov  <alexander.chumakov@teleca.com>
+
+	Reviewed by: Sergio Villar Senin <svillar@igalia.com>
+
+	* libtinymail-camel/tny-camel-header.c (tny_camel_header_dup_message_id):
+	tny_camel_header_dup_message_id should return an allocated message ID,
+	otherwise a crash or memory corruption is possible when the client
+	tries to release the message ID with g_free
+
 2010-04-14  Sergio Villar Senin  <svillar@igalia.com>
 
 	* configure.ac: disable glib cast checks in code built for
