@@ -1,3 +1,11 @@
+tinymail (1.1.91) unstable; urgency=low
+
+  * Fixes: NB#160412 Return dynamically allocated string for mail (mime content) id
+  * Fixes: NB#158769 Enable addresses with a new line between display-name and angle-addr
+  * Fixes: NB#162685 Disable GLib cast checks in tinymail (G_DISABLE_CAST_CHECKS)
+
+ -- Sergio Villar Senin <svillar@igalia.com>  Tue, 08 Jun 2010 12:45:00 +0400
+
 tinymail (1.1.90) unstable; urgency=low
 
   * Prerelease 1.1.90
