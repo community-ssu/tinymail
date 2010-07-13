@@ -28,10 +28,10 @@ ifneq (,$(findstring thumb,$(DEB_BUILD_OPTIONS)))
 endif
 
 config.status:
-	if [ ! -x configure ]; then ./autogen.sh --with-platform=maemo --with-ssl=nss --disable-idle; fi
+	if [ ! -x configure ]; then ./autogen.sh --with-platform=maemo --with-ssl=nss --disable-idle --disable-imap-part-fetch; fi
 	dh_testdir
 	# Add here commands to configure the package.
-	CFLAGS="$(CFLAGS) -fPIC" ./configure --with-platform=maemo --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --with-ssl=nss --disable-idle --sysconfdir=/etc --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info
+	CFLAGS="$(CFLAGS) -fPIC" ./configure --with-platform=maemo --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr --with-ssl=nss --disable-idle --disable-imap-part-fetch --sysconfdir=/etc --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info
 
 
 build: build-stamp

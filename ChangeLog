@@ -1,3 +1,12 @@
+2010-07-13  Alexander Chumakov  <alexander.chumakov@teleca.com>
+
+	Reviewed by: Sergio Villar Senin <svillar@igalia.com>
+
+        * debian/changelog: Added version 1.1.92 to the change log
+        for PE1 Fremantle pre-release
+        * debian/rules.maemo: Added '--disable-imap-part-fetch'
+        to the configuration flags for maemo variant
+
 2010-06-08  Alexander Chumakov  <alexander.chumakov@teleca.com>
 
         * Added version 1.1.91 to the change log for PE1 Fremantle pre-release

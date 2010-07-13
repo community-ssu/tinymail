@@ -1,3 +1,9 @@
+tinymail (1.1.92) unstable; urgency=low
+
+  * Fixes: NB#179769 IMAP providers: inline images are not shown in emails
+
+ -- Sergio Villar Senin <svillar@igalia.com>  Tue, 13 Jul 2010 18:30:00 +0400
+
 tinymail (1.1.91) unstable; urgency=low
 
   * Fixes: NB#160412 Return dynamically allocated string for mail (mime content) id
