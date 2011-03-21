@@ -67,6 +67,7 @@ struct _TnyGtkFolderStoreTreeModel
 	GPtrArray *signals;
 
 	TnyGtkFolderStoreTreeModelFlags flags;
+	gchar *path_separator;
 };
 
 struct _TnyGtkFolderStoreTreeModelClass
@@ -79,6 +80,8 @@ GType tny_gtk_folder_store_tree_model_column_get_type (void);
 GtkTreeModel* tny_gtk_folder_store_tree_model_new (TnyFolderStoreQuery *query);
 GtkTreeModel* tny_gtk_folder_store_tree_model_new_with_flags (TnyFolderStoreQuery *query, 
 							      TnyGtkFolderStoreTreeModelFlags flags);
+void tny_gtk_folder_store_tree_model_set_path_separator (TnyGtkFolderStoreTreeModel *self, const gchar *separator);
+const gchar *tny_gtk_folder_store_tree_model_get_path_separator (TnyGtkFolderStoreTreeModel *self);
 void tny_gtk_folder_store_tree_model_prepend (TnyGtkFolderStoreTreeModel *self, TnyFolderStore* item, const gchar *root_name);
 void tny_gtk_folder_store_tree_model_append (TnyGtkFolderStoreTreeModel *self, TnyFolderStore* item, const gchar *root_name);
 

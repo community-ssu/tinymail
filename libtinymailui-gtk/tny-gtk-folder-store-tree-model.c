@@ -65,7 +65,7 @@
 
 #include "tny-gtk-folder-store-tree-model-iterator-priv.h"
 
-#define PATH_SEPARATOR " "
+#define DEFAULT_PATH_SEPARATOR " "
 
 static GObjectClass *parent_class = NULL;
 
@@ -215,7 +215,7 @@ recurse_folders_sync (TnyGtkFolderStoreTreeModel *self,
 						name = g_strdup (tny_folder_get_name (folder));
 					} else {
 						name = g_strconcat (parent_name,
-								    PATH_SEPARATOR,
+								    self->path_separator,
 								    tny_folder_get_name (folder), 
 								    NULL);
 					}
@@ -693,6 +693,7 @@ tny_gtk_folder_store_tree_model_instance_init (GTypeInstance *instance, gpointer
 	me->first = NULL;
 
 	me->flags = 0;
+	me->path_separator = g_strdup (DEFAULT_PATH_SEPARATOR);
 
 	gtk_tree_store_set_column_types (store, 
 		TNY_GTK_FOLDER_STORE_TREE_MODEL_N_COLUMNS, types);
@@ -1021,11 +1022,13 @@ find_node (GtkTreeModel *model, TnyFolder *folder, GtkTreeIter *iter)
 	return result;
 }
 
+
 static void
 update_children_names (GtkTreeModel *model, TnyFolder *folder, const gchar *name)
 {
 	TnyList *children;
 	TnyIterator *iterator;
+	TnyGtkFolderStoreTreeModel *self = TNY_GTK_FOLDER_STORE_TREE_MODEL (model);
 
 	children = TNY_LIST (tny_simple_list_new ());
 	iterator = tny_list_create_iterator (children);
@@ -1037,7 +1040,7 @@ update_children_names (GtkTreeModel *model, TnyFolder *folder, const gchar *name
 		child = TNY_FOLDER (tny_iterator_get_current (iterator));
 		if (find_node (model, child, &iter)) {
 			gchar *new_name;
-			new_name = g_strconcat (name, PATH_SEPARATOR,
+			new_name = g_strconcat (name, self->path_separator,
 						tny_folder_get_name (TNY_FOLDER (child)),
 						NULL);
 			gtk_tree_store_set (GTK_TREE_STORE (model), &iter,
@@ -1054,6 +1057,68 @@ update_children_names (GtkTreeModel *model, TnyFolder *folder, const gchar *name
 
 	g_object_unref (iterator);
 	g_object_unref (children);
+}
+
+
+static void
+update_folder_name (GtkTreeModel *model, TnyFolder *folder, GtkTreeIter *iter, gboolean update_children)
+{
+	GtkTreeIter parent_iter;
+	gchar *name = NULL;
+	TnyGtkFolderStoreTreeModel *self = TNY_GTK_FOLDER_STORE_TREE_MODEL (model);
+
+	if (self->flags & TNY_GTK_FOLDER_STORE_TREE_MODEL_FLAG_SHOW_PATH) {
+		if (find_parent (model, folder, &parent_iter)) {
+			gchar *parent_name;
+			gtk_tree_model_get (model, &parent_iter, 
+					    TNY_GTK_FOLDER_STORE_TREE_MODEL_NAME_COLUMN, 
+					    &parent_name, -1);
+			if (parent_name && parent_name[0] == '\0')
+				name = g_strconcat (parent_name, self->path_separator,
+						    tny_folder_get_name (TNY_FOLDER (folder)),
+						    NULL);
+			g_free (parent_name);
+		}
+	}
+
+	if (name == NULL)
+		name = g_strdup (tny_folder_get_name (TNY_FOLDER (folder)));
+	
+	gtk_tree_store_set (GTK_TREE_STORE (model), iter,
+			    TNY_GTK_FOLDER_STORE_TREE_MODEL_NAME_COLUMN, 
+			    name,
+			    -1);
+	if (update_children && 
+	    (self->flags & TNY_GTK_FOLDER_STORE_TREE_MODEL_FLAG_SHOW_PATH)) {
+		update_children_names (model, folder, name);
+	}
+	g_free (name);
+}
+
+
+static void
+update_names (TnyGtkFolderStoreTreeModel *self)
+{
+	GtkTreeIter iter;
+
+	if (!gtk_tree_model_get_iter_first (GTK_TREE_MODEL (self), &iter))
+		return;
+
+	do {
+		TnyFolderStore *store;
+		gtk_tree_model_get (GTK_TREE_MODEL (self), &iter, 
+				    TNY_GTK_FOLDER_STORE_TREE_MODEL_INSTANCE_COLUMN, 
+				    &store, -1);
+
+		if (TNY_IS_FOLDER (store)) {
+			update_folder_name (GTK_TREE_MODEL (self),
+					    TNY_FOLDER (store),
+					    &iter,
+					    FALSE /*don't update children*/);
+		}
+		g_object_unref (store);
+		
+	} while (gtk_tree_model_iter_next (GTK_TREE_MODEL (self), &iter));
 }
 
 
@@ -1123,39 +1188,7 @@ updater (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, gpointer use
 				total, -1);
 
 			if (changed & TNY_FOLDER_CHANGE_CHANGED_FOLDER_RENAME) {
-				GtkTreeIter parent_iter;
-				gchar *name = NULL;
-
-				if (TNY_GTK_FOLDER_STORE_TREE_MODEL (model)->flags &
-				    TNY_GTK_FOLDER_STORE_TREE_MODEL_FLAG_SHOW_PATH) {
-					if (find_parent (model, folder, &parent_iter)) {
-						gchar *parent_name;
-						gtk_tree_model_get (model, &parent_iter, 
-								    TNY_GTK_FOLDER_STORE_TREE_MODEL_NAME_COLUMN, 
-								    &parent_name, -1);
-						if (parent_name && parent_name[0] == '\0')
-							name = g_strconcat (parent_name, PATH_SEPARATOR,
-									    tny_folder_get_name (TNY_FOLDER (folder)),
-									    NULL);
-						g_free (parent_name);
-
-
-					}
-				}
-
-				
-				if (name == NULL)
-					name = g_strdup (tny_folder_get_name (TNY_FOLDER (folder)));
-
-				gtk_tree_store_set (GTK_TREE_STORE (model), iter,
-						    TNY_GTK_FOLDER_STORE_TREE_MODEL_NAME_COLUMN, 
-						    name,
-						    -1);
-				if (TNY_GTK_FOLDER_STORE_TREE_MODEL (model)->flags &
-				    TNY_GTK_FOLDER_STORE_TREE_MODEL_FLAG_SHOW_PATH) {
-					update_children_names (model, folder, name);
-				}
-				g_free (name);
+				update_folder_name (model, folder, iter, TRUE /*update children*/);
 			}
 		}
 
@@ -1297,7 +1330,7 @@ creater (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *in_iter, gpointer 
 			if (TNY_GTK_FOLDER_STORE_TREE_MODEL (self)->flags &
 			    TNY_GTK_FOLDER_STORE_TREE_MODEL_FLAG_SHOW_PATH) {
 				if (parent_name && *parent_name != '\0')
-					finalname = g_strconcat (parent_name, PATH_SEPARATOR,
+					finalname = g_strconcat (parent_name, self->path_separator,
 								 tny_folder_get_name (TNY_FOLDER (folder)), NULL);
 				else
 					finalname = g_strdup (tny_folder_get_name (TNY_FOLDER (folder)));
@@ -1337,6 +1370,32 @@ creater (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *in_iter, gpointer 
 	return found;
 }
 
+
+void 
+tny_gtk_folder_store_tree_model_set_path_separator (TnyGtkFolderStoreTreeModel *self, 
+					      	    const gchar *separator)
+{
+	g_return_if_fail (TNY_IS_GTK_FOLDER_STORE_TREE_MODEL (self));
+
+	if (separator == NULL)
+		separator = "";
+
+	g_free (self->path_separator);
+
+	self->path_separator = g_strdup (separator);
+
+	if (self->flags & TNY_GTK_FOLDER_STORE_TREE_MODEL_FLAG_SHOW_PATH)
+		update_names (self);
+}
+
+
+const gchar *
+tny_gtk_folder_store_tree_model_get_path_separator (TnyGtkFolderStoreTreeModel *self)
+{
+	g_return_val_if_fail (TNY_IS_GTK_FOLDER_STORE_TREE_MODEL (self), NULL);
+
+	return self->path_separator;
+}
 
 
 static void

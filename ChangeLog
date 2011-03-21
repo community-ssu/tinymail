@@ -1,3 +1,10 @@
+2011-04-02 Naikel Aparicio <naikel@gmail.com>
+
+	* libtinymailui-gtk/tny-gtk-folder-list-store.h:
+	* libtinymailui-gtk/tny-gtk-folder-list-store.c:
+	Folder tree store path separator is now configurable just like the
+	folder list store is.
+
 2010-07-13  Alexander Chumakov  <alexander.chumakov@teleca.com>
 
 	Reviewed by: Sergio Villar Senin <svillar@igalia.com>
