@@ -616,11 +616,13 @@ tny_session_camel_ms_thread_msg_new (CamelSession *session, CamelSessionThreadOp
 {
 	CamelSessionThreadMsg *msg = ms_parent_class->thread_msg_new(session, ops, size);
 
+#if 0
 	msg->ops = g_new0 (CamelSessionThreadOps,1);
 	msg->ops->free = my_free_func;
 	msg->ops->receive = my_receive_func;
 	msg->data = NULL;
 	msg->op = camel_operation_new (my_cancel_func, NULL);
+#endif
 
 	return msg;
 
