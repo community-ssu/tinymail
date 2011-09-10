@@ -1169,6 +1169,7 @@ imap_rescan_condstore (CamelFolder *folder, int exists, const char *highestmodse
 	 * important. */
 
 	summary_got = 0;
+	resp = NULL;
 	while ((type = camel_imap_command_response (store, &resp, ex)) == CAMEL_IMAP_RESPONSE_UNTAGGED)
 	{
 		if (changes == NULL)
@@ -1177,21 +1178,22 @@ imap_rescan_condstore (CamelFolder *folder, int exists, const char *highestmodse
 		if (process_condstore_line (imap_folder, resp, changes) == -1) {
 			imap_folder->need_rescan = TRUE;
 			g_free (resp);
+			resp = NULL;
 			continue;
 		}
 
 		g_free (resp);
+		resp = NULL;
 		camel_operation_progress (NULL, ++summary_got , summary_len);
 	}
 
 	camel_operation_end (NULL);
 
+	/* Free the final tagged response */
+	g_free (resp);
 	if (type == CAMEL_IMAP_RESPONSE_ERROR)
 		return FALSE;
 
-	/* Free the final tagged response */
-	if (resp)
-		g_free (resp);
 
 	if (changes) {
 		camel_object_trigger_event(CAMEL_OBJECT (folder), "folder_changed", changes);
@@ -1281,6 +1283,7 @@ imap_rescan (CamelFolder *folder, int exists, CamelException *ex)
 
 		data = parse_fetch_response (imap_folder, resp);
 		g_free (resp);
+		resp = NULL;
 		if (!data)
 			continue;
 
