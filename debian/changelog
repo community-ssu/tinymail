@@ -1,3 +1,15 @@
+tinymail (1.1.92+1cssu3) unstable; urgency=low
+
+  * Fixed memory leaks and possible double frees (fixes crashes - thanks freemangordon)
+
+ -- Mohammad Abu-Garbeyyeh <mohammad7410@gmail.com>  Sat, 19 Nov 2011 16:56:14 +0200
+
+tinymail (1.1.92+1cssu2) unstable; urgency=low
+
+  * Offline imap support.
+
+ -- Mohammad Abu-Garbeyyeh <mohammad7410@gmail.com>  Sun, 07 Aug 2011 15:03:59 +0300
+
 tinymail (1.1.92+1cssu1) unstable; urgency=low
 
   * Increment version number
