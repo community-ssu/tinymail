@@ -1,3 +1,9 @@
+tinymail (1.1.92+1cssu4) unstable; urgency=low
+
+  * Rebuilt without thumb support
+
+ -- Mohammad Abu-Garbeyyeh <mohammad7410@gmail.com>  Tue, 29 Nov 2011 18:58:54 +0200
+
 tinymail (1.1.92+1cssu3) unstable; urgency=low
 
   * Fixed memory leaks and possible double frees (fixes crashes - thanks freemangordon)
