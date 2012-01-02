@@ -1,7 +1,7 @@
 Source: tinymail
 Section: libs 
 Priority: optional
-Maintainer: Oystein Gisnas <oystein@gisnas.net>
+Maintainer: Christian Ratzenhofer <christian_ratzenhofer@yahoo.de>
 Build-Depends: debhelper (>=4), cdbs, dpkg-dev (>= 1.13.18), libglib2.0-dev (>= 2.6), libgtk2.0-dev, libosso-gnomevfs2-dev, libgconf2-dev, libosso-dev, libconic0-dev, gnome-common, gtk-doc-tools, microb-engine-dev
 Standards-Version: 3.7.2
 
