@@ -1,3 +1,9 @@
+tinymail (1.1.92+1cssu4-thumb0) unstable; urgency=low
+
+  * Rebuilt with thumb support
+
+ -- Ivaylo Dimitrov <freemangordon@abv.bg>  Fri, 11 May 2012 05:39:34 +0300
+
 tinymail (1.1.92+1cssu4) unstable; urgency=low
 
   * Rebuilt without thumb support
