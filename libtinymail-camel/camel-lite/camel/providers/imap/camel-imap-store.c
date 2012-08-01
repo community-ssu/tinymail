@@ -2724,12 +2724,11 @@ get_folder_status (CamelImapStore *imap_store, const char *folder_name, const ch
 		item->name = g_strndup (name, p - name);
 		item->value = strtoul (p, &p, 10);
 
-		if(!items){
+		if(!items)
 			items=item;
-			tail=item;
-		}
+		else
+			tail->next = item;
 
-		tail->next = item;
 		tail = item;
 
 		while (*p == ' ')
