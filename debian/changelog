@@ -1,3 +1,9 @@
+tinymail (1.1.92+1cssu4-thumb3) unstable; urgency=low
+
+  * camel-imap-store.c: prevent heap corruption if list contains only one element
+
+ -- Ivaylo Dimitrov <freemangordon@abv.bg>  Wed, 01 Aug 2012 12:46:25 +0300
+
 tinymail (1.1.92+1cssu4-thumb2) unstable; urgency=low
 
   * Add kernel-feature-errata-430973-workaround dependency only for [armel]
