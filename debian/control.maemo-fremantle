@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: libtinymail-1.0-0
 Architecture: any
-Depends: kernel-feature-errata-430973-workaround, ${shlibs:Depends}
+Depends: kernel-feature-errata-430973-workaround [armel], ${shlibs:Depends}
 Description: memory-effective framework for accessing e-mail - library
  Tinymail is a development framework for accessing E-mail services using
  devices with few memory resources.
@@ -44,7 +44,7 @@ Description: memory-effective framework for accessing e-mail - debug symbol file
 
 Package: libtinymail-camel-1.0-0
 Architecture: any
-Depends: kernel-feature-errata-430973-workaround, ${shlibs:Depends}
+Depends: kernel-feature-errata-430973-workaround [armel], ${shlibs:Depends}
 Description: memory-effective framework for accessing e-mail - Camel library
  Tinymail is a development framework for accessing E-mail services using
  devices with few memory resources.
@@ -81,7 +81,7 @@ Description: memory-effective framework for accessing e-mail - debug symbol file
 
 Package: libtinymailui-1.0-0
 Architecture: any
-Depends: kernel-feature-errata-430973-workaround, ${shlibs:Depends}
+Depends: kernel-feature-errata-430973-workaround [armel], ${shlibs:Depends}
 Description: memory-effective framework for accessing e-mail - Camel library
  Tinymail is a development framework for accessing E-mail services using
  devices with few memory resources.
@@ -117,7 +117,7 @@ Description: memory-effective framework for accessing e-mail - debug symbol file
 
 Package: libtinymailui-gtk-1.0-0
 Architecture: any
-Depends: kernel-feature-errata-430973-workaround, ${shlibs:Depends}
+Depends: kernel-feature-errata-430973-workaround [armel], ${shlibs:Depends}
 Description: memory-effective framework for accessing e-mail - Camel library
  Tinymail is a development framework for accessing E-mail services using
  devices with few memory resources.
@@ -153,7 +153,7 @@ Description: memory-effective framework for accessing e-mail - debug symbol file
 
 Package: libtinymail-maemo-1.0-0
 Architecture: any
-Depends: kernel-feature-errata-430973-workaround, ${shlibs:Depends}
+Depends: kernel-feature-errata-430973-workaround [armel], ${shlibs:Depends}
 Description: memory-effective framework for accessing e-mail - Camel library
  Tinymail is a development framework for accessing E-mail services using
  devices with few memory resources.
@@ -189,7 +189,7 @@ Description: memory-effective framework for accessing e-mail - debug symbol file
 
 Package: libtinymail-gnomevfs-1.0-0
 Architecture: any
-Depends: kernel-feature-errata-430973-workaround, ${shlibs:Depends}
+Depends: kernel-feature-errata-430973-workaround [armel], ${shlibs:Depends}
 Description: memory-effective framework for accessing e-mail - Camel library
  Tinymail is a development framework for accessing E-mail services using
  devices with few memory resources.
