@@ -1,4 +1,4 @@
-tinymail (1.1.92+1cssu4-thumb3) unstable; urgency=low
+tinymail (1.1.92+1cssu4+thumb3) unstable; urgency=low
 
   * camel-imap-store.c: prevent heap corruption if list contains only one element
 
