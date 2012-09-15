@@ -29,5 +29,7 @@ patch -fp0 < gtk-doc.make.distcheck.patch
 
 ./gentypes.sh $srcdir
 
+autoreconf
+
 exit 0
 
