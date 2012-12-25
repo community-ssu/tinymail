@@ -2713,7 +2713,6 @@ get_folder_status (CamelImapStore *imap_store, const char *folder_name, const ch
 	}
 
 	items = NULL;
-	tail = (struct imap_status_item *) &items;
 
 	do {
 		name = p;
@@ -2725,7 +2724,11 @@ get_folder_status (CamelImapStore *imap_store, const char *folder_name, const ch
 		item->name = g_strndup (name, p - name);
 		item->value = strtoul (p, &p, 10);
 
-		tail->next = item;
+		if(!items)
+			items=item;
+		else
+			tail->next = item;
+
 		tail = item;
 
 		while (*p == ' ')

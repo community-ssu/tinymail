@@ -1,3 +1,10 @@
+tinymail (1.1.92+1cssu5) unstable; urgency=low
+
+  * camel-imap-store.c - fix invalid/NULL pointer returned from get_folder_status
+  * camel-imap-store.c - prevent heap corruption if list contains only one element
+
+ -- Christian Ratzenhofer <christian_ratzenhofer@yahoo.de>  Fri, 24 Aug 2012 20:26:50 +0200
+
 tinymail (1.1.92+1cssu4) unstable; urgency=low
 
   * Rebuilt without thumb support
