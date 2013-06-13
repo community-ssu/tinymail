@@ -1,3 +1,9 @@
+tinymail (1.1.92+1cssu6) unstable; urgency=low
+
+  * camel-imap-folder.c: fix gmail FETCH reply containing more that one open/close bracket pairs
+
+ -- Ivaylo Dimitrov <freemangordon@abv.bg>  Thu, 13 Jun 2013 17:26:23 +0200
+
 tinymail (1.1.92+1cssu5) unstable; urgency=low
 
   * camel-imap-store.c - fix invalid/NULL pointer returned from get_folder_status
