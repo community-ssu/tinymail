@@ -5975,8 +5975,16 @@ Received: from nic.funet.fi
 			 if (response->untagged) {
 			  for (i = 0; i < response->untagged->len; i++) {
 				char *line = response->untagged->pdata[i];
+				int br_cnt=0;
 
 				do {
+					if(*line == '(') {
+						br_cnt++;
+					}
+					if(*line == ')') {
+						br_cnt--;
+					}
+
 					line++;
 
 					if (!g_ascii_strncasecmp (line, "BODY[", 5) ||
@@ -6002,7 +6010,7 @@ Received: from nic.funet.fi
 						}
 					}
 
-				} while (!done && line && *line != ')');
+				} while (!done && line && (*line != ')' || br_cnt > 0));
 			  }
 			 }
 			 camel_imap_response_free (store, response);
