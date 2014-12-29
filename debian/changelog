@@ -1,3 +1,9 @@
+tinymail (1.1.92+1cssu7+thumb0) unstable; urgency=low
+
+  * Thumb2 build
+
+ -- Ivaylo Dimitrov <freemangordon@abv.bg>  Mon, 29 Dec 2014 16:37:53 +0200
+
 tinymail (1.1.92+1cssu7) unstable; urgency=low
 
   * allow TLS on alternative ports
