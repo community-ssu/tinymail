@@ -1,3 +1,9 @@
+tinymail (1.1.92+1cssu7) unstable; urgency=low
+
+  * allow TLS on alternative ports
+
+ -- Christian Ratzenhofer <christian.ratzenhofer@cdnm.at>  Tue, 23 Dec 2014 23:57:52 +0100
+
 tinymail (1.1.92+1cssu6) unstable; urgency=low
 
   * camel-imap-folder.c: fix gmail FETCH reply containing more that one open/close bracket pairs
